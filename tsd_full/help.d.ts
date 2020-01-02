@@ -1,0 +1,867 @@
+/// <reference path="core.d.ts" />
+/// <reference path="gui.d.ts" />
+/// <reference path="widgets.d.ts" />
+declare namespace help {
+	interface QCompressedHelpInfo_ITF {
+		QCompressedHelpInfo_PTR():QCompressedHelpInfo;
+	}
+
+	class QCompressedHelpInfo {
+		___pointer: number;
+		QCompressedHelpInfo_PTR():QCompressedHelpInfo;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Component():string;
+		FromCompressedHelpFile(documentationFileName:string):QCompressedHelpInfo;
+		NamespaceName():string;
+		Swap(other:QCompressedHelpInfo_ITF):void;
+		Version():core.QVersionNumber;
+		DestroyQCompressedHelpInfo():void;
+	}
+	function NewQCompressedHelpInfoFromPointer(ptr:number):QCompressedHelpInfo;
+	function NewQCompressedHelpInfo():QCompressedHelpInfo;
+	function NewQCompressedHelpInfo2(other:QCompressedHelpInfo_ITF):QCompressedHelpInfo;
+	function NewQCompressedHelpInfo3(other:QCompressedHelpInfo_ITF):QCompressedHelpInfo;
+	function QCompressedHelpInfo_FromCompressedHelpFile(documentationFileName:string):QCompressedHelpInfo;
+	interface QHelpContentItem_ITF {
+		QHelpContentItem_PTR():QHelpContentItem;
+	}
+
+	class QHelpContentItem {
+		___pointer: number;
+		QHelpContentItem_PTR():QHelpContentItem;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Child(row:number):QHelpContentItem;
+		ChildCount():number;
+		ChildPosition(child:QHelpContentItem_ITF):number;
+		Parent():QHelpContentItem;
+		Row():number;
+		Title():string;
+		Url():core.QUrl;
+		DestroyQHelpContentItem():void;
+	}
+	function NewQHelpContentItemFromPointer(ptr:number):QHelpContentItem;
+	interface QHelpContentModel_ITF extends core.QAbstractItemModel_ITF {
+		QHelpContentModel_PTR():QHelpContentModel;
+	}
+
+	class QHelpContentModel extends core.QAbstractItemModel {
+		___pointer: number;
+		QHelpContentModel_PTR():QHelpContentModel;
+		Pointer():number;
+		SetPointer(p:number):void;
+		ConnectColumnCount(f:(parent:core.QModelIndex)=>number):void;
+		DisconnectColumnCount():void;
+		ColumnCount(parent:core.QModelIndex_ITF):number;
+		ColumnCountDefault(parent:core.QModelIndex_ITF):number;
+		ContentItemAt(index:core.QModelIndex_ITF):QHelpContentItem;
+		ConnectContentsCreated(f:()=>void):void;
+		DisconnectContentsCreated():void;
+		ContentsCreated():void;
+		ConnectContentsCreationStarted(f:()=>void):void;
+		DisconnectContentsCreationStarted():void;
+		ContentsCreationStarted():void;
+		CreateContents(customFilterName:string):void;
+		ConnectData(f:(index:core.QModelIndex,role:number)=>core.QVariant):void;
+		DisconnectData():void;
+		Data(index:core.QModelIndex_ITF,role:number):core.QVariant;
+		DataDefault(index:core.QModelIndex_ITF,role:number):core.QVariant;
+		ConnectIndex(f:(row:number,column:number,parent:core.QModelIndex)=>core.QModelIndex):void;
+		DisconnectIndex():void;
+		Index(row:number,column:number,parent:core.QModelIndex_ITF):core.QModelIndex;
+		IndexDefault(row:number,column:number,parent:core.QModelIndex_ITF):core.QModelIndex;
+		IsCreatingContents():boolean;
+		ConnectParent(f:(index:core.QModelIndex)=>core.QModelIndex):void;
+		DisconnectParent():void;
+		Parent(index:core.QModelIndex_ITF):core.QModelIndex;
+		ParentDefault(index:core.QModelIndex_ITF):core.QModelIndex;
+		ConnectRowCount(f:(parent:core.QModelIndex)=>number):void;
+		DisconnectRowCount():void;
+		RowCount(parent:core.QModelIndex_ITF):number;
+		RowCountDefault(parent:core.QModelIndex_ITF):number;
+		ConnectDestroyQHelpContentModel(f:()=>void):void;
+		DisconnectDestroyQHelpContentModel():void;
+		DestroyQHelpContentModel():void;
+		DestroyQHelpContentModelDefault():void;
+		BuddyDefault(index:core.QModelIndex_ITF):core.QModelIndex;
+		CanDropMimeDataDefault(data:core.QMimeData_ITF,action:number,row:number,column:number,parent:core.QModelIndex_ITF):boolean;
+		CanFetchMoreDefault(parent:core.QModelIndex_ITF):boolean;
+		DropMimeDataDefault(data:core.QMimeData_ITF,action:number,row:number,column:number,parent:core.QModelIndex_ITF):boolean;
+		FetchMoreDefault(parent:core.QModelIndex_ITF):void;
+		FlagsDefault(index:core.QModelIndex_ITF):number;
+		HasChildrenDefault(parent:core.QModelIndex_ITF):boolean;
+		HeaderDataDefault(section:number,orientation:number,role:number):core.QVariant;
+		InsertColumnsDefault(column:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		InsertRowsDefault(row:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		ItemDataDefault(index:core.QModelIndex_ITF):Map<number,core.QVariant>;
+		MatchDefault(start:core.QModelIndex_ITF,role:number,value:core.QVariant_ITF,hits:number,flags:number):core.QModelIndex[];
+		MimeDataDefault(indexes:core.QModelIndex[]):core.QMimeData;
+		MimeTypesDefault():string[];
+		MoveColumnsDefault(sourceParent:core.QModelIndex_ITF,sourceColumn:number,count:number,destinationParent:core.QModelIndex_ITF,destinationChild:number):boolean;
+		MoveRowsDefault(sourceParent:core.QModelIndex_ITF,sourceRow:number,count:number,destinationParent:core.QModelIndex_ITF,destinationChild:number):boolean;
+		RemoveColumnsDefault(column:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		RemoveRowsDefault(row:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		ResetInternalDataDefault():void;
+		RevertDefault():void;
+		RoleNamesDefault():Map<number,core.QByteArray>;
+		SetDataDefault(index:core.QModelIndex_ITF,value:core.QVariant_ITF,role:number):boolean;
+		SetHeaderDataDefault(section:number,orientation:number,value:core.QVariant_ITF,role:number):boolean;
+		SetItemDataDefault(index:core.QModelIndex_ITF,roles:Map<number,core.QVariant>):boolean;
+		SiblingDefault(row:number,column:number,index:core.QModelIndex_ITF):core.QModelIndex;
+		SortDefault(column:number,order:number):void;
+		SpanDefault(index:core.QModelIndex_ITF):core.QSize;
+		SubmitDefault():boolean;
+		SupportedDragActionsDefault():number;
+		SupportedDropActionsDefault():number;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpContentModelFromPointer(ptr:number):QHelpContentModel;
+	interface QHelpContentWidget_ITF extends widgets.QTreeView_ITF {
+		QHelpContentWidget_PTR():QHelpContentWidget;
+	}
+
+	class QHelpContentWidget extends widgets.QTreeView {
+		___pointer: number;
+		QHelpContentWidget_PTR():QHelpContentWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+		IndexOf(link:core.QUrl_ITF):core.QModelIndex;
+		ConnectLinkActivated(f:(link:core.QUrl)=>void):void;
+		DisconnectLinkActivated():void;
+		LinkActivated(link:core.QUrl_ITF):void;
+		CollapseDefault(index:core.QModelIndex_ITF):void;
+		CollapseAllDefault():void;
+		ColumnCountChangedDefault(oldCount:number,newCount:number):void;
+		ColumnMovedDefault():void;
+		ColumnResizedDefault(column:number,oldSize:number,newSize:number):void;
+		CurrentChangedDefault(current:core.QModelIndex_ITF,previous:core.QModelIndex_ITF):void;
+		DataChangedDefault(topLeft:core.QModelIndex_ITF,bottomRight:core.QModelIndex_ITF,roles:number[]):void;
+		DragMoveEventDefault(event:gui.QDragMoveEvent_ITF):void;
+		DrawBranchesDefault(painter:gui.QPainter_ITF,rect:core.QRect_ITF,index:core.QModelIndex_ITF):void;
+		DrawRowDefault(painter:gui.QPainter_ITF,option:widgets.QStyleOptionViewItem_ITF,index:core.QModelIndex_ITF):void;
+		ExpandDefault(index:core.QModelIndex_ITF):void;
+		ExpandAllDefault():void;
+		ExpandRecursivelyDefault(index:core.QModelIndex_ITF,depth:number):void;
+		ExpandToDepthDefault(depth:number):void;
+		HideColumnDefault(column:number):void;
+		HorizontalOffsetDefault():number;
+		IndexAtDefault(point:core.QPoint_ITF):core.QModelIndex;
+		IsIndexHiddenDefault(index:core.QModelIndex_ITF):boolean;
+		KeyPressEventDefault(event:gui.QKeyEvent_ITF):void;
+		KeyboardSearchDefault(search:string):void;
+		MouseDoubleClickEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseMoveEventDefault(event:gui.QMouseEvent_ITF):void;
+		MousePressEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseReleaseEventDefault(event:gui.QMouseEvent_ITF):void;
+		MoveCursorDefault(cursorAction:number,modifiers:number):core.QModelIndex;
+		PaintEventDefault(event:gui.QPaintEvent_ITF):void;
+		ResetDefault():void;
+		ResizeColumnToContentsDefault(column:number):void;
+		RowsAboutToBeRemovedDefault(parent:core.QModelIndex_ITF,start:number,end:number):void;
+		RowsInsertedDefault(parent:core.QModelIndex_ITF,start:number,end:number):void;
+		RowsRemovedDefault(parent:core.QModelIndex_ITF,start:number,end:number):void;
+		ScrollContentsByDefault(dx:number,dy:number):void;
+		ScrollToDefault(index:core.QModelIndex_ITF,hint:number):void;
+		SelectAllDefault():void;
+		SelectionChangedDefault(selected:core.QItemSelection_ITF,deselected:core.QItemSelection_ITF):void;
+		SetModelDefault(model:core.QAbstractItemModel_ITF):void;
+		SetRootIndexDefault(index:core.QModelIndex_ITF):void;
+		SetSelectionDefault(rect:core.QRect_ITF,command:number):void;
+		SetSelectionModelDefault(selectionModel:core.QItemSelectionModel_ITF):void;
+		ShowColumnDefault(column:number):void;
+		SizeHintForColumnDefault(column:number):number;
+		SortByColumnDefault(column:number,order:number):void;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+		UpdateGeometriesDefault():void;
+		VerticalOffsetDefault():number;
+		ViewportEventDefault(event:core.QEvent_ITF):boolean;
+		ViewportSizeHintDefault():core.QSize;
+		VisualRectDefault(index:core.QModelIndex_ITF):core.QRect;
+		VisualRegionForSelectionDefault(selection:core.QItemSelection_ITF):gui.QRegion;
+		ClearSelectionDefault():void;
+		CloseEditorDefault(editor:widgets.QWidget_ITF,hint:number):void;
+		CommitDataDefault(editor:widgets.QWidget_ITF):void;
+		DragEnterEventDefault(event:gui.QDragEnterEvent_ITF):void;
+		DragLeaveEventDefault(event:gui.QDragLeaveEvent_ITF):void;
+		DropEventDefault(event:gui.QDropEvent_ITF):void;
+		EditDefault(index:core.QModelIndex_ITF):void;
+		Edit2Default(index:core.QModelIndex_ITF,trigger:number,event:core.QEvent_ITF):boolean;
+		EditorDestroyedDefault(editor:core.QObject_ITF):void;
+		EventDefault(event:core.QEvent_ITF):boolean;
+		EventFilterDefault(object:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		FocusInEventDefault(event:gui.QFocusEvent_ITF):void;
+		FocusNextPrevChildDefault(next:boolean):boolean;
+		FocusOutEventDefault(event:gui.QFocusEvent_ITF):void;
+		InputMethodEventDefault(event:gui.QInputMethodEvent_ITF):void;
+		InputMethodQueryDefault(query:number):core.QVariant;
+		ResizeEventDefault(event:gui.QResizeEvent_ITF):void;
+		ScrollToBottomDefault():void;
+		ScrollToTopDefault():void;
+		SelectionCommandDefault(index:core.QModelIndex_ITF,event:core.QEvent_ITF):number;
+		SetCurrentIndexDefault(index:core.QModelIndex_ITF):void;
+		SizeHintForRowDefault(row:number):number;
+		StartDragDefault(supportedActions:number):void;
+		UpdateDefault(index:core.QModelIndex_ITF):void;
+		ViewOptionsDefault():widgets.QStyleOptionViewItem;
+		ContextMenuEventDefault(e:gui.QContextMenuEvent_ITF):void;
+		MinimumSizeHintDefault():core.QSize;
+		SetupViewportDefault(viewport:widgets.QWidget_ITF):void;
+		SizeHintDefault():core.QSize;
+		WheelEventDefault(e:gui.QWheelEvent_ITF):void;
+		ChangeEventDefault(ev:core.QEvent_ITF):void;
+		ActionEventDefault(event:gui.QActionEvent_ITF):void;
+		CloseDefault():boolean;
+		CloseEventDefault(event:gui.QCloseEvent_ITF):void;
+		EnterEventDefault(event:core.QEvent_ITF):void;
+		HasHeightForWidthDefault():boolean;
+		HeightForWidthDefault(w:number):number;
+		HideDefault():void;
+		HideEventDefault(event:gui.QHideEvent_ITF):void;
+		InitPainterDefault(painter:gui.QPainter_ITF):void;
+		KeyReleaseEventDefault(event:gui.QKeyEvent_ITF):void;
+		LeaveEventDefault(event:core.QEvent_ITF):void;
+		LowerDefault():void;
+		MetricDefault(m:number):number;
+		MoveEventDefault(event:gui.QMoveEvent_ITF):void;
+		NativeEventDefault(eventType:core.QByteArray_ITF,message:number,result:number):boolean;
+		PaintEngineDefault():gui.QPaintEngine;
+		RaiseDefault():void;
+		RepaintDefault():void;
+		SetDisabledDefault(disable:boolean):void;
+		SetEnabledDefault(vbo:boolean):void;
+		SetFocus2Default():void;
+		SetHiddenDefault(hidden:boolean):void;
+		SetStyleSheetDefault(styleSheet:string):void;
+		SetVisibleDefault(visible:boolean):void;
+		SetWindowModifiedDefault(vbo:boolean):void;
+		SetWindowTitleDefault(vqs:string):void;
+		ShowDefault():void;
+		ShowEventDefault(event:gui.QShowEvent_ITF):void;
+		ShowFullScreenDefault():void;
+		ShowMaximizedDefault():void;
+		ShowMinimizedDefault():void;
+		ShowNormalDefault():void;
+		TabletEventDefault(event:gui.QTabletEvent_ITF):void;
+		UpdateMicroFocusDefault():void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		MetaObjectDefault():core.QMetaObject;
+	}
+	function NewQHelpContentWidgetFromPointer(ptr:number):QHelpContentWidget;
+	interface QHelpEngine_ITF extends QHelpEngineCore_ITF {
+		QHelpEngine_PTR():QHelpEngine;
+	}
+
+	class QHelpEngine extends QHelpEngineCore {
+		___pointer: number;
+		QHelpEngine_PTR():QHelpEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+		ContentModel():QHelpContentModel;
+		ContentWidget():QHelpContentWidget;
+		IndexModel():QHelpIndexModel;
+		IndexWidget():QHelpIndexWidget;
+		SearchEngine():QHelpSearchEngine;
+		ConnectDestroyQHelpEngine(f:()=>void):void;
+		DisconnectDestroyQHelpEngine():void;
+		DestroyQHelpEngine():void;
+		DestroyQHelpEngineDefault():void;
+	}
+	function NewQHelpEngineFromPointer(ptr:number):QHelpEngine;
+	function NewQHelpEngine(collectionFile:string,parent:core.QObject_ITF):QHelpEngine;
+	function NewQHelpEngineCore(collectionFile:string,parent:core.QObject_ITF):QHelpEngineCore;
+	interface QHelpEngineCore_ITF extends core.QObject_ITF {
+		QHelpEngineCore_PTR():QHelpEngineCore;
+	}
+
+	class QHelpEngineCore extends core.QObject {
+		___pointer: number;
+		QHelpEngineCore_PTR():QHelpEngineCore;
+		Pointer():number;
+		SetPointer(p:number):void;
+		AutoSaveFilter():boolean;
+		CollectionFile():string;
+		CopyCollectionFile(fileName:string):boolean;
+		CurrentFilter():string;
+		CustomValue(key:string,defaultValue:core.QVariant_ITF):core.QVariant;
+		DocumentationFileName(namespaceName:string):string;
+		Error():string;
+		FileData(url:core.QUrl_ITF):core.QByteArray;
+		Files2(namespaceName:string,filterName:string,extensionFilter:string):core.QUrl[];
+		FilterEngine():QHelpFilterEngine;
+		FindFile(url:core.QUrl_ITF):core.QUrl;
+		LinksForIdentifier(id:string):Map<string,core.QUrl>;
+		LinksForKeyword(keyword:string):Map<string,core.QUrl>;
+		MetaData(documentationFileName:string,name:string):core.QVariant;
+		NamespaceName(documentationFileName:string):string;
+		RegisterDocumentation(documentationFileName:string):boolean;
+		RegisteredDocumentations():string[];
+		RemoveCustomValue(key:string):boolean;
+		SetAutoSaveFilter(save:boolean):void;
+		SetCollectionFile(fileName:string):void;
+		SetCurrentFilter(filterName:string):void;
+		SetCustomValue(key:string,value:core.QVariant_ITF):boolean;
+		SetUsesFilterEngine(uses:boolean):void;
+		SetupData():boolean;
+		ConnectSetupFinished(f:()=>void):void;
+		DisconnectSetupFinished():void;
+		SetupFinished():void;
+		ConnectSetupStarted(f:()=>void):void;
+		DisconnectSetupStarted():void;
+		SetupStarted():void;
+		UnregisterDocumentation(namespaceName:string):boolean;
+		UsesFilterEngine():boolean;
+		ConnectWarning(f:(msg:string)=>void):void;
+		DisconnectWarning():void;
+		Warning(msg:string):void;
+		ConnectDestroyQHelpEngineCore(f:()=>void):void;
+		DisconnectDestroyQHelpEngineCore():void;
+		DestroyQHelpEngineCore():void;
+		DestroyQHelpEngineCoreDefault():void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpEngineCoreFromPointer(ptr:number):QHelpEngineCore;
+	function NewQHelpEngineCore(collectionFile:string,parent:core.QObject_ITF):QHelpEngineCore;
+	function QHelpEngineCore_MetaData(documentationFileName:string,name:string):core.QVariant;
+	function QHelpEngineCore_NamespaceName(documentationFileName:string):string;
+	interface QHelpFilterData_ITF {
+		QHelpFilterData_PTR():QHelpFilterData;
+	}
+
+	class QHelpFilterData {
+		___pointer: number;
+		QHelpFilterData_PTR():QHelpFilterData;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Components():string[];
+		SetComponents(components:string[]):void;
+		SetVersions(versions:core.QVersionNumber[]):void;
+		Versions():core.QVersionNumber[];
+		DestroyQHelpFilterData():void;
+	}
+	function NewQHelpFilterDataFromPointer(ptr:number):QHelpFilterData;
+	function NewQHelpFilterData():QHelpFilterData;
+	function NewQHelpFilterData2(other:QHelpFilterData_ITF):QHelpFilterData;
+	function NewQHelpFilterData3(other:QHelpFilterData_ITF):QHelpFilterData;
+	interface QHelpFilterEngine_ITF extends core.QObject_ITF {
+		QHelpFilterEngine_PTR():QHelpFilterEngine;
+	}
+
+	class QHelpFilterEngine extends core.QObject {
+		___pointer: number;
+		QHelpFilterEngine_PTR():QHelpFilterEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+		ActiveFilter():string;
+		AvailableComponents():string[];
+		ConnectFilterActivated(f:(newFilter:string)=>void):void;
+		DisconnectFilterActivated():void;
+		FilterActivated(newFilter:string):void;
+		FilterData(filterName:string):QHelpFilterData;
+		Filters():string[];
+		NamespaceToComponent():Map<string,string>;
+		NamespaceToVersion():Map<string,core.QVersionNumber>;
+		NamespacesForFilter(filterName:string):string[];
+		RemoveFilter(filterName:string):boolean;
+		SetActiveFilter(filterName:string):boolean;
+		SetFilterData(filterName:string,filterData:QHelpFilterData_ITF):boolean;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpFilterEngineFromPointer(ptr:number):QHelpFilterEngine;
+	interface QHelpGlobal_ITF {
+		QHelpGlobal_PTR():QHelpGlobal;
+	}
+
+	class QHelpGlobal {
+		___pointer: number;
+		QHelpGlobal_PTR():QHelpGlobal;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQHelpGlobal():void;
+	}
+	function NewQHelpGlobalFromPointer(ptr:number):QHelpGlobal;
+	interface QHelpIndexModel_ITF extends core.QStringListModel_ITF {
+		QHelpIndexModel_PTR():QHelpIndexModel;
+	}
+
+	class QHelpIndexModel extends core.QStringListModel {
+		___pointer: number;
+		QHelpIndexModel_PTR():QHelpIndexModel;
+		Pointer():number;
+		SetPointer(p:number):void;
+		CreateIndex(customFilterName:string):void;
+		Filter(filter:string,wildcard:string):core.QModelIndex;
+		ConnectIndexCreated(f:()=>void):void;
+		DisconnectIndexCreated():void;
+		IndexCreated():void;
+		ConnectIndexCreationStarted(f:()=>void):void;
+		DisconnectIndexCreationStarted():void;
+		IndexCreationStarted():void;
+		IsCreatingIndex():boolean;
+		DataDefault(index:core.QModelIndex_ITF,role:number):core.QVariant;
+		FlagsDefault(index:core.QModelIndex_ITF):number;
+		InsertRowsDefault(row:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		ItemDataDefault(index:core.QModelIndex_ITF):Map<number,core.QVariant>;
+		MoveRowsDefault(sourceParent:core.QModelIndex_ITF,sourceRow:number,count:number,destinationParent:core.QModelIndex_ITF,destinationChild:number):boolean;
+		RemoveRowsDefault(row:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		RowCountDefault(parent:core.QModelIndex_ITF):number;
+		SetDataDefault(index:core.QModelIndex_ITF,value:core.QVariant_ITF,role:number):boolean;
+		SetItemDataDefault(index:core.QModelIndex_ITF,roles:Map<number,core.QVariant>):boolean;
+		SiblingDefault(row:number,column:number,idx:core.QModelIndex_ITF):core.QModelIndex;
+		SortDefault(column:number,order:number):void;
+		SupportedDropActionsDefault():number;
+		DropMimeDataDefault(data:core.QMimeData_ITF,action:number,row:number,column:number,parent:core.QModelIndex_ITF):boolean;
+		IndexDefault(row:number,column:number,parent:core.QModelIndex_ITF):core.QModelIndex;
+		BuddyDefault(index:core.QModelIndex_ITF):core.QModelIndex;
+		CanDropMimeDataDefault(data:core.QMimeData_ITF,action:number,row:number,column:number,parent:core.QModelIndex_ITF):boolean;
+		CanFetchMoreDefault(parent:core.QModelIndex_ITF):boolean;
+		ColumnCountDefault(parent:core.QModelIndex_ITF):number;
+		FetchMoreDefault(parent:core.QModelIndex_ITF):void;
+		HasChildrenDefault(parent:core.QModelIndex_ITF):boolean;
+		HeaderDataDefault(section:number,orientation:number,role:number):core.QVariant;
+		InsertColumnsDefault(column:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		MatchDefault(start:core.QModelIndex_ITF,role:number,value:core.QVariant_ITF,hits:number,flags:number):core.QModelIndex[];
+		MimeDataDefault(indexes:core.QModelIndex[]):core.QMimeData;
+		MimeTypesDefault():string[];
+		MoveColumnsDefault(sourceParent:core.QModelIndex_ITF,sourceColumn:number,count:number,destinationParent:core.QModelIndex_ITF,destinationChild:number):boolean;
+		ParentDefault(index:core.QModelIndex_ITF):core.QModelIndex;
+		RemoveColumnsDefault(column:number,count:number,parent:core.QModelIndex_ITF):boolean;
+		ResetInternalDataDefault():void;
+		RevertDefault():void;
+		RoleNamesDefault():Map<number,core.QByteArray>;
+		SetHeaderDataDefault(section:number,orientation:number,value:core.QVariant_ITF,role:number):boolean;
+		SpanDefault(index:core.QModelIndex_ITF):core.QSize;
+		SubmitDefault():boolean;
+		SupportedDragActionsDefault():number;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpIndexModelFromPointer(ptr:number):QHelpIndexModel;
+	interface QHelpIndexWidget_ITF extends widgets.QListView_ITF {
+		QHelpIndexWidget_PTR():QHelpIndexWidget;
+	}
+
+	class QHelpIndexWidget extends widgets.QListView {
+		___pointer: number;
+		QHelpIndexWidget_PTR():QHelpIndexWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+		ConnectActivateCurrentItem(f:()=>void):void;
+		DisconnectActivateCurrentItem():void;
+		ActivateCurrentItem():void;
+		ActivateCurrentItemDefault():void;
+		ConnectFilterIndices(f:(filter:string,wildcard:string)=>void):void;
+		DisconnectFilterIndices():void;
+		FilterIndices(filter:string,wildcard:string):void;
+		FilterIndicesDefault(filter:string,wildcard:string):void;
+		ConnectLinkActivated(f:(link:core.QUrl,keyword:string)=>void):void;
+		DisconnectLinkActivated():void;
+		LinkActivated(link:core.QUrl_ITF,keyword:string):void;
+		ConnectLinksActivated(f:(links:Map<string,core.QUrl>,keyword:string)=>void):void;
+		DisconnectLinksActivated():void;
+		LinksActivated(links:Map<string,core.QUrl>,keyword:string):void;
+		CurrentChangedDefault(current:core.QModelIndex_ITF,previous:core.QModelIndex_ITF):void;
+		DataChangedDefault(topLeft:core.QModelIndex_ITF,bottomRight:core.QModelIndex_ITF,roles:number[]):void;
+		DragLeaveEventDefault(e:gui.QDragLeaveEvent_ITF):void;
+		DragMoveEventDefault(e:gui.QDragMoveEvent_ITF):void;
+		DropEventDefault(e:gui.QDropEvent_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		HorizontalOffsetDefault():number;
+		IndexAtDefault(p:core.QPoint_ITF):core.QModelIndex;
+		IsIndexHiddenDefault(index:core.QModelIndex_ITF):boolean;
+		MouseMoveEventDefault(e:gui.QMouseEvent_ITF):void;
+		MouseReleaseEventDefault(e:gui.QMouseEvent_ITF):void;
+		MoveCursorDefault(cursorAction:number,modifiers:number):core.QModelIndex;
+		PaintEventDefault(e:gui.QPaintEvent_ITF):void;
+		ResizeEventDefault(e:gui.QResizeEvent_ITF):void;
+		RowsAboutToBeRemovedDefault(parent:core.QModelIndex_ITF,start:number,end:number):void;
+		RowsInsertedDefault(parent:core.QModelIndex_ITF,start:number,end:number):void;
+		ScrollToDefault(index:core.QModelIndex_ITF,hint:number):void;
+		SelectedIndexesDefault():core.QModelIndex[];
+		SelectionChangedDefault(selected:core.QItemSelection_ITF,deselected:core.QItemSelection_ITF):void;
+		SetSelectionDefault(rect:core.QRect_ITF,command:number):void;
+		StartDragDefault(supportedActions:number):void;
+		TimerEventDefault(e:core.QTimerEvent_ITF):void;
+		UpdateGeometriesDefault():void;
+		VerticalOffsetDefault():number;
+		ViewOptionsDefault():widgets.QStyleOptionViewItem;
+		ViewportSizeHintDefault():core.QSize;
+		VisualRectDefault(index:core.QModelIndex_ITF):core.QRect;
+		VisualRegionForSelectionDefault(selection:core.QItemSelection_ITF):gui.QRegion;
+		WheelEventDefault(e:gui.QWheelEvent_ITF):void;
+		ClearSelectionDefault():void;
+		CloseEditorDefault(editor:widgets.QWidget_ITF,hint:number):void;
+		CommitDataDefault(editor:widgets.QWidget_ITF):void;
+		DragEnterEventDefault(event:gui.QDragEnterEvent_ITF):void;
+		EditDefault(index:core.QModelIndex_ITF):void;
+		Edit2Default(index:core.QModelIndex_ITF,trigger:number,event:core.QEvent_ITF):boolean;
+		EditorDestroyedDefault(editor:core.QObject_ITF):void;
+		EventFilterDefault(object:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		FocusInEventDefault(event:gui.QFocusEvent_ITF):void;
+		FocusNextPrevChildDefault(next:boolean):boolean;
+		FocusOutEventDefault(event:gui.QFocusEvent_ITF):void;
+		InputMethodEventDefault(event:gui.QInputMethodEvent_ITF):void;
+		InputMethodQueryDefault(query:number):core.QVariant;
+		KeyPressEventDefault(event:gui.QKeyEvent_ITF):void;
+		KeyboardSearchDefault(search:string):void;
+		MouseDoubleClickEventDefault(event:gui.QMouseEvent_ITF):void;
+		MousePressEventDefault(event:gui.QMouseEvent_ITF):void;
+		ResetDefault():void;
+		ScrollToBottomDefault():void;
+		ScrollToTopDefault():void;
+		SelectAllDefault():void;
+		SelectionCommandDefault(index:core.QModelIndex_ITF,event:core.QEvent_ITF):number;
+		SetCurrentIndexDefault(index:core.QModelIndex_ITF):void;
+		SetModelDefault(model:core.QAbstractItemModel_ITF):void;
+		SetRootIndexDefault(index:core.QModelIndex_ITF):void;
+		SetSelectionModelDefault(selectionModel:core.QItemSelectionModel_ITF):void;
+		SizeHintForColumnDefault(column:number):number;
+		SizeHintForRowDefault(row:number):number;
+		UpdateDefault(index:core.QModelIndex_ITF):void;
+		ViewportEventDefault(event:core.QEvent_ITF):boolean;
+		ContextMenuEventDefault(e:gui.QContextMenuEvent_ITF):void;
+		MinimumSizeHintDefault():core.QSize;
+		ScrollContentsByDefault(dx:number,dy:number):void;
+		SetupViewportDefault(viewport:widgets.QWidget_ITF):void;
+		SizeHintDefault():core.QSize;
+		ChangeEventDefault(ev:core.QEvent_ITF):void;
+		ActionEventDefault(event:gui.QActionEvent_ITF):void;
+		CloseDefault():boolean;
+		CloseEventDefault(event:gui.QCloseEvent_ITF):void;
+		EnterEventDefault(event:core.QEvent_ITF):void;
+		HasHeightForWidthDefault():boolean;
+		HeightForWidthDefault(w:number):number;
+		HideDefault():void;
+		HideEventDefault(event:gui.QHideEvent_ITF):void;
+		InitPainterDefault(painter:gui.QPainter_ITF):void;
+		KeyReleaseEventDefault(event:gui.QKeyEvent_ITF):void;
+		LeaveEventDefault(event:core.QEvent_ITF):void;
+		LowerDefault():void;
+		MetricDefault(m:number):number;
+		MoveEventDefault(event:gui.QMoveEvent_ITF):void;
+		NativeEventDefault(eventType:core.QByteArray_ITF,message:number,result:number):boolean;
+		PaintEngineDefault():gui.QPaintEngine;
+		RaiseDefault():void;
+		RepaintDefault():void;
+		SetDisabledDefault(disable:boolean):void;
+		SetEnabledDefault(vbo:boolean):void;
+		SetFocus2Default():void;
+		SetHiddenDefault(hidden:boolean):void;
+		SetStyleSheetDefault(styleSheet:string):void;
+		SetVisibleDefault(visible:boolean):void;
+		SetWindowModifiedDefault(vbo:boolean):void;
+		SetWindowTitleDefault(vqs:string):void;
+		ShowDefault():void;
+		ShowEventDefault(event:gui.QShowEvent_ITF):void;
+		ShowFullScreenDefault():void;
+		ShowMaximizedDefault():void;
+		ShowMinimizedDefault():void;
+		ShowNormalDefault():void;
+		TabletEventDefault(event:gui.QTabletEvent_ITF):void;
+		UpdateMicroFocusDefault():void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		MetaObjectDefault():core.QMetaObject;
+	}
+	function NewQHelpIndexWidgetFromPointer(ptr:number):QHelpIndexWidget;
+	interface QHelpSearchEngine_ITF extends core.QObject_ITF {
+		QHelpSearchEngine_PTR():QHelpSearchEngine;
+	}
+
+	class QHelpSearchEngine extends core.QObject {
+		___pointer: number;
+		QHelpSearchEngine_PTR():QHelpSearchEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+		ConnectCancelIndexing(f:()=>void):void;
+		DisconnectCancelIndexing():void;
+		CancelIndexing():void;
+		CancelIndexingDefault():void;
+		ConnectCancelSearching(f:()=>void):void;
+		DisconnectCancelSearching():void;
+		CancelSearching():void;
+		CancelSearchingDefault():void;
+		ConnectIndexingFinished(f:()=>void):void;
+		DisconnectIndexingFinished():void;
+		IndexingFinished():void;
+		ConnectIndexingStarted(f:()=>void):void;
+		DisconnectIndexingStarted():void;
+		IndexingStarted():void;
+		QueryWidget():QHelpSearchQueryWidget;
+		ConnectReindexDocumentation(f:()=>void):void;
+		DisconnectReindexDocumentation():void;
+		ReindexDocumentation():void;
+		ReindexDocumentationDefault():void;
+		ResultWidget():QHelpSearchResultWidget;
+		ConnectSearch2(f:(searchInput:string)=>void):void;
+		DisconnectSearch2():void;
+		Search2(searchInput:string):void;
+		Search2Default(searchInput:string):void;
+		SearchInput():string;
+		SearchResultCount():number;
+		SearchResults(start:number,end:number):QHelpSearchResult[];
+		ConnectSearchingFinished(f:(searchResultCount:number)=>void):void;
+		DisconnectSearchingFinished():void;
+		SearchingFinished(searchResultCount:number):void;
+		ConnectSearchingStarted(f:()=>void):void;
+		DisconnectSearchingStarted():void;
+		SearchingStarted():void;
+		ConnectDestroyQHelpSearchEngine(f:()=>void):void;
+		DisconnectDestroyQHelpSearchEngine():void;
+		DestroyQHelpSearchEngine():void;
+		DestroyQHelpSearchEngineDefault():void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventDefault(e:core.QEvent_ITF):boolean;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpSearchEngineFromPointer(ptr:number):QHelpSearchEngine;
+	function NewQHelpSearchEngine(helpEngine:QHelpEngineCore_ITF,parent:core.QObject_ITF):QHelpSearchEngine;
+	interface QHelpSearchQuery_ITF {
+		QHelpSearchQuery_PTR():QHelpSearchQuery;
+	}
+
+	class QHelpSearchQuery {
+		___pointer: number;
+		QHelpSearchQuery_PTR():QHelpSearchQuery;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQHelpSearchQuery():void;
+	}
+	function NewQHelpSearchQueryFromPointer(ptr:number):QHelpSearchQuery;
+	function NewQHelpSearchQuery():QHelpSearchQuery;
+	function NewQHelpSearchQueryWidget(parent:widgets.QWidget_ITF):QHelpSearchQueryWidget;
+	interface QHelpSearchQueryWidget_ITF extends widgets.QWidget_ITF {
+		QHelpSearchQueryWidget_PTR():QHelpSearchQueryWidget;
+	}
+
+	class QHelpSearchQueryWidget extends widgets.QWidget {
+		___pointer: number;
+		QHelpSearchQueryWidget_PTR():QHelpSearchQueryWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+		CollapseExtendedSearch():void;
+		ExpandExtendedSearch():void;
+		ConnectSearch(f:()=>void):void;
+		DisconnectSearch():void;
+		Search():void;
+		SearchInput():string;
+		SetSearchInput(searchInput:string):void;
+		ConnectDestroyQHelpSearchQueryWidget(f:()=>void):void;
+		DisconnectDestroyQHelpSearchQueryWidget():void;
+		DestroyQHelpSearchQueryWidget():void;
+		DestroyQHelpSearchQueryWidgetDefault():void;
+		ActionEventDefault(event:gui.QActionEvent_ITF):void;
+		ChangeEventDefault(event:core.QEvent_ITF):void;
+		CloseDefault():boolean;
+		CloseEventDefault(event:gui.QCloseEvent_ITF):void;
+		ContextMenuEventDefault(event:gui.QContextMenuEvent_ITF):void;
+		DragEnterEventDefault(event:gui.QDragEnterEvent_ITF):void;
+		DragLeaveEventDefault(event:gui.QDragLeaveEvent_ITF):void;
+		DragMoveEventDefault(event:gui.QDragMoveEvent_ITF):void;
+		DropEventDefault(event:gui.QDropEvent_ITF):void;
+		EnterEventDefault(event:core.QEvent_ITF):void;
+		EventDefault(event:core.QEvent_ITF):boolean;
+		FocusInEventDefault(event:gui.QFocusEvent_ITF):void;
+		FocusNextPrevChildDefault(next:boolean):boolean;
+		FocusOutEventDefault(event:gui.QFocusEvent_ITF):void;
+		HasHeightForWidthDefault():boolean;
+		HeightForWidthDefault(w:number):number;
+		HideDefault():void;
+		HideEventDefault(event:gui.QHideEvent_ITF):void;
+		InitPainterDefault(painter:gui.QPainter_ITF):void;
+		InputMethodEventDefault(event:gui.QInputMethodEvent_ITF):void;
+		InputMethodQueryDefault(query:number):core.QVariant;
+		KeyPressEventDefault(event:gui.QKeyEvent_ITF):void;
+		KeyReleaseEventDefault(event:gui.QKeyEvent_ITF):void;
+		LeaveEventDefault(event:core.QEvent_ITF):void;
+		LowerDefault():void;
+		MetricDefault(m:number):number;
+		MinimumSizeHintDefault():core.QSize;
+		MouseDoubleClickEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseMoveEventDefault(event:gui.QMouseEvent_ITF):void;
+		MousePressEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseReleaseEventDefault(event:gui.QMouseEvent_ITF):void;
+		MoveEventDefault(event:gui.QMoveEvent_ITF):void;
+		NativeEventDefault(eventType:core.QByteArray_ITF,message:number,result:number):boolean;
+		PaintEngineDefault():gui.QPaintEngine;
+		PaintEventDefault(event:gui.QPaintEvent_ITF):void;
+		RaiseDefault():void;
+		RepaintDefault():void;
+		ResizeEventDefault(event:gui.QResizeEvent_ITF):void;
+		SetDisabledDefault(disable:boolean):void;
+		SetEnabledDefault(vbo:boolean):void;
+		SetFocus2Default():void;
+		SetHiddenDefault(hidden:boolean):void;
+		SetStyleSheetDefault(styleSheet:string):void;
+		SetVisibleDefault(visible:boolean):void;
+		SetWindowModifiedDefault(vbo:boolean):void;
+		SetWindowTitleDefault(vqs:string):void;
+		ShowDefault():void;
+		ShowEventDefault(event:gui.QShowEvent_ITF):void;
+		ShowFullScreenDefault():void;
+		ShowMaximizedDefault():void;
+		ShowMinimizedDefault():void;
+		ShowNormalDefault():void;
+		SizeHintDefault():core.QSize;
+		TabletEventDefault(event:gui.QTabletEvent_ITF):void;
+		UpdateDefault():void;
+		UpdateMicroFocusDefault():void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpSearchQueryWidgetFromPointer(ptr:number):QHelpSearchQueryWidget;
+	function NewQHelpSearchQueryWidget(parent:widgets.QWidget_ITF):QHelpSearchQueryWidget;
+	interface QHelpSearchResult_ITF {
+		QHelpSearchResult_PTR():QHelpSearchResult;
+	}
+
+	class QHelpSearchResult {
+		___pointer: number;
+		QHelpSearchResult_PTR():QHelpSearchResult;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Snippet():string;
+		Title():string;
+		Url():core.QUrl;
+		DestroyQHelpSearchResult():void;
+	}
+	function NewQHelpSearchResultFromPointer(ptr:number):QHelpSearchResult;
+	function NewQHelpSearchResult():QHelpSearchResult;
+	function NewQHelpSearchResult2(other:QHelpSearchResult_ITF):QHelpSearchResult;
+	function NewQHelpSearchResult3(url:core.QUrl_ITF,title:string,snippet:string):QHelpSearchResult;
+	interface QHelpSearchResultWidget_ITF extends widgets.QWidget_ITF {
+		QHelpSearchResultWidget_PTR():QHelpSearchResultWidget;
+	}
+
+	class QHelpSearchResultWidget extends widgets.QWidget {
+		___pointer: number;
+		QHelpSearchResultWidget_PTR():QHelpSearchResultWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+		LinkAt(point:core.QPoint_ITF):core.QUrl;
+		ConnectRequestShowLink(f:(link:core.QUrl)=>void):void;
+		DisconnectRequestShowLink():void;
+		RequestShowLink(link:core.QUrl_ITF):void;
+		ConnectDestroyQHelpSearchResultWidget(f:()=>void):void;
+		DisconnectDestroyQHelpSearchResultWidget():void;
+		DestroyQHelpSearchResultWidget():void;
+		DestroyQHelpSearchResultWidgetDefault():void;
+		ActionEventDefault(event:gui.QActionEvent_ITF):void;
+		ChangeEventDefault(event:core.QEvent_ITF):void;
+		CloseDefault():boolean;
+		CloseEventDefault(event:gui.QCloseEvent_ITF):void;
+		ContextMenuEventDefault(event:gui.QContextMenuEvent_ITF):void;
+		DragEnterEventDefault(event:gui.QDragEnterEvent_ITF):void;
+		DragLeaveEventDefault(event:gui.QDragLeaveEvent_ITF):void;
+		DragMoveEventDefault(event:gui.QDragMoveEvent_ITF):void;
+		DropEventDefault(event:gui.QDropEvent_ITF):void;
+		EnterEventDefault(event:core.QEvent_ITF):void;
+		EventDefault(event:core.QEvent_ITF):boolean;
+		FocusInEventDefault(event:gui.QFocusEvent_ITF):void;
+		FocusNextPrevChildDefault(next:boolean):boolean;
+		FocusOutEventDefault(event:gui.QFocusEvent_ITF):void;
+		HasHeightForWidthDefault():boolean;
+		HeightForWidthDefault(w:number):number;
+		HideDefault():void;
+		HideEventDefault(event:gui.QHideEvent_ITF):void;
+		InitPainterDefault(painter:gui.QPainter_ITF):void;
+		InputMethodEventDefault(event:gui.QInputMethodEvent_ITF):void;
+		InputMethodQueryDefault(query:number):core.QVariant;
+		KeyPressEventDefault(event:gui.QKeyEvent_ITF):void;
+		KeyReleaseEventDefault(event:gui.QKeyEvent_ITF):void;
+		LeaveEventDefault(event:core.QEvent_ITF):void;
+		LowerDefault():void;
+		MetricDefault(m:number):number;
+		MinimumSizeHintDefault():core.QSize;
+		MouseDoubleClickEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseMoveEventDefault(event:gui.QMouseEvent_ITF):void;
+		MousePressEventDefault(event:gui.QMouseEvent_ITF):void;
+		MouseReleaseEventDefault(event:gui.QMouseEvent_ITF):void;
+		MoveEventDefault(event:gui.QMoveEvent_ITF):void;
+		NativeEventDefault(eventType:core.QByteArray_ITF,message:number,result:number):boolean;
+		PaintEngineDefault():gui.QPaintEngine;
+		PaintEventDefault(event:gui.QPaintEvent_ITF):void;
+		RaiseDefault():void;
+		RepaintDefault():void;
+		ResizeEventDefault(event:gui.QResizeEvent_ITF):void;
+		SetDisabledDefault(disable:boolean):void;
+		SetEnabledDefault(vbo:boolean):void;
+		SetFocus2Default():void;
+		SetHiddenDefault(hidden:boolean):void;
+		SetStyleSheetDefault(styleSheet:string):void;
+		SetVisibleDefault(visible:boolean):void;
+		SetWindowModifiedDefault(vbo:boolean):void;
+		SetWindowTitleDefault(vqs:string):void;
+		ShowDefault():void;
+		ShowEventDefault(event:gui.QShowEvent_ITF):void;
+		ShowFullScreenDefault():void;
+		ShowMaximizedDefault():void;
+		ShowMinimizedDefault():void;
+		ShowNormalDefault():void;
+		SizeHintDefault():core.QSize;
+		TabletEventDefault(event:gui.QTabletEvent_ITF):void;
+		UpdateDefault():void;
+		UpdateMicroFocusDefault():void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
+		ChildEventDefault(event:core.QChildEvent_ITF):void;
+		ConnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		CustomEventDefault(event:core.QEvent_ITF):void;
+		DeleteLaterDefault():void;
+		DisconnectNotifyDefault(sign:core.QMetaMethod_ITF):void;
+		EventFilterDefault(watched:core.QObject_ITF,event:core.QEvent_ITF):boolean;
+		MetaObjectDefault():core.QMetaObject;
+		TimerEventDefault(event:core.QTimerEvent_ITF):void;
+	}
+	function NewQHelpSearchResultWidgetFromPointer(ptr:number):QHelpSearchResultWidget;
+}
