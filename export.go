@@ -170,6 +170,9 @@ func trimAndPatch(t string, data []byte, self bool, boot bool) string {
 
 func extractAndPatch(t string, data []byte) string {
 	dstDir := filepath.Dir(os.Args[0])
+	if strings.Contains(dstDir, "/private/var/folders/") { //the *.app is quarantined on macOS (can be fixed by using "xattr -c *.app" or by moving the *.app into "/Applications")
+		dstDir = core.QStandardPaths_StandardLocations(core.QStandardPaths__DownloadLocation)[0]
+	}
 
 	var dst string
 	fi, _ := os.Stat(os.Args[0])
