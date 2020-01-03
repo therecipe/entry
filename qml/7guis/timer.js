@@ -5,7 +5,18 @@
 /// <reference path="../../tsd_full/widgets.d.ts" />	import github.com/therecipe/qt/widgets
 
 var nil;
+var isWinXP;
 (function() {
+
+	if (isWinXP) {
+		var oldFunc = widgets.NewQGridLayout
+		widgets.NewQGridLayout = function(parent) {
+			var r = oldFunc(parent)
+			// @ts-ignore
+			r.AddWidget2 = r.AddWidget
+			return r
+		}
+	}
 
 	var window = widgets.NewQWidget(nil, 0),
 		layout = widgets.NewQGridLayout(window)
