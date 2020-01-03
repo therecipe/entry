@@ -118,6 +118,11 @@ func trimAndPatch(t string, data []byte, self bool, boot bool) string {
 	if strings.Contains(dstDir, ".app/") {
 		dstDir = filepath.Dir(strings.Split(dstDir, ".app/")[0])
 	}
+	var quarantined bool
+	if strings.Contains(dstDir, "/private/var/folders/") { //the *.app is quarantined on macOS (can be fixed by using "xattr -c *.app" or by moving the *.app into "/Applications")
+		quarantined = true
+		dstDir = core.QStandardPaths_StandardLocations(core.QStandardPaths__DownloadLocation)[0]
+	}
 
 	fi, _ := os.Stat(os.Args[0])
 	fr, err := os.OpenFile(os.Args[0], os.O_RDONLY, fi.Mode().Perm())
@@ -131,7 +136,7 @@ func trimAndPatch(t string, data []byte, self bool, boot bool) string {
 	if t == "windows" {
 		ending = ".exe"
 	}
-	if self {
+	if self && !quarantined {
 		dst = filepath.Join(filepath.Dir(os.Args[0]), strings.TrimSuffix(filepath.Base(os.Args[0]), ending)+"_patched"+ending)
 	} else {
 		dst = filepath.Join(dstDir, "dist", t+ending)
@@ -157,7 +162,7 @@ func trimAndPatch(t string, data []byte, self bool, boot bool) string {
 
 	patch(dst, data, boot)
 
-	if self {
+	if self && !quarantined {
 		return filepath.Dir(os.Args[0])
 	}
 	return filepath.Join(dstDir, "dist")
@@ -165,9 +170,6 @@ func trimAndPatch(t string, data []byte, self bool, boot bool) string {
 
 func extractAndPatch(t string, data []byte) string {
 	dstDir := filepath.Dir(os.Args[0])
-	if strings.Contains(dstDir, ".app/") {
-		dstDir = filepath.Dir(strings.Split(dstDir, ".app/")[0])
-	}
 
 	var dst string
 	fi, _ := os.Stat(os.Args[0])
@@ -193,15 +195,9 @@ func extractAndPatch(t string, data []byte) string {
 			ending = ".exe"
 		}
 		dst = filepath.Join(dstDir, "dist", t+ending)
-		if t == "darwin" {
-			dst = filepath.Join(dstDir, "dist", "darwin.app", "Contents", "MacOS", t)
-		}
+
 		os.MkdirAll(filepath.Dir(dst), 0755)
 		os.RemoveAll(dst)
-		if t == "darwin" {
-			ioutil.WriteFile(filepath.Join(dstDir, "dist", "darwin.app", "Contents", "Info.plist"), darwin_plist(t), 0644)
-			ioutil.WriteFile(filepath.Join(dstDir, "dist", "darwin.app", "Contents", "PkgInfo"), darwin_pkginfo(), 0644)
-		}
 
 		fw, _ := os.OpenFile(dst, os.O_RDWR|os.O_CREATE, fi.Mode().Perm())
 		io.Copy(fw, fr)

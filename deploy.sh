@@ -39,6 +39,6 @@ ZNAME=$(ls *windows*) && rm -r linux darwin *.app *.zip && zip -q -9 -r $ZNAME $
 
 
 mkdir $OPWD/deploy/js && cp $OPWD/deploy/*.zip $OPWD/deploy/js
-cd $OPWD/deploy/js && mv *darwin_amd64* darwin.zip && mv *linux_amd64* linux.zip && mv *windows_amd64* windows.zip && mv *windows_386* windowsxp.zip && mv *js* wasm.zip && unzip wasm.zip && rm -f wasm.zip && zip -q -9 -r wasm.zip * && mv wasm.zip $OPWD/deploy/${NAME}_wasm.zip
+cd $OPWD/deploy/js && mv *darwin_amd64* darwin.zip && mv *linux_amd64* linux.zip && mv *windows_amd64* windows.zip && mv *windows_386* windowsxp.zip && mv *js* wasm.zip && unzip wasm.zip && zip -q -9 -r ${NAME}_wasm.zip * && mv ${NAME}_wasm.zip $OPWD/deploy/${NAME}_wasm.zip
 
 cd $OPWD && rm -rf $OPWD/deploy/js $OPWD/deploy/${NAME}_js.zip $OPWD/deploy/*_amd64* && find $OPWD/deploy -name "*_amd64*" -exec mv {} $OPWD/deploy \;

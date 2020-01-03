@@ -79,18 +79,16 @@
 				return "dynamic.qml"
 			case 13:
 				return "goroutine.qml"
-				/*
-				case 14:
-					return "7guis/counter.js"
-				case 15:
-					return "7guis/converter.js"
-				case 16:
-					return "7guis/flight.js"
-				case 17:
-					return "7guis/timer.js"
-				case 18:
-					return "7guis/crud.js"
-				*/
+			case 14:
+				return "7guis/counter.js"
+			case 15:
+				return "7guis/converter.js"
+			case 16:
+				return "7guis/flight.js"
+			case 17:
+				return "7guis/timer.js"
+			case 18:
+				return "7guis/crud.js"
 		}
 		return ""
 	}
@@ -143,7 +141,7 @@
 		tabWidget.AddTab(widgets.NewQWidget(nil, 0), fileForIndex(-1))
 		leftLayout.AddWidget(te, 0, 0)
 	} else {
-		for (var i = 0; i <= 13; i++) {
+		for (var i = 0; i <= 18; i++) {
 			if (isInsideBrowser) {
 				switch (fileForIndex(i)) {
 					case "systray.js":
@@ -158,6 +156,9 @@
 						textEdits.push(te)
 						tabWidget.AddTab(te, fileForIndex(i))
 				}
+				continue
+			}
+			if (fileForIndex(i).indexOf("7guis") == 0 && !isInsideBrowser) {
 				continue
 			}
 			if (isWinXP) { //TODO:
@@ -571,6 +572,9 @@
 
 	if ((isMain && isDev) || (isInsideBrowser && isDev && mainPayload != "")) {
 		var menu = window.MenuBar().AddMenu2("Settings")
+		if (isInsideBrowser) {
+			menu.SetVisible(false)
+		}
 
 		var showDev = widgets.NewQAction2("&Show Dev Panel", window)
 		menu.QWidget_PTR().AddAction(showDev)
