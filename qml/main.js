@@ -44,6 +44,14 @@
 			textEdit.SetTabStopDistance(textEdit.TabStopDistance() / 3)
 		}
 		main.NewGolangHighlighter2(doc)
+
+		if (isInsideBrowser && userAgent.indexOf("Macintosh") != -1) { //inverse the scrolling direction for macOS to restore the natural (inversed) scrolling behaviour
+			textEdit.ConnectWheelEvent(function(event) {
+				var angleDelta = event.AngleDelta()
+				textEdit.WheelEventDefault(gui.NewQWheelEvent7(event.PosF(), event.GlobalPosF(), event.PixelDelta(), core.NewQPoint2(angleDelta.X() * -1, angleDelta.Y() * -1), event.Buttons(), event.Modifiers(), event.Phase(), event.Inverted(), event.Source()))
+			})
+		}
+
 		return textEdit
 	}
 
@@ -572,9 +580,6 @@
 
 	if ((isMain && isDev) || (isInsideBrowser && isDev && mainPayload != "")) {
 		var menu = window.MenuBar().AddMenu2("Settings")
-		if (isInsideBrowser) {
-			menu.SetVisible(false)
-		}
 
 		var showDev = widgets.NewQAction2("&Show Dev Panel", window)
 		menu.QWidget_PTR().AddAction(showDev)
@@ -601,27 +606,29 @@
 			showDev.SetText("&Show Dev Panel")
 		})
 
-		var watchBoot = widgets.NewQAction2("&Watch Boot Payload", window)
-		menu.QWidget_PTR().AddAction(watchBoot)
-		watchBoot.ConnectTriggered(function(bool) {
-			var bp = widgets.QFileDialog_GetOpenFileName(window, "Watch Boot Payload", core.QDir_HomePath(), "", "", 0)
-			if (bp != "") {
-				main.watchBoot(bp)
-				main.restart()
-			}
-		})
-		watchBoot.SetMenuRole(widgets.QAction__ApplicationSpecificRole)
+		if (!isInsideBrowser) {
+			var watchBoot = widgets.NewQAction2("&Watch Boot Payload", window)
+			menu.QWidget_PTR().AddAction(watchBoot)
+			watchBoot.ConnectTriggered(function(bool) {
+				var bp = widgets.QFileDialog_GetOpenFileName(window, "Watch Boot Payload", core.QDir_HomePath(), "", "", 0)
+				if (bp != "") {
+					main.watchBoot(bp)
+					main.restart()
+				}
+			})
+			watchBoot.SetMenuRole(widgets.QAction__ApplicationSpecificRole)
 
-		var watchPayload = widgets.NewQAction2("&Watch Main Payload", window)
-		menu.QWidget_PTR().AddAction(watchPayload)
-		watchPayload.ConnectTriggered(function(bool) {
-			var mp = widgets.QFileDialog_GetOpenFileName(window, "Watch Main Payload", core.QDir_HomePath(), "", "", 0)
-			if (mp != "") {
-				main.watchPayload(mp)
-				main.restart()
-			}
-		})
-		watchPayload.SetMenuRole(widgets.QAction__ApplicationSpecificRole)
+			var watchPayload = widgets.NewQAction2("&Watch Main Payload", window)
+			menu.QWidget_PTR().AddAction(watchPayload)
+			watchPayload.ConnectTriggered(function(bool) {
+				var mp = widgets.QFileDialog_GetOpenFileName(window, "Watch Main Payload", core.QDir_HomePath(), "", "", 0)
+				if (mp != "") {
+					main.watchPayload(mp)
+					main.restart()
+				}
+			})
+			watchPayload.SetMenuRole(widgets.QAction__ApplicationSpecificRole)
+		}
 
 		var aboutQt = widgets.NewQAction2("&About Qt", window)
 		menu.QWidget_PTR().AddAction(aboutQt)
@@ -632,8 +639,10 @@
 
 		window.QObject_PTR().ConnectDestroyed(function(o) {
 			menu.RemoveAction(showDev)
-			menu.RemoveAction(watchBoot)
-			menu.RemoveAction(watchPayload)
+			if (!isInsideBrowser) {
+				menu.RemoveAction(watchBoot)
+				menu.RemoveAction(watchPayload)
+			}
 			menu.RemoveAction(aboutQt)
 		})
 	}

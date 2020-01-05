@@ -1,6 +1,6 @@
-[DEMO LINK](https://therecipe.github.io/entry)
+[FULL BINARIES](https://github.com/therecipe/entry/releases/tag/v0.0.0)
 
-[BINARIES](https://github.com/therecipe/entry/releases/tag/v0.0.0)
+[WEB DEMO (EXPERIMENTAL)](https://therecipe.github.io/entry)
 
 ---
 

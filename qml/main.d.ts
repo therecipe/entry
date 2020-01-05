@@ -38,3 +38,4 @@ var isTesting
 var isTestingVisible
 var softRestart
 var gc
+var userAgent

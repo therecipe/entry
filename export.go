@@ -198,10 +198,15 @@ func extractAndPatch(t string, data []byte) string {
 			ending = ".exe"
 		}
 		dst = filepath.Join(dstDir, "dist", t+ending)
-
+		if t == "darwin" {
+			dst = filepath.Join(dstDir, "dist", "darwin.app", "Contents", "MacOS", t)
+		}
 		os.MkdirAll(filepath.Dir(dst), 0755)
 		os.RemoveAll(dst)
-
+		if t == "darwin" {
+			ioutil.WriteFile(filepath.Join(dstDir, "dist", "darwin.app", "Contents", "Info.plist"), darwin_plist(t), 0644)
+			ioutil.WriteFile(filepath.Join(dstDir, "dist", "darwin.app", "Contents", "PkgInfo"), darwin_pkginfo(), 0644)
+		}
 		fw, _ := os.OpenFile(dst, os.O_RDWR|os.O_CREATE, fi.Mode().Perm())
 		io.Copy(fw, fr)
 		fw.Close()

@@ -71,6 +71,7 @@ func main() {
 	js.Global.Set("recursionCounter", 0)
 	js.Global.Set("isTesting", false)
 	js.Global.Set("isTestingVisible", true)
+	js.Global.Set("userAgent", qt.Global.Call("eval", "window.navigator.userAgent"))
 
 	js.Global.Set("qt", new(js.Object))
 	js.Global.Get("qt").Set("runSync", runSync)
