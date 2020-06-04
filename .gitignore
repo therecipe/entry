@@ -4,3 +4,4 @@ deploy/*
 vendor/*
 rcc*
 moc*
+*.qmlc
