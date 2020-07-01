@@ -1,5 +1,15 @@
 /// <reference path="core.d.ts" />
 declare namespace positioning {
+	interface LocationSingleton_ITF extends core.QObject_ITF {
+		LocationSingleton_PTR():LocationSingleton;
+	}
+
+	class LocationSingleton extends core.QObject {
+		___pointer: number;
+		LocationSingleton_PTR():LocationSingleton;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QGeoAddress_ITF {
 		QGeoAddress_PTR():QGeoAddress;
 	}
@@ -199,6 +209,16 @@ declare namespace positioning {
 	const QGeoCoordinate__DegreesMinutesWithHemisphere: number;
 	const QGeoCoordinate__DegreesMinutesSeconds: number;
 	const QGeoCoordinate__DegreesMinutesSecondsWithHemisphere: number;
+	interface QGeoLocation_ITF {
+		QGeoLocation_PTR():QGeoLocation;
+	}
+
+	class QGeoLocation {
+		___pointer: number;
+		QGeoLocation_PTR():QGeoLocation;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QGeoPath_ITF extends QGeoShape_ITF {
 		QGeoPath_PTR():QGeoPath;
 	}
@@ -292,7 +312,6 @@ declare namespace positioning {
 	function NewQGeoPositionInfo():QGeoPositionInfo;
 	function NewQGeoPositionInfo2(coordinate:QGeoCoordinate_ITF,timestamp:core.QDateTime_ITF):QGeoPositionInfo;
 	function NewQGeoPositionInfo3(other:QGeoPositionInfo_ITF):QGeoPositionInfo;
-	function NewQGeoPositionInfoSource(parent:core.QObject_ITF):QGeoPositionInfoSource;
 	const QGeoPositionInfo__Direction: number;
 	const QGeoPositionInfo__GroundSpeed: number;
 	const QGeoPositionInfo__VerticalSpeed: number;
@@ -467,7 +486,6 @@ declare namespace positioning {
 	function NewQGeoSatelliteInfoFromPointer(ptr:number):QGeoSatelliteInfo;
 	function NewQGeoSatelliteInfo():QGeoSatelliteInfo;
 	function NewQGeoSatelliteInfo2(other:QGeoSatelliteInfo_ITF):QGeoSatelliteInfo;
-	function NewQGeoSatelliteInfoSource(parent:core.QObject_ITF):QGeoSatelliteInfoSource;
 	const QGeoSatelliteInfo__Elevation: number;
 	const QGeoSatelliteInfo__Azimuth: number;
 	const QGeoSatelliteInfo__Undefined: number;

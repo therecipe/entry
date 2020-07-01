@@ -613,11 +613,6 @@ declare namespace widgets {
 	}
 	function NewQDialFromPointer(ptr:number):QDial;
 	function NewQDial(parent:QWidget_ITF):QDial;
-	function NewQDialog(parent:QWidget_ITF,ff:number):QDialog;
-	function NewQDialogButtonBox(parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox2(orientation:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox3(buttons:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox4(buttons:number,orientation:number,parent:QWidget_ITF):QDialogButtonBox;
 	interface QDialog_ITF extends QWidget_ITF {
 		QDialog_PTR():QDialog;
 	}
@@ -658,10 +653,6 @@ declare namespace widgets {
 	}
 	function NewQDialogFromPointer(ptr:number):QDialog;
 	function NewQDialog(parent:QWidget_ITF,ff:number):QDialog;
-	function NewQDialogButtonBox(parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox2(orientation:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox3(buttons:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox4(buttons:number,orientation:number,parent:QWidget_ITF):QDialogButtonBox;
 	const QDialog__Rejected: number;
 	const QDialog__Accepted: number;
 	interface QDialogButtonBox_ITF extends QWidget_ITF {
@@ -972,6 +963,10 @@ declare namespace widgets {
 		TypeDefault():number;
 		Update(rect:core.QRectF_ITF):void;
 		Update2(x:number,y:number,width:number,height:number):void;
+		ConnectWheelEvent(f:(event:QGraphicsSceneWheelEvent)=>void):void;
+		DisconnectWheelEvent():void;
+		WheelEvent(event:QGraphicsSceneWheelEvent_ITF):void;
+		WheelEventDefault(event:QGraphicsSceneWheelEvent_ITF):void;
 		Window():QGraphicsWidget;
 		X():number;
 		Y():number;
@@ -982,7 +977,6 @@ declare namespace widgets {
 	}
 	function NewQGraphicsItemFromPointer(ptr:number):QGraphicsItem;
 	function NewQGraphicsItem(parent:QGraphicsItem_ITF):QGraphicsItem;
-	function NewQGraphicsItemGroup(parent:QGraphicsItem_ITF):QGraphicsItemGroup;
 	const QGraphicsItem__ItemIsMovable: number;
 	const QGraphicsItem__ItemIsSelectable: number;
 	const QGraphicsItem__ItemIsFocusable: number;
@@ -1096,7 +1090,6 @@ declare namespace widgets {
 	}
 	function NewQGraphicsLayoutFromPointer(ptr:number):QGraphicsLayout;
 	function NewQGraphicsLayout(parent:QGraphicsLayoutItem_ITF):QGraphicsLayout;
-	function NewQGraphicsLayoutItem(parent:QGraphicsLayoutItem_ITF,isLayout:boolean):QGraphicsLayoutItem;
 	interface QGraphicsLayoutItem_ITF {
 		QGraphicsLayoutItem_PTR():QGraphicsLayoutItem;
 	}
@@ -1374,6 +1367,10 @@ declare namespace widgets {
 		Update(rect:core.QRectF_ITF):void;
 		UpdateDefault(rect:core.QRectF_ITF):void;
 		Update2(x:number,y:number,w:number,h:number):void;
+		ConnectWheelEvent(f:(wheelEvent:QGraphicsSceneWheelEvent)=>void):void;
+		DisconnectWheelEvent():void;
+		WheelEvent(wheelEvent:QGraphicsSceneWheelEvent_ITF):void;
+		WheelEventDefault(wheelEvent:QGraphicsSceneWheelEvent_ITF):void;
 		Width():number;
 		ConnectDestroyQGraphicsScene(f:()=>void):void;
 		DisconnectDestroyQGraphicsScene():void;
@@ -1390,8 +1387,6 @@ declare namespace widgets {
 	function NewQGraphicsScene(parent:core.QObject_ITF):QGraphicsScene;
 	function NewQGraphicsScene2(sceneRect:core.QRectF_ITF,parent:core.QObject_ITF):QGraphicsScene;
 	function NewQGraphicsScene3(x:number,y:number,width:number,height:number,parent:core.QObject_ITF):QGraphicsScene;
-	function NewQGraphicsSceneMoveEvent2():QGraphicsSceneMoveEvent;
-	function NewQGraphicsSceneResizeEvent2():QGraphicsSceneResizeEvent;
 	const QGraphicsScene__ItemLayer: number;
 	const QGraphicsScene__BackgroundLayer: number;
 	const QGraphicsScene__ForegroundLayer: number;
@@ -1413,6 +1408,7 @@ declare namespace widgets {
 		AcceptProposedAction():void;
 		Buttons():number;
 		MimeData():core.QMimeData;
+		Modifiers():number;
 		Pos():core.QPointF;
 		ProposedAction():number;
 		Source():QWidget;
@@ -1450,6 +1446,7 @@ declare namespace widgets {
 		Button():number;
 		Buttons():number;
 		Flags():number;
+		Modifiers():number;
 		Pos():core.QPointF;
 		Source():number;
 		ConnectDestroyQGraphicsSceneMouseEvent(f:()=>void):void;
@@ -1490,6 +1487,25 @@ declare namespace widgets {
 	}
 	function NewQGraphicsSceneResizeEventFromPointer(ptr:number):QGraphicsSceneResizeEvent;
 	function NewQGraphicsSceneResizeEvent2():QGraphicsSceneResizeEvent;
+	interface QGraphicsSceneWheelEvent_ITF extends QGraphicsSceneEvent_ITF {
+		QGraphicsSceneWheelEvent_PTR():QGraphicsSceneWheelEvent;
+	}
+
+	class QGraphicsSceneWheelEvent extends QGraphicsSceneEvent {
+		___pointer: number;
+		QGraphicsSceneWheelEvent_PTR():QGraphicsSceneWheelEvent;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Buttons():number;
+		Delta():number;
+		Modifiers():number;
+		Pos():core.QPointF;
+		ConnectDestroyQGraphicsSceneWheelEvent(f:()=>void):void;
+		DisconnectDestroyQGraphicsSceneWheelEvent():void;
+		DestroyQGraphicsSceneWheelEvent():void;
+		DestroyQGraphicsSceneWheelEventDefault():void;
+	}
+	function NewQGraphicsSceneWheelEventFromPointer(ptr:number):QGraphicsSceneWheelEvent;
 	const QGraphicsSimpleTextItem__Type: number;
 	interface QGraphicsTextItem_ITF extends QGraphicsObject_ITF {
 		QGraphicsTextItem_PTR():QGraphicsTextItem;
@@ -1946,7 +1962,6 @@ declare namespace widgets {
 	function NewQLayoutFromPointer(ptr:number):QLayout;
 	function NewQLayout(parent:QWidget_ITF):QLayout;
 	function NewQLayout2():QLayout;
-	function NewQLayoutItem(alignment:number):QLayoutItem;
 	const QLayout__SetDefaultConstraint: number;
 	const QLayout__SetNoConstraint: number;
 	const QLayout__SetMinimumSize: number;
@@ -2199,7 +2214,6 @@ declare namespace widgets {
 	function NewQMenu(parent:QWidget_ITF):QMenu;
 	function NewQMenu2(title:string,parent:QWidget_ITF):QMenu;
 	function QMenu_Exec3(actions:QAction[],pos:core.QPoint_ITF,at:QAction_ITF,parent:QWidget_ITF):QAction;
-	function NewQMenuBar(parent:QWidget_ITF):QMenuBar;
 	interface QMenuBar_ITF extends QWidget_ITF {
 		QMenuBar_PTR():QMenuBar;
 	}
@@ -2637,13 +2651,6 @@ declare namespace widgets {
 	}
 	function NewQStyleFromPointer(ptr:number):QStyle;
 	function NewQStyle2():QStyle;
-	function NewQStyleHintReturn(version:number,ty:number):QStyleHintReturn;
-	function NewQStyleOption(version:number,ty:number):QStyleOption;
-	function NewQStyleOption2(other:QStyleOption_ITF):QStyleOption;
-	function NewQStyleOptionComplex(version:number,ty:number):QStyleOptionComplex;
-	function NewQStyleOptionComplex2(other:QStyleOptionComplex_ITF):QStyleOptionComplex;
-	function NewQStyleOptionGraphicsItem():QStyleOptionGraphicsItem;
-	function NewQStyleOptionGraphicsItem2(other:QStyleOptionGraphicsItem_ITF):QStyleOptionGraphicsItem;
 	const QStyle__State_None: number;
 	const QStyle__State_Enabled: number;
 	const QStyle__State_Raised: number;
@@ -3248,10 +3255,6 @@ declare namespace widgets {
 	function NewQStyleOptionFromPointer(ptr:number):QStyleOption;
 	function NewQStyleOption(version:number,ty:number):QStyleOption;
 	function NewQStyleOption2(other:QStyleOption_ITF):QStyleOption;
-	function NewQStyleOptionComplex(version:number,ty:number):QStyleOptionComplex;
-	function NewQStyleOptionComplex2(other:QStyleOptionComplex_ITF):QStyleOptionComplex;
-	function NewQStyleOptionGraphicsItem():QStyleOptionGraphicsItem;
-	function NewQStyleOptionGraphicsItem2(other:QStyleOptionGraphicsItem_ITF):QStyleOptionGraphicsItem;
 	const QStyleOption__SO_Default: number;
 	const QStyleOption__SO_FocusRect: number;
 	const QStyleOption__SO_Button: number;
@@ -3690,13 +3693,6 @@ declare namespace widgets {
 	function NewQTableWidgetFromPointer(ptr:number):QTableWidget;
 	function NewQTableWidget(parent:QWidget_ITF):QTableWidget;
 	function NewQTableWidget2(rows:number,columns:number,parent:QWidget_ITF):QTableWidget;
-	function NewQTableWidgetItem(ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem2(text:string,ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem3(icon:gui.QIcon_ITF,text:string,ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem4(other:QTableWidgetItem_ITF):QTableWidgetItem;
-	function NewQTableWidgetSelectionRange():QTableWidgetSelectionRange;
-	function NewQTableWidgetSelectionRange2(top:number,left:number,bottom:number,right:number):QTableWidgetSelectionRange;
-	function NewQTableWidgetSelectionRange3(other:QTableWidgetSelectionRange_ITF):QTableWidgetSelectionRange;
 	interface QTableWidgetItem_ITF {
 		QTableWidgetItem_PTR():QTableWidgetItem;
 	}
@@ -4031,6 +4027,10 @@ declare namespace widgets {
 		Update2(x:number,y:number,w:number,h:number):void;
 		Update3(rect:core.QRect_ITF):void;
 		Update4(rgn:gui.QRegion_ITF):void;
+		ConnectWheelEvent(f:(event:gui.QWheelEvent)=>void):void;
+		DisconnectWheelEvent():void;
+		WheelEvent(event:gui.QWheelEvent_ITF):void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
 		Width():number;
 		Window():QWidget;
 		WindowTitle():string;

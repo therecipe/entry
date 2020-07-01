@@ -10,10 +10,10 @@ declare namespace script {
 		Pointer():number;
 		SetPointer(p:number):void;
 		Engine():QScriptEngine;
-		ConnectExtension(f:(extension:number,argument:core.QVariant)=>core.QVariant):void;
+		ConnectExtension(f:(extensi:number,argument:core.QVariant)=>core.QVariant):void;
 		DisconnectExtension():void;
-		Extension(extension:number,argument:core.QVariant_ITF):core.QVariant;
-		ExtensionDefault(extension:number,argument:core.QVariant_ITF):core.QVariant;
+		Extension(extensi:number,argument:core.QVariant_ITF):core.QVariant;
+		ExtensionDefault(extensi:number,argument:core.QVariant_ITF):core.QVariant;
 		ConnectName(f:()=>string):void;
 		DisconnectName():void;
 		Name():string;
@@ -42,10 +42,10 @@ declare namespace script {
 		DisconnectSetProperty():void;
 		SetProperty(object:QScriptValue_ITF,name:QScriptString_ITF,id:number,value:QScriptValue_ITF):void;
 		SetPropertyDefault(object:QScriptValue_ITF,name:QScriptString_ITF,id:number,value:QScriptValue_ITF):void;
-		ConnectSupportsExtension(f:(extension:number)=>boolean):void;
+		ConnectSupportsExtension(f:(extensi:number)=>boolean):void;
 		DisconnectSupportsExtension():void;
-		SupportsExtension(extension:number):boolean;
-		SupportsExtensionDefault(extension:number):boolean;
+		SupportsExtension(extensi:number):boolean;
+		SupportsExtensionDefault(extensi:number):boolean;
 		ConnectDestroyQScriptClass(f:()=>void):void;
 		DisconnectDestroyQScriptClass():void;
 		DestroyQScriptClass():void;
@@ -57,6 +57,16 @@ declare namespace script {
 	const QScriptClass__HandlesWriteAccess: number;
 	const QScriptClass__Callable: number;
 	const QScriptClass__HasInstance: number;
+	interface QScriptClassPropertyIterator_ITF {
+		QScriptClassPropertyIterator_PTR():QScriptClassPropertyIterator;
+	}
+
+	class QScriptClassPropertyIterator {
+		___pointer: number;
+		QScriptClassPropertyIterator_PTR():QScriptClassPropertyIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QScriptContext_ITF {
 		QScriptContext_PTR():QScriptContext;
 	}
@@ -86,9 +96,6 @@ declare namespace script {
 		DestroyQScriptContext():void;
 	}
 	function NewQScriptContextFromPointer(ptr:number):QScriptContext;
-	function NewQScriptContextInfo(context:QScriptContext_ITF):QScriptContextInfo;
-	function NewQScriptContextInfo2(other:QScriptContextInfo_ITF):QScriptContextInfo;
-	function NewQScriptContextInfo3():QScriptContextInfo;
 	const QScriptContext__NormalState: number;
 	const QScriptContext__ExceptionState: number;
 	const QScriptContext__UnknownError: number;
@@ -147,7 +154,7 @@ declare namespace script {
 		Evaluate2(program:QScriptProgram_ITF):QScriptValue;
 		GlobalObject():QScriptValue;
 		HasUncaughtException():boolean;
-		ImportExtension(extension:string):QScriptValue;
+		ImportExtension(extensi:string):QScriptValue;
 		ImportedExtensions():string[];
 		InstallTranslatorFunctions(object:QScriptValue_ITF):void;
 		IsEvaluating():boolean;
@@ -198,7 +205,6 @@ declare namespace script {
 	function NewQScriptEngine():QScriptEngine;
 	function NewQScriptEngine2(parent:core.QObject_ITF):QScriptEngine;
 	function QScriptEngine_CheckSyntax(program:string):QScriptSyntaxCheckResult;
-	function NewQScriptEngineAgent(engine:QScriptEngine_ITF):QScriptEngineAgent;
 	const QScriptEngine__QtOwnership: number;
 	const QScriptEngine__ScriptOwnership: number;
 	const QScriptEngine__AutoOwnership: number;
@@ -237,10 +243,10 @@ declare namespace script {
 		DisconnectExceptionThrow():void;
 		ExceptionThrow(scriptId:number,exception:QScriptValue_ITF,hasHandler:boolean):void;
 		ExceptionThrowDefault(scriptId:number,exception:QScriptValue_ITF,hasHandler:boolean):void;
-		ConnectExtension(f:(extension:number,argument:core.QVariant)=>core.QVariant):void;
+		ConnectExtension(f:(extensi:number,argument:core.QVariant)=>core.QVariant):void;
 		DisconnectExtension():void;
-		Extension(extension:number,argument:core.QVariant_ITF):core.QVariant;
-		ExtensionDefault(extension:number,argument:core.QVariant_ITF):core.QVariant;
+		Extension(extensi:number,argument:core.QVariant_ITF):core.QVariant;
+		ExtensionDefault(extensi:number,argument:core.QVariant_ITF):core.QVariant;
 		ConnectFunctionEntry(f:(scriptId:number)=>void):void;
 		DisconnectFunctionEntry():void;
 		FunctionEntry(scriptId:number):void;
@@ -261,10 +267,10 @@ declare namespace script {
 		DisconnectScriptUnload():void;
 		ScriptUnload(id:number):void;
 		ScriptUnloadDefault(id:number):void;
-		ConnectSupportsExtension(f:(extension:number)=>boolean):void;
+		ConnectSupportsExtension(f:(extensi:number)=>boolean):void;
 		DisconnectSupportsExtension():void;
-		SupportsExtension(extension:number):boolean;
-		SupportsExtensionDefault(extension:number):boolean;
+		SupportsExtension(extensi:number):boolean;
+		SupportsExtensionDefault(extensi:number):boolean;
 		ConnectDestroyQScriptEngineAgent(f:()=>void):void;
 		DisconnectDestroyQScriptEngineAgent():void;
 		DestroyQScriptEngineAgent():void;
@@ -465,6 +471,16 @@ declare namespace script {
 	const QScriptValue__QObjectMember: number;
 	const QScriptValue__KeepExistingFlags: number;
 	const QScriptValue__UserRange: number;
+	interface QScriptValueIterator_ITF {
+		QScriptValueIterator_PTR():QScriptValueIterator;
+	}
+
+	class QScriptValueIterator {
+		___pointer: number;
+		QScriptValueIterator_PTR():QScriptValueIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QScriptable_ITF {
 		QScriptable_PTR():QScriptable;
 	}

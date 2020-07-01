@@ -6,9 +6,7 @@ declare namespace qml {
 
 	class QJSEngine extends core.QObject {
 		___pointer: number;
-		ToGoType(jsval:QJSValue, dst:any):void
 		NewJSType(property:QJSValue, name:string, i:any):void
-		NewGoType(i:any[]):QJSValue
 		QJSEngine_PTR():QJSEngine;
 		Pointer():number;
 		SetPointer(p:number):void;
@@ -56,6 +54,7 @@ declare namespace qml {
 		IsCallable():boolean;
 		IsError():boolean;
 		IsNull():boolean;
+		IsObject():boolean;
 		IsString():boolean;
 		IsUndefined():boolean;
 		Property(name:string):QJSValue;

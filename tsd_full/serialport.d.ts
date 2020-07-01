@@ -105,10 +105,6 @@ declare namespace serialport {
 	function NewQSerialPort(parent:core.QObject_ITF):QSerialPort;
 	function NewQSerialPort2(name:string,parent:core.QObject_ITF):QSerialPort;
 	function NewQSerialPort3(serialPortInfo:QSerialPortInfo_ITF,parent:core.QObject_ITF):QSerialPort;
-	function NewQSerialPortInfo():QSerialPortInfo;
-	function NewQSerialPortInfo2(port:QSerialPort_ITF):QSerialPortInfo;
-	function NewQSerialPortInfo3(name:string):QSerialPortInfo;
-	function NewQSerialPortInfo4(other:QSerialPortInfo_ITF):QSerialPortInfo;
 	const QSerialPort__Input: number;
 	const QSerialPort__Output: number;
 	const QSerialPort__AllDirections: number;

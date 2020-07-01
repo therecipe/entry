@@ -125,7 +125,6 @@ declare namespace gamepad {
 	}
 	function NewQGamepadFromPointer(ptr:number):QGamepad;
 	function NewQGamepad(deviceId:number,parent:core.QObject_ITF):QGamepad;
-	function NewQGamepadKeyNavigation(parent:core.QObject_ITF):QGamepadKeyNavigation;
 	interface QGamepadKeyNavigation_ITF extends core.QObject_ITF {
 		QGamepadKeyNavigation_PTR():QGamepadKeyNavigation;
 	}

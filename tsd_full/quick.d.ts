@@ -3,6 +3,83 @@
 /// <reference path="widgets.d.ts" />
 /// <reference path="qml.d.ts" />
 declare namespace quick {
+	interface BacktraceJob_ITF extends CollectJob_ITF {
+		BacktraceJob_PTR():BacktraceJob;
+	}
+
+	class BacktraceJob extends CollectJob {
+		___pointer: number;
+		BacktraceJob_PTR():BacktraceJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyBacktraceJob():void;
+	}
+	interface CollectJob_ITF extends QV4DebugJob_ITF {
+		CollectJob_PTR():CollectJob;
+	}
+
+	class CollectJob extends QV4DebugJob {
+		___pointer: number;
+		CollectJob_PTR():CollectJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyCollectJob():void;
+	}
+	interface EvalJob_ITF extends JavaScriptJob_ITF {
+		EvalJob_PTR():EvalJob;
+	}
+
+	class EvalJob extends JavaScriptJob {
+		___pointer: number;
+		EvalJob_PTR():EvalJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyEvalJob():void;
+	}
+	interface ExpressionEvalJob_ITF extends JavaScriptJob_ITF {
+		ExpressionEvalJob_PTR():ExpressionEvalJob;
+	}
+
+	class ExpressionEvalJob extends JavaScriptJob {
+		___pointer: number;
+		ExpressionEvalJob_PTR():ExpressionEvalJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyExpressionEvalJob():void;
+	}
+	interface FrameJob_ITF extends CollectJob_ITF {
+		FrameJob_PTR():FrameJob;
+	}
+
+	class FrameJob extends CollectJob {
+		___pointer: number;
+		FrameJob_PTR():FrameJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyFrameJob():void;
+	}
+	interface GatherSourcesJob_ITF extends QV4DebugJob_ITF {
+		GatherSourcesJob_PTR():GatherSourcesJob;
+	}
+
+	class GatherSourcesJob extends QV4DebugJob {
+		___pointer: number;
+		GatherSourcesJob_PTR():GatherSourcesJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyGatherSourcesJob():void;
+	}
+	interface JavaScriptJob_ITF extends QV4DebugJob_ITF {
+		JavaScriptJob_PTR():JavaScriptJob;
+	}
+
+	class JavaScriptJob extends QV4DebugJob {
+		___pointer: number;
+		JavaScriptJob_PTR():JavaScriptJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyJavaScriptJob():void;
+	}
 	interface QDebugMessageServiceFactory_ITF {
 		QDebugMessageServiceFactory_PTR():QDebugMessageServiceFactory;
 	}
@@ -39,6 +116,17 @@ declare namespace quick {
 		DestroyQLocalClientConnectionFactory():void;
 	}
 	function NewQLocalClientConnectionFactoryFromPointer(ptr:number):QLocalClientConnectionFactory;
+	interface QOpenVGMatrix_ITF {
+		QOpenVGMatrix_PTR():QOpenVGMatrix;
+	}
+
+	class QOpenVGMatrix {
+		___pointer: number;
+		QOpenVGMatrix_PTR():QOpenVGMatrix;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenVGMatrix():void;
+	}
 	interface QOpenVGOffscreenSurface_ITF {
 		QOpenVGOffscreenSurface_PTR():QOpenVGOffscreenSurface;
 	}
@@ -51,6 +139,234 @@ declare namespace quick {
 		DestroyQOpenVGOffscreenSurface():void;
 	}
 	function NewQOpenVGOffscreenSurfaceFromPointer(ptr:number):QOpenVGOffscreenSurface;
+	interface QQmlDebugServerFactory_ITF {
+		QQmlDebugServerFactory_PTR():QQmlDebugServerFactory;
+	}
+
+	class QQmlDebugServerFactory {
+		___pointer: number;
+		QQmlDebugServerFactory_PTR():QQmlDebugServerFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlDebugServerFactory():void;
+	}
+	interface QQmlDebuggerServiceFactory_ITF {
+		QQmlDebuggerServiceFactory_PTR():QQmlDebuggerServiceFactory;
+	}
+
+	class QQmlDebuggerServiceFactory {
+		___pointer: number;
+		QQmlDebuggerServiceFactory_PTR():QQmlDebuggerServiceFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlDebuggerServiceFactory():void;
+	}
+	interface QQmlEngineControlServiceImpl_ITF {
+		QQmlEngineControlServiceImpl_PTR():QQmlEngineControlServiceImpl;
+	}
+
+	class QQmlEngineControlServiceImpl {
+		___pointer: number;
+		QQmlEngineControlServiceImpl_PTR():QQmlEngineControlServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlEngineControlServiceImpl():void;
+	}
+	interface QQmlEngineDebugServiceImpl_ITF {
+		QQmlEngineDebugServiceImpl_PTR():QQmlEngineDebugServiceImpl;
+	}
+
+	class QQmlEngineDebugServiceImpl {
+		___pointer: number;
+		QQmlEngineDebugServiceImpl_PTR():QQmlEngineDebugServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlEngineDebugServiceImpl():void;
+	}
+	interface QQmlInspectorServiceFactory_ITF {
+		QQmlInspectorServiceFactory_PTR():QQmlInspectorServiceFactory;
+	}
+
+	class QQmlInspectorServiceFactory {
+		___pointer: number;
+		QQmlInspectorServiceFactory_PTR():QQmlInspectorServiceFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlInspectorServiceFactory():void;
+	}
+	interface QQmlNativeDebugConnector_ITF {
+		QQmlNativeDebugConnector_PTR():QQmlNativeDebugConnector;
+	}
+
+	class QQmlNativeDebugConnector {
+		___pointer: number;
+		QQmlNativeDebugConnector_PTR():QQmlNativeDebugConnector;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlNativeDebugConnector():void;
+	}
+	interface QQmlNativeDebugConnectorFactory_ITF {
+		QQmlNativeDebugConnectorFactory_PTR():QQmlNativeDebugConnectorFactory;
+	}
+
+	class QQmlNativeDebugConnectorFactory {
+		___pointer: number;
+		QQmlNativeDebugConnectorFactory_PTR():QQmlNativeDebugConnectorFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlNativeDebugConnectorFactory():void;
+	}
+	interface QQmlNativeDebugServiceFactory_ITF {
+		QQmlNativeDebugServiceFactory_PTR():QQmlNativeDebugServiceFactory;
+	}
+
+	class QQmlNativeDebugServiceFactory {
+		___pointer: number;
+		QQmlNativeDebugServiceFactory_PTR():QQmlNativeDebugServiceFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlNativeDebugServiceFactory():void;
+	}
+	interface QQmlNativeDebugServiceImpl_ITF {
+		QQmlNativeDebugServiceImpl_PTR():QQmlNativeDebugServiceImpl;
+	}
+
+	class QQmlNativeDebugServiceImpl {
+		___pointer: number;
+		QQmlNativeDebugServiceImpl_PTR():QQmlNativeDebugServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlNativeDebugServiceImpl():void;
+	}
+	interface QQmlPreviewBlacklist_ITF {
+		QQmlPreviewBlacklist_PTR():QQmlPreviewBlacklist;
+	}
+
+	class QQmlPreviewBlacklist {
+		___pointer: number;
+		QQmlPreviewBlacklist_PTR():QQmlPreviewBlacklist;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewBlacklist():void;
+	}
+	interface QQmlPreviewFileEngine_ITF {
+		QQmlPreviewFileEngine_PTR():QQmlPreviewFileEngine;
+	}
+
+	class QQmlPreviewFileEngine {
+		___pointer: number;
+		QQmlPreviewFileEngine_PTR():QQmlPreviewFileEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewFileEngine():void;
+	}
+	interface QQmlPreviewFileEngineHandler_ITF {
+		QQmlPreviewFileEngineHandler_PTR():QQmlPreviewFileEngineHandler;
+	}
+
+	class QQmlPreviewFileEngineHandler {
+		___pointer: number;
+		QQmlPreviewFileEngineHandler_PTR():QQmlPreviewFileEngineHandler;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewFileEngineHandler():void;
+	}
+	interface QQmlPreviewFileLoader_ITF extends core.QObject_ITF {
+		QQmlPreviewFileLoader_PTR():QQmlPreviewFileLoader;
+	}
+
+	class QQmlPreviewFileLoader extends core.QObject {
+		___pointer: number;
+		QQmlPreviewFileLoader_PTR():QQmlPreviewFileLoader;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QQmlPreviewHandler_ITF extends core.QObject_ITF {
+		QQmlPreviewHandler_PTR():QQmlPreviewHandler;
+	}
+
+	class QQmlPreviewHandler extends core.QObject {
+		___pointer: number;
+		QQmlPreviewHandler_PTR():QQmlPreviewHandler;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QQmlPreviewPosition_ITF {
+		QQmlPreviewPosition_PTR():QQmlPreviewPosition;
+	}
+
+	class QQmlPreviewPosition {
+		___pointer: number;
+		QQmlPreviewPosition_PTR():QQmlPreviewPosition;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewPosition():void;
+	}
+	interface QQmlPreviewServiceFactory_ITF {
+		QQmlPreviewServiceFactory_PTR():QQmlPreviewServiceFactory;
+	}
+
+	class QQmlPreviewServiceFactory {
+		___pointer: number;
+		QQmlPreviewServiceFactory_PTR():QQmlPreviewServiceFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewServiceFactory():void;
+	}
+	interface QQmlPreviewServiceImpl_ITF {
+		QQmlPreviewServiceImpl_PTR():QQmlPreviewServiceImpl;
+	}
+
+	class QQmlPreviewServiceImpl {
+		___pointer: number;
+		QQmlPreviewServiceImpl_PTR():QQmlPreviewServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlPreviewServiceImpl():void;
+	}
+	interface QQmlProfilerAdapter_ITF {
+		QQmlProfilerAdapter_PTR():QQmlProfilerAdapter;
+	}
+
+	class QQmlProfilerAdapter {
+		___pointer: number;
+		QQmlProfilerAdapter_PTR():QQmlProfilerAdapter;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlProfilerAdapter():void;
+	}
+	interface QQmlProfilerServiceFactory_ITF {
+		QQmlProfilerServiceFactory_PTR():QQmlProfilerServiceFactory;
+	}
+
+	class QQmlProfilerServiceFactory {
+		___pointer: number;
+		QQmlProfilerServiceFactory_PTR():QQmlProfilerServiceFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlProfilerServiceFactory():void;
+	}
+	interface QQmlProfilerServiceImpl_ITF {
+		QQmlProfilerServiceImpl_PTR():QQmlProfilerServiceImpl;
+	}
+
+	class QQmlProfilerServiceImpl {
+		___pointer: number;
+		QQmlProfilerServiceImpl_PTR():QQmlProfilerServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlProfilerServiceImpl():void;
+	}
+	interface QQmlWatcher_ITF extends core.QObject_ITF {
+		QQmlWatcher_PTR():QQmlWatcher;
+	}
+
+	class QQmlWatcher extends core.QObject {
+		___pointer: number;
+		QQmlWatcher_PTR():QQmlWatcher;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QQuickAsyncImageProvider_ITF extends QQuickImageProvider_ITF {
 		QQuickAsyncImageProvider_PTR():QQuickAsyncImageProvider;
 	}
@@ -70,6 +386,18 @@ declare namespace quick {
 	}
 	function NewQQuickAsyncImageProviderFromPointer(ptr:number):QQuickAsyncImageProvider;
 	function NewQQuickAsyncImageProvider():QQuickAsyncImageProvider;
+	interface QQuickFolderListModel_ITF extends qml.QQmlParserStatus_ITF {
+		QQuickFolderListModel_PTR():QQuickFolderListModel;
+		QAbstractListModel_PTR():core.QAbstractListModel;
+	}
+
+	class QQuickFolderListModel extends qml.QQmlParserStatus {
+		QAbstractListModel_PTR():core.QAbstractListModel
+		___pointer: number;
+		QQuickFolderListModel_PTR():QQuickFolderListModel;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QQuickFramebufferObject_ITF extends QQuickItem_ITF {
 		QQuickFramebufferObject_PTR():QQuickFramebufferObject;
 	}
@@ -610,6 +938,17 @@ declare namespace quick {
 	const QQuickPaintedItem__FramebufferObject: number;
 	const QQuickPaintedItem__InvertedYFramebufferObject: number;
 	const QQuickPaintedItem__FastFBOResizing: number;
+	interface QQuickProfilerAdapter_ITF {
+		QQuickProfilerAdapter_PTR():QQuickProfilerAdapter;
+	}
+
+	class QQuickProfilerAdapter {
+		___pointer: number;
+		QQuickProfilerAdapter_PTR():QQuickProfilerAdapter;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQuickProfilerAdapter():void;
+	}
 	interface QQuickProfilerAdapterFactory_ITF {
 		QQuickProfilerAdapterFactory_PTR():QQuickProfilerAdapterFactory;
 	}
@@ -1285,7 +1624,6 @@ declare namespace quick {
 	function QSGGeometry_UpdateColoredRectGeometry(g:QSGGeometry_ITF,rect:core.QRectF_ITF):void;
 	function QSGGeometry_UpdateRectGeometry(g:QSGGeometry_ITF,rect:core.QRectF_ITF):void;
 	function QSGGeometry_UpdateTexturedRectGeometry(g:QSGGeometry_ITF,rect:core.QRectF_ITF,textureRect:core.QRectF_ITF):void;
-	function NewQSGGeometryNode():QSGGeometryNode;
 	const QSGGeometry__UnknownAttribute: number;
 	const QSGGeometry__PositionAttribute: number;
 	const QSGGeometry__ColorAttribute: number;
@@ -1583,6 +1921,154 @@ declare namespace quick {
 	}
 	function NewQSGOpaqueTextureMaterialFromPointer(ptr:number):QSGOpaqueTextureMaterial;
 	function NewQSGOpaqueTextureMaterial():QSGOpaqueTextureMaterial;
+	interface QSGOpenVGFontGlyphCache_ITF {
+		QSGOpenVGFontGlyphCache_PTR():QSGOpenVGFontGlyphCache;
+	}
+
+	class QSGOpenVGFontGlyphCache {
+		___pointer: number;
+		QSGOpenVGFontGlyphCache_PTR():QSGOpenVGFontGlyphCache;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGFontGlyphCache():void;
+	}
+	interface QSGOpenVGFontGlyphCacheManager_ITF {
+		QSGOpenVGFontGlyphCacheManager_PTR():QSGOpenVGFontGlyphCacheManager;
+	}
+
+	class QSGOpenVGFontGlyphCacheManager {
+		___pointer: number;
+		QSGOpenVGFontGlyphCacheManager_PTR():QSGOpenVGFontGlyphCacheManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGFontGlyphCacheManager():void;
+	}
+	interface QSGOpenVGImageNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGImageNode_PTR():QSGOpenVGImageNode;
+		QSGImageNode_PTR():QSGImageNode;
+	}
+
+	class QSGOpenVGImageNode extends QSGOpenVGRenderable {
+		QSGImageNode_PTR():QSGImageNode
+		___pointer: number;
+		QSGOpenVGImageNode_PTR():QSGOpenVGImageNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGImageNode():void;
+	}
+	interface QSGOpenVGInternalImageNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGInternalImageNode_PTR():QSGOpenVGInternalImageNode;
+	}
+
+	class QSGOpenVGInternalImageNode extends QSGOpenVGRenderable {
+		___pointer: number;
+		QSGOpenVGInternalImageNode_PTR():QSGOpenVGInternalImageNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGInternalImageNode():void;
+	}
+	interface QSGOpenVGInternalRectangleNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGInternalRectangleNode_PTR():QSGOpenVGInternalRectangleNode;
+	}
+
+	class QSGOpenVGInternalRectangleNode extends QSGOpenVGRenderable {
+		___pointer: number;
+		QSGOpenVGInternalRectangleNode_PTR():QSGOpenVGInternalRectangleNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGInternalRectangleNode():void;
+	}
+	interface QSGOpenVGLayer_ITF {
+		QSGOpenVGLayer_PTR():QSGOpenVGLayer;
+	}
+
+	class QSGOpenVGLayer {
+		___pointer: number;
+		QSGOpenVGLayer_PTR():QSGOpenVGLayer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGLayer():void;
+	}
+	interface QSGOpenVGNinePatchNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGNinePatchNode_PTR():QSGOpenVGNinePatchNode;
+		QSGGeometryNode_PTR():QSGGeometryNode;
+	}
+
+	class QSGOpenVGNinePatchNode extends QSGOpenVGRenderable {
+		QSGGeometryNode_PTR():QSGGeometryNode
+		___pointer: number;
+		QSGOpenVGNinePatchNode_PTR():QSGOpenVGNinePatchNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGNinePatchNode():void;
+	}
+	interface QSGOpenVGNodeVisitor_ITF {
+		QSGOpenVGNodeVisitor_PTR():QSGOpenVGNodeVisitor;
+	}
+
+	class QSGOpenVGNodeVisitor {
+		___pointer: number;
+		QSGOpenVGNodeVisitor_PTR():QSGOpenVGNodeVisitor;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGNodeVisitor():void;
+	}
+	interface QSGOpenVGPainterNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGPainterNode_PTR():QSGOpenVGPainterNode;
+	}
+
+	class QSGOpenVGPainterNode extends QSGOpenVGRenderable {
+		___pointer: number;
+		QSGOpenVGPainterNode_PTR():QSGOpenVGPainterNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGPainterNode():void;
+	}
+	interface QSGOpenVGRectangleNode_ITF extends QSGRectangleNode_ITF {
+		QSGOpenVGRectangleNode_PTR():QSGOpenVGRectangleNode;
+		QSGOpenVGRenderable_PTR():QSGOpenVGRenderable;
+	}
+
+	class QSGOpenVGRectangleNode extends QSGRectangleNode {
+		QSGOpenVGRenderable_PTR():QSGOpenVGRenderable
+		___pointer: number;
+		QSGOpenVGRectangleNode_PTR():QSGOpenVGRectangleNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGRectangleNode():void;
+	}
+	interface QSGOpenVGRenderable_ITF {
+		QSGOpenVGRenderable_PTR():QSGOpenVGRenderable;
+	}
+
+	class QSGOpenVGRenderable {
+		___pointer: number;
+		QSGOpenVGRenderable_PTR():QSGOpenVGRenderable;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGRenderable():void;
+	}
+	interface QSGOpenVGSpriteNode_ITF extends QSGOpenVGRenderable_ITF {
+		QSGOpenVGSpriteNode_PTR():QSGOpenVGSpriteNode;
+	}
+
+	class QSGOpenVGSpriteNode extends QSGOpenVGRenderable {
+		___pointer: number;
+		QSGOpenVGSpriteNode_PTR():QSGOpenVGSpriteNode;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGOpenVGSpriteNode():void;
+	}
+	interface QSGOpenVGTexture_ITF extends QSGTexture_ITF {
+		QSGOpenVGTexture_PTR():QSGOpenVGTexture;
+	}
+
+	class QSGOpenVGTexture extends QSGTexture {
+		___pointer: number;
+		QSGOpenVGTexture_PTR():QSGOpenVGTexture;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSGRectangleNode_ITF extends QSGGeometryNode_ITF {
 		QSGRectangleNode_PTR():QSGRectangleNode;
 	}
@@ -1702,6 +2188,39 @@ declare namespace quick {
 	const QSGRendererInterface__ShaderSourceString: number;
 	const QSGRendererInterface__ShaderSourceFile: number;
 	const QSGRendererInterface__ShaderByteCode: number;
+	interface QSGSimpleMaterial_ITF extends QSGMaterial_ITF {
+		QSGSimpleMaterial_PTR():QSGSimpleMaterial;
+	}
+
+	class QSGSimpleMaterial extends QSGMaterial {
+		___pointer: number;
+		QSGSimpleMaterial_PTR():QSGSimpleMaterial;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGSimpleMaterial():void;
+	}
+	interface QSGSimpleMaterialComparableMaterial_ITF extends QSGSimpleMaterial_ITF {
+		QSGSimpleMaterialComparableMaterial_PTR():QSGSimpleMaterialComparableMaterial;
+	}
+
+	class QSGSimpleMaterialComparableMaterial extends QSGSimpleMaterial {
+		___pointer: number;
+		QSGSimpleMaterialComparableMaterial_PTR():QSGSimpleMaterialComparableMaterial;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGSimpleMaterialComparableMaterial():void;
+	}
+	interface QSGSimpleMaterialShader_ITF extends QSGMaterialShader_ITF {
+		QSGSimpleMaterialShader_PTR():QSGSimpleMaterialShader;
+	}
+
+	class QSGSimpleMaterialShader extends QSGMaterialShader {
+		___pointer: number;
+		QSGSimpleMaterialShader_PTR():QSGSimpleMaterialShader;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSGSimpleMaterialShader():void;
+	}
 	interface QSGSimpleRectNode_ITF extends QSGGeometryNode_ITF {
 		QSGSimpleRectNode_PTR():QSGSimpleRectNode;
 	}
@@ -1914,4 +2433,113 @@ declare namespace quick {
 		DestroyQTcpServerConnectionFactory():void;
 	}
 	function NewQTcpServerConnectionFactoryFromPointer(ptr:number):QTcpServerConnectionFactory;
+	interface QV4DataCollector_ITF {
+		QV4DataCollector_PTR():QV4DataCollector;
+	}
+
+	class QV4DataCollector {
+		___pointer: number;
+		QV4DataCollector_PTR():QV4DataCollector;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQV4DataCollector():void;
+	}
+	interface QV4DebugJob_ITF {
+		QV4DebugJob_PTR():QV4DebugJob;
+	}
+
+	class QV4DebugJob {
+		___pointer: number;
+		QV4DebugJob_PTR():QV4DebugJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQV4DebugJob():void;
+	}
+	interface QV4DebugServiceImpl_ITF {
+		QV4DebugServiceImpl_PTR():QV4DebugServiceImpl;
+	}
+
+	class QV4DebugServiceImpl {
+		___pointer: number;
+		QV4DebugServiceImpl_PTR():QV4DebugServiceImpl;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQV4DebugServiceImpl():void;
+	}
+	interface QV4Debugger_ITF {
+		QV4Debugger_PTR():QV4Debugger;
+	}
+
+	class QV4Debugger {
+		___pointer: number;
+		QV4Debugger_PTR():QV4Debugger;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQV4Debugger():void;
+	}
+	interface QV4DebuggerAgent_ITF extends core.QObject_ITF {
+		QV4DebuggerAgent_PTR():QV4DebuggerAgent;
+	}
+
+	class QV4DebuggerAgent extends core.QObject {
+		___pointer: number;
+		QV4DebuggerAgent_PTR():QV4DebuggerAgent;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QV4ProfilerAdapter_ITF {
+		QV4ProfilerAdapter_PTR():QV4ProfilerAdapter;
+	}
+
+	class QV4ProfilerAdapter {
+		___pointer: number;
+		QV4ProfilerAdapter_PTR():QV4ProfilerAdapter;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQV4ProfilerAdapter():void;
+	}
+	interface QWavefrontMesh_ITF {
+		QWavefrontMesh_PTR():QWavefrontMesh;
+	}
+
+	class QWavefrontMesh {
+		___pointer: number;
+		QWavefrontMesh_PTR():QWavefrontMesh;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQWavefrontMesh():void;
+	}
+	interface ScopeJob_ITF extends CollectJob_ITF {
+		ScopeJob_PTR():ScopeJob;
+	}
+
+	class ScopeJob extends CollectJob {
+		___pointer: number;
+		ScopeJob_PTR():ScopeJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyScopeJob():void;
+	}
+	interface SharedImageProvider_ITF {
+		SharedImageProvider_PTR():SharedImageProvider;
+	}
+
+	class SharedImageProvider {
+		___pointer: number;
+		SharedImageProvider_PTR():SharedImageProvider;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroySharedImageProvider():void;
+	}
+	interface ValueLookupJob_ITF extends CollectJob_ITF {
+		ValueLookupJob_PTR():ValueLookupJob;
+	}
+
+	class ValueLookupJob extends CollectJob {
+		___pointer: number;
+		ValueLookupJob_PTR():ValueLookupJob;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyValueLookupJob():void;
+	}
 }

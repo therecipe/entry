@@ -53,7 +53,6 @@ declare namespace webchannel {
 	}
 	function NewQWebChannelFromPointer(ptr:number):QWebChannel;
 	function NewQWebChannel(parent:core.QObject_ITF):QWebChannel;
-	function NewQWebChannelAbstractTransport(parent:core.QObject_ITF):QWebChannelAbstractTransport;
 	interface QWebChannelAbstractTransport_ITF extends core.QObject_ITF {
 		QWebChannelAbstractTransport_PTR():QWebChannelAbstractTransport;
 	}

@@ -1,6 +1,16 @@
 /// <reference path="core.d.ts" />
 /// <reference path="positioning.d.ts" />
 declare namespace location {
+	interface QGeoCodeReply_ITF extends core.QObject_ITF {
+		QGeoCodeReply_PTR():QGeoCodeReply;
+	}
+
+	class QGeoCodeReply extends core.QObject {
+		___pointer: number;
+		QGeoCodeReply_PTR():QGeoCodeReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QGeoCodeReply__NoError: number;
 	const QGeoCodeReply__EngineNotSetError: number;
 	const QGeoCodeReply__CommunicationError: number;
@@ -8,6 +18,37 @@ declare namespace location {
 	const QGeoCodeReply__UnsupportedOptionError: number;
 	const QGeoCodeReply__CombinationError: number;
 	const QGeoCodeReply__UnknownError: number;
+	interface QGeoCodingManager_ITF extends core.QObject_ITF {
+		QGeoCodingManager_PTR():QGeoCodingManager;
+	}
+
+	class QGeoCodingManager extends core.QObject {
+		___pointer: number;
+		QGeoCodingManager_PTR():QGeoCodingManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QGeoCodingManagerEngine_ITF extends core.QObject_ITF {
+		QGeoCodingManagerEngine_PTR():QGeoCodingManagerEngine;
+	}
+
+	class QGeoCodingManagerEngine extends core.QObject {
+		___pointer: number;
+		QGeoCodingManagerEngine_PTR():QGeoCodingManagerEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QGeoJson_ITF {
+		QGeoJson_PTR():QGeoJson;
+	}
+
+	class QGeoJson {
+		___pointer: number;
+		QGeoJson_PTR():QGeoJson;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQGeoJson():void;
+	}
 	interface QGeoManeuver_ITF {
 		QGeoManeuver_PTR():QGeoManeuver;
 	}
@@ -83,15 +124,6 @@ declare namespace location {
 	function NewQGeoRouteFromPointer(ptr:number):QGeoRoute;
 	function NewQGeoRoute():QGeoRoute;
 	function NewQGeoRoute2(other:QGeoRoute_ITF):QGeoRoute;
-	function NewQGeoRouteLeg():QGeoRouteLeg;
-	function NewQGeoRouteLeg2(other:QGeoRouteLeg_ITF):QGeoRouteLeg;
-	function NewQGeoRouteReply(error:number,errorString:string,parent:core.QObject_ITF):QGeoRouteReply;
-	function NewQGeoRouteReply2(request:QGeoRouteRequest_ITF,parent:core.QObject_ITF):QGeoRouteReply;
-	function NewQGeoRouteRequest(waypoints:positioning.QGeoCoordinate[]):QGeoRouteRequest;
-	function NewQGeoRouteRequest2(origi:positioning.QGeoCoordinate_ITF,destination:positioning.QGeoCoordinate_ITF):QGeoRouteRequest;
-	function NewQGeoRouteRequest3(other:QGeoRouteRequest_ITF):QGeoRouteRequest;
-	function NewQGeoRouteSegment():QGeoRouteSegment;
-	function NewQGeoRouteSegment2(other:QGeoRouteSegment_ITF):QGeoRouteSegment;
 	interface QGeoRouteLeg_ITF extends QGeoRoute_ITF {
 		QGeoRouteLeg_PTR():QGeoRouteLeg;
 	}
@@ -297,7 +329,6 @@ declare namespace location {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQGeoRoutingManagerFromPointer(ptr:number):QGeoRoutingManager;
-	function NewQGeoRoutingManagerEngine(parameters:Map<string,core.QVariant>,parent:core.QObject_ITF):QGeoRoutingManagerEngine;
 	interface QGeoRoutingManagerEngine_ITF extends core.QObject_ITF {
 		QGeoRoutingManagerEngine_PTR():QGeoRoutingManagerEngine;
 	}
@@ -461,6 +492,27 @@ declare namespace location {
 		DestroyQGeoServiceProviderFactoryDefault():void;
 	}
 	function NewQGeoServiceProviderFactoryFromPointer(ptr:number):QGeoServiceProviderFactory;
+	interface QGeoServiceProviderFactoryV2_ITF extends QGeoServiceProviderFactory_ITF {
+		QGeoServiceProviderFactoryV2_PTR():QGeoServiceProviderFactoryV2;
+	}
+
+	class QGeoServiceProviderFactoryV2 extends QGeoServiceProviderFactory {
+		___pointer: number;
+		QGeoServiceProviderFactoryV2_PTR():QGeoServiceProviderFactoryV2;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QGeoServiceProviderFactoryV3_ITF extends QGeoServiceProviderFactoryV2_ITF {
+		QGeoServiceProviderFactoryV3_PTR():QGeoServiceProviderFactoryV3;
+	}
+
+	class QGeoServiceProviderFactoryV3 extends QGeoServiceProviderFactoryV2 {
+		___pointer: number;
+		QGeoServiceProviderFactoryV3_PTR():QGeoServiceProviderFactoryV3;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQGeoServiceProviderFactoryV3():void;
+	}
 	interface QLocation_ITF {
 		QLocation_PTR():QLocation;
 	}
@@ -477,15 +529,205 @@ declare namespace location {
 	const QLocation__DeviceVisibility: number;
 	const QLocation__PrivateVisibility: number;
 	const QLocation__PublicVisibility: number;
+	interface QPlace_ITF {
+		QPlace_PTR():QPlace;
+	}
+
+	class QPlace {
+		___pointer: number;
+		QPlace_PTR():QPlace;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceAttribute_ITF {
+		QPlaceAttribute_PTR():QPlaceAttribute;
+	}
+
+	class QPlaceAttribute {
+		___pointer: number;
+		QPlaceAttribute_PTR():QPlaceAttribute;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceCategory_ITF {
+		QPlaceCategory_PTR():QPlaceCategory;
+	}
+
+	class QPlaceCategory {
+		___pointer: number;
+		QPlaceCategory_PTR():QPlaceCategory;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceContactDetail_ITF {
+		QPlaceContactDetail_PTR():QPlaceContactDetail;
+	}
+
+	class QPlaceContactDetail {
+		___pointer: number;
+		QPlaceContactDetail_PTR():QPlaceContactDetail;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceContent_ITF {
+		QPlaceContent_PTR():QPlaceContent;
+	}
+
+	class QPlaceContent {
+		___pointer: number;
+		QPlaceContent_PTR():QPlaceContent;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QPlaceContent__NoType: number;
 	const QPlaceContent__ImageType: number;
 	const QPlaceContent__ReviewType: number;
 	const QPlaceContent__EditorialType: number;
 	const QPlaceContent__CustomType: number;
+	interface QPlaceContentReply_ITF extends QPlaceReply_ITF {
+		QPlaceContentReply_PTR():QPlaceContentReply;
+	}
+
+	class QPlaceContentReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceContentReply_PTR():QPlaceContentReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceContentRequest_ITF {
+		QPlaceContentRequest_PTR():QPlaceContentRequest;
+	}
+
+	class QPlaceContentRequest {
+		___pointer: number;
+		QPlaceContentRequest_PTR():QPlaceContentRequest;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceDetailsReply_ITF extends QPlaceReply_ITF {
+		QPlaceDetailsReply_PTR():QPlaceDetailsReply;
+	}
+
+	class QPlaceDetailsReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceDetailsReply_PTR():QPlaceDetailsReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceEditorial_ITF extends QPlaceContent_ITF {
+		QPlaceEditorial_PTR():QPlaceEditorial;
+	}
+
+	class QPlaceEditorial extends QPlaceContent {
+		___pointer: number;
+		QPlaceEditorial_PTR():QPlaceEditorial;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceIcon_ITF {
+		QPlaceIcon_PTR():QPlaceIcon;
+	}
+
+	class QPlaceIcon {
+		___pointer: number;
+		QPlaceIcon_PTR():QPlaceIcon;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceIdReply_ITF extends QPlaceReply_ITF {
+		QPlaceIdReply_PTR():QPlaceIdReply;
+	}
+
+	class QPlaceIdReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceIdReply_PTR():QPlaceIdReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QPlaceIdReply__SavePlace: number;
 	const QPlaceIdReply__SaveCategory: number;
 	const QPlaceIdReply__RemovePlace: number;
 	const QPlaceIdReply__RemoveCategory: number;
+	interface QPlaceImage_ITF extends QPlaceContent_ITF {
+		QPlaceImage_PTR():QPlaceImage;
+	}
+
+	class QPlaceImage extends QPlaceContent {
+		___pointer: number;
+		QPlaceImage_PTR():QPlaceImage;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceManager_ITF extends core.QObject_ITF {
+		QPlaceManager_PTR():QPlaceManager;
+	}
+
+	class QPlaceManager extends core.QObject {
+		___pointer: number;
+		QPlaceManager_PTR():QPlaceManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceManagerEngine_ITF extends core.QObject_ITF {
+		QPlaceManagerEngine_PTR():QPlaceManagerEngine;
+	}
+
+	class QPlaceManagerEngine extends core.QObject {
+		___pointer: number;
+		QPlaceManagerEngine_PTR():QPlaceManagerEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceMatchReply_ITF extends QPlaceReply_ITF {
+		QPlaceMatchReply_PTR():QPlaceMatchReply;
+	}
+
+	class QPlaceMatchReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceMatchReply_PTR():QPlaceMatchReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceMatchRequest_ITF {
+		QPlaceMatchRequest_PTR():QPlaceMatchRequest;
+	}
+
+	class QPlaceMatchRequest {
+		___pointer: number;
+		QPlaceMatchRequest_PTR():QPlaceMatchRequest;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceProposedSearchResult_ITF extends QPlaceSearchResult_ITF {
+		QPlaceProposedSearchResult_PTR():QPlaceProposedSearchResult;
+	}
+
+	class QPlaceProposedSearchResult extends QPlaceSearchResult {
+		___pointer: number;
+		QPlaceProposedSearchResult_PTR():QPlaceProposedSearchResult;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceRatings_ITF {
+		QPlaceRatings_PTR():QPlaceRatings;
+	}
+
+	class QPlaceRatings {
+		___pointer: number;
+		QPlaceRatings_PTR():QPlaceRatings;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceReply_ITF extends core.QObject_ITF {
+		QPlaceReply_PTR():QPlaceReply;
+	}
+
+	class QPlaceReply extends core.QObject {
+		___pointer: number;
+		QPlaceReply_PTR():QPlaceReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QPlaceReply__NoError: number;
 	const QPlaceReply__PlaceDoesNotExistError: number;
 	const QPlaceReply__CategoryDoesNotExistError: number;
@@ -503,10 +745,90 @@ declare namespace location {
 	const QPlaceReply__ContentReply: number;
 	const QPlaceReply__IdReply: number;
 	const QPlaceReply__MatchReply: number;
+	interface QPlaceResult_ITF extends QPlaceSearchResult_ITF {
+		QPlaceResult_PTR():QPlaceResult;
+	}
+
+	class QPlaceResult extends QPlaceSearchResult {
+		___pointer: number;
+		QPlaceResult_PTR():QPlaceResult;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceReview_ITF extends QPlaceContent_ITF {
+		QPlaceReview_PTR():QPlaceReview;
+	}
+
+	class QPlaceReview extends QPlaceContent {
+		___pointer: number;
+		QPlaceReview_PTR():QPlaceReview;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceSearchReply_ITF extends QPlaceReply_ITF {
+		QPlaceSearchReply_PTR():QPlaceSearchReply;
+	}
+
+	class QPlaceSearchReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceSearchReply_PTR():QPlaceSearchReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceSearchRequest_ITF {
+		QPlaceSearchRequest_PTR():QPlaceSearchRequest;
+	}
+
+	class QPlaceSearchRequest {
+		___pointer: number;
+		QPlaceSearchRequest_PTR():QPlaceSearchRequest;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QPlaceSearchRequest__UnspecifiedHint: number;
 	const QPlaceSearchRequest__DistanceHint: number;
 	const QPlaceSearchRequest__LexicalPlaceNameHint: number;
+	interface QPlaceSearchResult_ITF {
+		QPlaceSearchResult_PTR():QPlaceSearchResult;
+	}
+
+	class QPlaceSearchResult {
+		___pointer: number;
+		QPlaceSearchResult_PTR():QPlaceSearchResult;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QPlaceSearchResult__UnknownSearchResult: number;
 	const QPlaceSearchResult__PlaceResult: number;
 	const QPlaceSearchResult__ProposedSearchResult: number;
+	interface QPlaceSearchSuggestionReply_ITF extends QPlaceReply_ITF {
+		QPlaceSearchSuggestionReply_PTR():QPlaceSearchSuggestionReply;
+	}
+
+	class QPlaceSearchSuggestionReply extends QPlaceReply {
+		___pointer: number;
+		QPlaceSearchSuggestionReply_PTR():QPlaceSearchSuggestionReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceSupplier_ITF {
+		QPlaceSupplier_PTR():QPlaceSupplier;
+	}
+
+	class QPlaceSupplier {
+		___pointer: number;
+		QPlaceSupplier_PTR():QPlaceSupplier;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlaceUser_ITF {
+		QPlaceUser_PTR():QPlaceUser;
+	}
+
+	class QPlaceUser {
+		___pointer: number;
+		QPlaceUser_PTR():QPlaceUser;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 }

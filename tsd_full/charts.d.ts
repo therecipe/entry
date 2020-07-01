@@ -1200,8 +1200,6 @@ declare namespace charts {
 	}
 	function NewQChartFromPointer(ptr:number):QChart;
 	function NewQChart(parent:widgets.QGraphicsItem_ITF,wFlags:number):QChart;
-	function NewQChartView(parent:widgets.QWidget_ITF):QChartView;
-	function NewQChartView2(chart:QChart_ITF,parent:widgets.QWidget_ITF):QChartView;
 	const QChart__ChartTypeUndefined: number;
 	const QChart__ChartTypeCartesian: number;
 	const QChart__ChartTypePolar: number;

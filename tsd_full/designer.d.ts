@@ -2,6 +2,107 @@
 /// <reference path="gui.d.ts" />
 /// <reference path="widgets.d.ts" />
 declare namespace designer {
+	interface AppFontDialog_ITF extends widgets.QDialog_ITF {
+		AppFontDialog_PTR():AppFontDialog;
+	}
+
+	class AppFontDialog extends widgets.QDialog {
+		___pointer: number;
+		AppFontDialog_PTR():AppFontDialog;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface AppFontWidget_ITF extends widgets.QGroupBox_ITF {
+		AppFontWidget_PTR():AppFontWidget;
+	}
+
+	class AppFontWidget extends widgets.QGroupBox {
+		___pointer: number;
+		AppFontWidget_PTR():AppFontWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface AppearanceOptions_ITF {
+		AppearanceOptions_PTR():AppearanceOptions;
+	}
+
+	class AppearanceOptions {
+		___pointer: number;
+		AppearanceOptions_PTR():AppearanceOptions;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAppearanceOptions():void;
+	}
+	interface AssistantClient_ITF extends core.QObject_ITF {
+		AssistantClient_PTR():AssistantClient;
+	}
+
+	class AssistantClient extends core.QObject {
+		___pointer: number;
+		AssistantClient_PTR():AssistantClient;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface DockedMainWindow_ITF extends MainWindowBase_ITF {
+		DockedMainWindow_PTR():DockedMainWindow;
+	}
+
+	class DockedMainWindow extends MainWindowBase {
+		___pointer: number;
+		DockedMainWindow_PTR():DockedMainWindow;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface DockedMdiArea_ITF extends widgets.QMdiArea_ITF {
+		DockedMdiArea_PTR():DockedMdiArea;
+	}
+
+	class DockedMdiArea extends widgets.QMdiArea {
+		___pointer: number;
+		DockedMdiArea_PTR():DockedMdiArea;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface MainWindowBase_ITF extends widgets.QMainWindow_ITF {
+		MainWindowBase_PTR():MainWindowBase;
+	}
+
+	class MainWindowBase extends widgets.QMainWindow {
+		___pointer: number;
+		MainWindowBase_PTR():MainWindowBase;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface NewForm_ITF extends widgets.QDialog_ITF {
+		NewForm_PTR():NewForm;
+	}
+
+	class NewForm extends widgets.QDialog {
+		___pointer: number;
+		NewForm_PTR():NewForm;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface PreferencesDialog_ITF extends widgets.QDialog_ITF {
+		PreferencesDialog_PTR():PreferencesDialog;
+	}
+
+	class PreferencesDialog extends widgets.QDialog {
+		___pointer: number;
+		PreferencesDialog_PTR():PreferencesDialog;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QAbstractExtensionFactory_ITF {
+		QAbstractExtensionFactory_PTR():QAbstractExtensionFactory;
+	}
+
+	class QAbstractExtensionFactory {
+		___pointer: number;
+		QAbstractExtensionFactory_PTR():QAbstractExtensionFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QAbstractExtensionManager_ITF {
 		QAbstractExtensionManager_PTR():QAbstractExtensionManager;
 	}
@@ -53,6 +154,16 @@ declare namespace designer {
 	}
 	function NewQAbstractFormBuilderFromPointer(ptr:number):QAbstractFormBuilder;
 	function NewQAbstractFormBuilder():QAbstractFormBuilder;
+	interface QDesigner_ITF extends widgets.QApplication_ITF {
+		QDesigner_PTR():QDesigner;
+	}
+
+	class QDesigner extends widgets.QApplication {
+		___pointer: number;
+		QDesigner_PTR():QDesigner;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QDesignerActionEditorInterface_ITF extends widgets.QWidget_ITF {
 		QDesignerActionEditorInterface_PTR():QDesignerActionEditorInterface;
 	}
@@ -147,6 +258,57 @@ declare namespace designer {
 	}
 	function NewQDesignerActionEditorInterfaceFromPointer(ptr:number):QDesignerActionEditorInterface;
 	function NewQDesignerActionEditorInterface(parent:widgets.QWidget_ITF,flags:number):QDesignerActionEditorInterface;
+	interface QDesignerActions_ITF extends core.QObject_ITF {
+		QDesignerActions_PTR():QDesignerActions;
+	}
+
+	class QDesignerActions extends core.QObject {
+		___pointer: number;
+		QDesignerActions_PTR():QDesignerActions;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QDesignerAppearanceOptionsPage_ITF extends core.QObject_ITF {
+		QDesignerAppearanceOptionsPage_PTR():QDesignerAppearanceOptionsPage;
+	}
+
+	class QDesignerAppearanceOptionsPage extends core.QObject {
+		___pointer: number;
+		QDesignerAppearanceOptionsPage_PTR():QDesignerAppearanceOptionsPage;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QDesignerAppearanceOptionsWidget_ITF extends widgets.QWidget_ITF {
+		QDesignerAppearanceOptionsWidget_PTR():QDesignerAppearanceOptionsWidget;
+	}
+
+	class QDesignerAppearanceOptionsWidget extends widgets.QWidget {
+		___pointer: number;
+		QDesignerAppearanceOptionsWidget_PTR():QDesignerAppearanceOptionsWidget;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QDesignerClient_ITF extends core.QObject_ITF {
+		QDesignerClient_PTR():QDesignerClient;
+	}
+
+	class QDesignerClient extends core.QObject {
+		___pointer: number;
+		QDesignerClient_PTR():QDesignerClient;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QDesignerComponents_ITF {
+		QDesignerComponents_PTR():QDesignerComponents;
+	}
+
+	class QDesignerComponents {
+		___pointer: number;
+		QDesignerComponents_PTR():QDesignerComponents;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQDesignerComponents():void;
+	}
 	interface QDesignerContainerExtension_ITF {
 		QDesignerContainerExtension_PTR():QDesignerContainerExtension;
 	}
@@ -330,6 +492,16 @@ declare namespace designer {
 	}
 	function NewQDesignerFormEditorInterfaceFromPointer(ptr:number):QDesignerFormEditorInterface;
 	function NewQDesignerFormEditorInterface(parent:core.QObject_ITF):QDesignerFormEditorInterface;
+	interface QDesignerFormWindow_ITF extends widgets.QWidget_ITF {
+		QDesignerFormWindow_PTR():QDesignerFormWindow;
+	}
+
+	class QDesignerFormWindow extends widgets.QWidget {
+		___pointer: number;
+		QDesignerFormWindow_PTR():QDesignerFormWindow;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QDesignerFormWindowCursorInterface_ITF {
 		QDesignerFormWindowCursorInterface_PTR():QDesignerFormWindowCursorInterface;
 	}
@@ -1163,6 +1335,27 @@ declare namespace designer {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQDesignerResourceBrowserInterfaceFromPointer(ptr:number):QDesignerResourceBrowserInterface;
+	interface QDesignerServer_ITF extends core.QObject_ITF {
+		QDesignerServer_PTR():QDesignerServer;
+	}
+
+	class QDesignerServer extends core.QObject {
+		___pointer: number;
+		QDesignerServer_PTR():QDesignerServer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QDesignerSettings_ITF {
+		QDesignerSettings_PTR():QDesignerSettings;
+	}
+
+	class QDesignerSettings {
+		___pointer: number;
+		QDesignerSettings_PTR():QDesignerSettings;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQDesignerSettings():void;
+	}
 	interface QDesignerTaskMenuExtension_ITF {
 		QDesignerTaskMenuExtension_PTR():QDesignerTaskMenuExtension;
 	}
@@ -1185,6 +1378,16 @@ declare namespace designer {
 		DestroyQDesignerTaskMenuExtensionDefault():void;
 	}
 	function NewQDesignerTaskMenuExtensionFromPointer(ptr:number):QDesignerTaskMenuExtension;
+	interface QDesignerToolWindow_ITF extends MainWindowBase_ITF {
+		QDesignerToolWindow_PTR():QDesignerToolWindow;
+	}
+
+	class QDesignerToolWindow extends MainWindowBase {
+		___pointer: number;
+		QDesignerToolWindow_PTR():QDesignerToolWindow;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QDesignerWidgetBoxInterface_ITF extends widgets.QWidget_ITF {
 		QDesignerWidgetBoxInterface_PTR():QDesignerWidgetBoxInterface;
 	}
@@ -1277,6 +1480,16 @@ declare namespace designer {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQDesignerWidgetBoxInterfaceFromPointer(ptr:number):QDesignerWidgetBoxInterface;
+	interface QDesignerWorkbench_ITF extends core.QObject_ITF {
+		QDesignerWorkbench_PTR():QDesignerWorkbench;
+	}
+
+	class QDesignerWorkbench extends core.QObject {
+		___pointer: number;
+		QDesignerWorkbench_PTR():QDesignerWorkbench;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QExtensionFactory_ITF extends QAbstractExtensionFactory_ITF {
 		QExtensionFactory_PTR():QExtensionFactory;
 		QObject_PTR():core.QObject;
@@ -1387,4 +1600,45 @@ declare namespace designer {
 	}
 	function NewQFormBuilderFromPointer(ptr:number):QFormBuilder;
 	function NewQFormBuilder():QFormBuilder;
+	interface SaveFormAsTemplate_ITF extends widgets.QDialog_ITF {
+		SaveFormAsTemplate_PTR():SaveFormAsTemplate;
+	}
+
+	class SaveFormAsTemplate extends widgets.QDialog {
+		___pointer: number;
+		SaveFormAsTemplate_PTR():SaveFormAsTemplate;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface ToolBarManager_ITF extends core.QObject_ITF {
+		ToolBarManager_PTR():ToolBarManager;
+	}
+
+	class ToolBarManager extends core.QObject {
+		___pointer: number;
+		ToolBarManager_PTR():ToolBarManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface ToolWindowFontSettings_ITF {
+		ToolWindowFontSettings_PTR():ToolWindowFontSettings;
+	}
+
+	class ToolWindowFontSettings {
+		___pointer: number;
+		ToolWindowFontSettings_PTR():ToolWindowFontSettings;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyToolWindowFontSettings():void;
+	}
+	interface VersionDialog_ITF extends widgets.QDialog_ITF {
+		VersionDialog_PTR():VersionDialog;
+	}
+
+	class VersionDialog extends widgets.QDialog {
+		___pointer: number;
+		VersionDialog_PTR():VersionDialog;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 }

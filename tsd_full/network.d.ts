@@ -66,10 +66,10 @@ declare namespace network {
 		BytesToWriteDefault():number;
 		CanReadLineDefault():boolean;
 		CloseDefault():void;
-		ConnectConnectToHost(f:(hostName:string,port:number,openMode:number,protocol:number)=>void):void;
+		ConnectConnectToHost(f:(hostName:string,port:number,openMode:number,protoc:number)=>void):void;
 		DisconnectConnectToHost():void;
-		ConnectToHost(hostName:string,port:number,openMode:number,protocol:number):void;
-		ConnectToHostDefault(hostName:string,port:number,openMode:number,protocol:number):void;
+		ConnectToHost(hostName:string,port:number,openMode:number,protoc:number):void;
+		ConnectToHostDefault(hostName:string,port:number,openMode:number,protoc:number):void;
 		ConnectConnectToHost2(f:(address:QHostAddress,port:number,openMode:number)=>void):void;
 		DisconnectConnectToHost2():void;
 		ConnectToHost2(address:QHostAddress_ITF,port:number,openMode:number):void;
@@ -427,6 +427,16 @@ declare namespace network {
 	function NewQDnsTextRecordFromPointer(ptr:number):QDnsTextRecord;
 	function NewQDnsTextRecord():QDnsTextRecord;
 	function NewQDnsTextRecord2(other:QDnsTextRecord_ITF):QDnsTextRecord;
+	interface QDtls_ITF extends core.QObject_ITF {
+		QDtls_PTR():QDtls;
+	}
+
+	class QDtls extends core.QObject {
+		___pointer: number;
+		QDtls_PTR():QDtls;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QDtls__NoError: number;
 	const QDtls__InvalidInputParameters: number;
 	const QDtls__InvalidOperation: number;
@@ -440,6 +450,16 @@ declare namespace network {
 	const QDtls__HandshakeInProgress: number;
 	const QDtls__PeerVerificationFailed: number;
 	const QDtls__HandshakeComplete: number;
+	interface QDtlsClientVerifier_ITF extends core.QObject_ITF {
+		QDtlsClientVerifier_PTR():QDtlsClientVerifier;
+	}
+
+	class QDtlsClientVerifier extends core.QObject {
+		___pointer: number;
+		QDtlsClientVerifier_PTR():QDtlsClientVerifier;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QHostAddress_ITF {
 		QHostAddress_PTR():QHostAddress;
 	}
@@ -960,7 +980,6 @@ declare namespace network {
 	function NewQNetworkConfigurationFromPointer(ptr:number):QNetworkConfiguration;
 	function NewQNetworkConfiguration():QNetworkConfiguration;
 	function NewQNetworkConfiguration2(other:QNetworkConfiguration_ITF):QNetworkConfiguration;
-	function NewQNetworkConfigurationManager(parent:core.QObject_ITF):QNetworkConfigurationManager;
 	const QNetworkConfiguration__InternetAccessPoint: number;
 	const QNetworkConfiguration__ServiceNetwork: number;
 	const QNetworkConfiguration__UserChoice: number;
@@ -1077,7 +1096,6 @@ declare namespace network {
 	function NewQNetworkCookie(name:core.QByteArray_ITF,value:core.QByteArray_ITF):QNetworkCookie;
 	function NewQNetworkCookie2(other:QNetworkCookie_ITF):QNetworkCookie;
 	function QNetworkCookie_ParseCookies(cookieString:core.QByteArray_ITF):QNetworkCookie[];
-	function NewQNetworkCookieJar(parent:core.QObject_ITF):QNetworkCookieJar;
 	const QNetworkCookie__NameAndValueOnly: number;
 	const QNetworkCookie__Full: number;
 	interface QNetworkCookieJar_ITF extends core.QObject_ITF {
@@ -1318,12 +1336,6 @@ declare namespace network {
 	function NewQNetworkProxy3(other:QNetworkProxy_ITF):QNetworkProxy;
 	function QNetworkProxy_ApplicationProxy():QNetworkProxy;
 	function QNetworkProxy_SetApplicationProxy(networkProxy:QNetworkProxy_ITF):void;
-	function NewQNetworkProxyFactory():QNetworkProxyFactory;
-	function NewQNetworkProxyQuery():QNetworkProxyQuery;
-	function NewQNetworkProxyQuery2(requestUrl:core.QUrl_ITF,queryType:number):QNetworkProxyQuery;
-	function NewQNetworkProxyQuery3(hostname:string,port:number,protocolTag:string,queryType:number):QNetworkProxyQuery;
-	function NewQNetworkProxyQuery4(bindPort:number,protocolTag:string,queryType:number):QNetworkProxyQuery;
-	function NewQNetworkProxyQuery8(other:QNetworkProxyQuery_ITF):QNetworkProxyQuery;
 	const QNetworkProxy__DefaultProxy: number;
 	const QNetworkProxy__Socks5Proxy: number;
 	const QNetworkProxy__NoProxy: number;
@@ -1777,6 +1789,37 @@ declare namespace network {
 	const QOcspResponse__CessationOfOperation: number;
 	const QOcspResponse__CertificateHold: number;
 	const QOcspResponse__RemoveFromCRL: number;
+	interface QPasswordDigestor_ITF {
+		QPasswordDigestor_PTR():QPasswordDigestor;
+	}
+
+	class QPasswordDigestor {
+		___pointer: number;
+		QPasswordDigestor_PTR():QPasswordDigestor;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPasswordDigestor():void;
+	}
+	interface QSctpServer_ITF extends QTcpServer_ITF {
+		QSctpServer_PTR():QSctpServer;
+	}
+
+	class QSctpServer extends QTcpServer {
+		___pointer: number;
+		QSctpServer_PTR():QSctpServer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QSctpSocket_ITF extends QTcpSocket_ITF {
+		QSctpSocket_PTR():QSctpSocket;
+	}
+
+	class QSctpSocket extends QTcpSocket {
+		___pointer: number;
+		QSctpSocket_PTR():QSctpSocket;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSsl_ITF {
 		QSsl_PTR():QSsl;
 	}
@@ -1789,32 +1832,6 @@ declare namespace network {
 		DestroyQSsl():void;
 	}
 	function NewQSslFromPointer(ptr:number):QSsl;
-	function NewQSslCertificate(device:core.QIODevice_ITF,format:number):QSslCertificate;
-	function NewQSslCertificate2(data:core.QByteArray_ITF,format:number):QSslCertificate;
-	function NewQSslCertificate3(other:QSslCertificate_ITF):QSslCertificate;
-	function NewQSslCertificateExtension():QSslCertificateExtension;
-	function NewQSslCertificateExtension2(other:QSslCertificateExtension_ITF):QSslCertificateExtension;
-	function NewQSslCipher():QSslCipher;
-	function NewQSslCipher2(name:string):QSslCipher;
-	function NewQSslCipher3(name:string,protocol:number):QSslCipher;
-	function NewQSslCipher4(other:QSslCipher_ITF):QSslCipher;
-	function NewQSslConfiguration():QSslConfiguration;
-	function NewQSslConfiguration2(other:QSslConfiguration_ITF):QSslConfiguration;
-	function NewQSslDiffieHellmanParameters():QSslDiffieHellmanParameters;
-	function NewQSslDiffieHellmanParameters2(other:QSslDiffieHellmanParameters_ITF):QSslDiffieHellmanParameters;
-	function NewQSslDiffieHellmanParameters3(other:QSslDiffieHellmanParameters_ITF):QSslDiffieHellmanParameters;
-	function NewQSslEllipticCurve():QSslEllipticCurve;
-	function NewQSslError():QSslError;
-	function NewQSslError2(error:number):QSslError;
-	function NewQSslError3(error:number,certificate:QSslCertificate_ITF):QSslError;
-	function NewQSslError4(other:QSslError_ITF):QSslError;
-	function NewQSslKey():QSslKey;
-	function NewQSslKey2(encoded:core.QByteArray_ITF,algorithm:number,encoding:number,ty:number,passPhrase:core.QByteArray_ITF):QSslKey;
-	function NewQSslKey3(device:core.QIODevice_ITF,algorithm:number,encoding:number,ty:number,passPhrase:core.QByteArray_ITF):QSslKey;
-	function NewQSslKey5(other:QSslKey_ITF):QSslKey;
-	function NewQSslPreSharedKeyAuthenticator():QSslPreSharedKeyAuthenticator;
-	function NewQSslPreSharedKeyAuthenticator2(authenticator:QSslPreSharedKeyAuthenticator_ITF):QSslPreSharedKeyAuthenticator;
-	function NewQSslSocket(parent:core.QObject_ITF):QSslSocket;
 	const QSsl__PrivateKey: number;
 	const QSsl__PublicKey: number;
 	const QSsl__Pem: number;
@@ -1881,7 +1898,7 @@ declare namespace network {
 		IssuerInfoAttributes():core.QByteArray[];
 		PublicKey():QSslKey;
 		SerialNumber():core.QByteArray;
-		SubjectAlternativeNames():number,string>;
+		SubjectAlternativeNames():Map<number,string>;
 		SubjectDisplayName():string;
 		SubjectInfo(subject:number):string[];
 		SubjectInfo2(attribute:core.QByteArray_ITF):string[];
@@ -1903,8 +1920,6 @@ declare namespace network {
 	function QSslCertificate_FromPath(path:string,format:number,syntax:number):QSslCertificate[];
 	function QSslCertificate_ImportPkcs12(device:core.QIODevice_ITF,key:QSslKey_ITF,certificate:QSslCertificate_ITF,caCertificates:QSslCertificate[],passPhrase:core.QByteArray_ITF):boolean;
 	function QSslCertificate_Verify(certificateChai:QSslCertificate[],hostName:string):QSslError[];
-	function NewQSslCertificateExtension():QSslCertificateExtension;
-	function NewQSslCertificateExtension2(other:QSslCertificateExtension_ITF):QSslCertificateExtension;
 	const QSslCertificate__Organization: number;
 	const QSslCertificate__CommonName: number;
 	const QSslCertificate__LocalityName: number;
@@ -1958,7 +1973,7 @@ declare namespace network {
 	function NewQSslCipherFromPointer(ptr:number):QSslCipher;
 	function NewQSslCipher():QSslCipher;
 	function NewQSslCipher2(name:string):QSslCipher;
-	function NewQSslCipher3(name:string,protocol:number):QSslCipher;
+	function NewQSslCipher3(name:string,protoc:number):QSslCipher;
 	function NewQSslCipher4(other:QSslCipher_ITF):QSslCipher;
 	interface QSslConfiguration_ITF {
 		QSslConfiguration_PTR():QSslConfiguration;
@@ -2008,7 +2023,7 @@ declare namespace network {
 		SetPeerVerifyMode(mode:number):void;
 		SetPreSharedKeyIdentityHint(hint:core.QByteArray_ITF):void;
 		SetPrivateKey(key:QSslKey_ITF):void;
-		SetProtocol(protocol:number):void;
+		SetProtocol(protoc:number):void;
 		SetSessionTicket(sessionTicket:core.QByteArray_ITF):void;
 		SetSslOption(option:number,on:boolean):void;
 		SupportedCiphers():QSslCipher[];
@@ -2196,8 +2211,8 @@ declare namespace network {
 		AddDefaultCaCertificate(certificate:QSslCertificate_ITF):void;
 		AddDefaultCaCertificates(path:string,encoding:number,syntax:number):boolean;
 		AddDefaultCaCertificates2(certificates:QSslCertificate[]):void;
-		ConnectToHostEncrypted(hostName:string,port:number,mode:number,protocol:number):void;
-		ConnectToHostEncrypted2(hostName:string,port:number,sslPeerName:string,mode:number,protocol:number):void;
+		ConnectToHostEncrypted(hostName:string,port:number,mode:number,protoc:number):void;
+		ConnectToHostEncrypted2(hostName:string,port:number,sslPeerName:string,mode:number,protoc:number):void;
 		ConnectEncrypted(f:()=>void):void;
 		DisconnectEncrypted():void;
 		Encrypted():void;
@@ -2242,7 +2257,7 @@ declare namespace network {
 		SetPeerVerifyName(hostName:string):void;
 		SetPrivateKey(key:QSslKey_ITF):void;
 		SetPrivateKey2(fileName:string,algorithm:number,format:number,passPhrase:core.QByteArray_ITF):void;
-		SetProtocol(protocol:number):void;
+		SetProtocol(protoc:number):void;
 		SetSslConfiguration(configuration:QSslConfiguration_ITF):void;
 		SslConfiguration():QSslConfiguration;
 		SslErrors():QSslError[];

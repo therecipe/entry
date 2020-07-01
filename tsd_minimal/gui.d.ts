@@ -383,7 +383,6 @@ declare namespace gui {
 		QDoubleValidator_PTR():QDoubleValidator;
 		Pointer():number;
 		SetPointer(p:number):void;
-		Bottom():number;
 		ConnectSetRange(f:(minimum:number,maximum:number,decimals:number)=>void):void;
 		DisconnectSetRange():void;
 		SetRange(minimum:number,maximum:number,decimals:number):void;
@@ -457,6 +456,7 @@ declare namespace gui {
 		AcceptProposedAction():void;
 		MimeData():core.QMimeData;
 		Pos():core.QPoint;
+		PosF():core.QPointF;
 		ProposedAction():number;
 		Source():core.QObject;
 	}
@@ -867,7 +867,6 @@ declare namespace gui {
 	function NewQIcon4(other:QIcon_ITF):QIcon;
 	function NewQIcon5(fileName:string):QIcon;
 	function NewQIcon6(engine:QIconEngine_ITF):QIcon;
-	function NewQIconEngine():QIconEngine;
 	const QIcon__Normal: number;
 	const QIcon__Disabled: number;
 	const QIcon__Active: number;
@@ -1066,6 +1065,7 @@ declare namespace gui {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQInputEvent():void;
+		Modifiers():number;
 	}
 	function NewQInputEventFromPointer(ptr:number):QInputEvent;
 	const QInputMethod__Click: number;
@@ -1084,7 +1084,6 @@ declare namespace gui {
 		QIntValidator_PTR():QIntValidator;
 		Pointer():number;
 		SetPointer(p:number):void;
-		Bottom():number;
 		ConnectSetRange(f:(bottom:number,top:number)=>void):void;
 		DisconnectSetRange():void;
 		SetRange(bottom:number,top:number):void;
@@ -1206,7 +1205,7 @@ declare namespace gui {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQMatrix():void;
-		Dy():number;
+		Inverted(invertible:boolean):QMatrix;
 		Map(x:number,y:number,tx:number,ty:number):void;
 		Map2(x:number,y:number,tx:number,ty:number):void;
 		Map3(point:core.QPoint_ITF):core.QPoint;
@@ -1224,10 +1223,6 @@ declare namespace gui {
 	function NewQMatrix2():QMatrix;
 	function NewQMatrix3(m11:number,m12:number,m21:number,m22:number,dx:number,dy:number):QMatrix;
 	function NewQMatrix5(matrix:QMatrix_ITF):QMatrix;
-	function NewQMatrix4x4():QMatrix4x4;
-	function NewQMatrix4x43(values:number):QMatrix4x4;
-	function NewQMatrix4x44(m11:number,m12:number,m13:number,m14:number,m21:number,m22:number,m23:number,m24:number,m31:number,m32:number,m33:number,m34:number,m41:number,m42:number,m43:number,m44:number):QMatrix4x4;
-	function NewQMatrix4x46(matrix:QMatrix_ITF):QMatrix4x4;
 	interface QMatrix4x4_ITF {
 		QMatrix4x4_PTR():QMatrix4x4;
 	}
@@ -1243,6 +1238,7 @@ declare namespace gui {
 		Data():number;
 		Data2():number;
 		Fill(value:number):void;
+		Inverted(invertible:boolean):QMatrix4x4;
 		Map(point:core.QPoint_ITF):core.QPoint;
 		Map2(point:core.QPointF_ITF):core.QPointF;
 		Map3(point:QVector3D_ITF):QVector3D;
@@ -1273,6 +1269,7 @@ declare namespace gui {
 		Button():number;
 		Buttons():number;
 		Flags():number;
+		GlobalPos():core.QPoint;
 		Pos():core.QPoint;
 		Source():number;
 		X():number;
@@ -2175,9 +2172,6 @@ declare namespace gui {
 	function NewQPainterFromPointer(ptr:number):QPainter;
 	function NewQPainter():QPainter;
 	function NewQPainter2(device:QPaintDevice_ITF):QPainter;
-	function NewQPainterPath():QPainterPath;
-	function NewQPainterPath2(startPoint:core.QPointF_ITF):QPainterPath;
-	function NewQPainterPath3(path:QPainterPath_ITF):QPainterPath;
 	const QPainter__Antialiasing: number;
 	const QPainter__TextAntialiasing: number;
 	const QPainter__SmoothPixmapTransform: number;
@@ -2404,6 +2398,7 @@ declare namespace gui {
 		DisconnectDestroyQPixmap():void;
 		DestroyQPixmap():void;
 		DestroyQPixmapDefault():void;
+		ToVariant():core.QVariant;
 		PaintEngine():QPaintEngine;
 		PaintEngineDefault():QPaintEngine;
 	}
@@ -2437,12 +2432,6 @@ declare namespace gui {
 	function NewQPolygon2(size:number):QPolygon;
 	function NewQPolygon3(points:core.QPoint[]):QPolygon;
 	function NewQPolygon5(rectangle:core.QRect_ITF,closed:boolean):QPolygon;
-	function NewQPolygonF():QPolygonF;
-	function NewQPolygonF2(size:number):QPolygonF;
-	function NewQPolygonF3(points:core.QPointF[]):QPolygonF;
-	function NewQPolygonF5(rectangle:core.QRectF_ITF):QPolygonF;
-	function NewQPolygonF6(polygon:QPolygon_ITF):QPolygonF;
-	function NewQPolygonF7(polygon:QPolygonF_ITF):QPolygonF;
 	interface QPolygonF_ITF extends core.QVector_ITF {
 		QPolygonF_PTR():QPolygonF;
 	}
@@ -2582,9 +2571,6 @@ declare namespace gui {
 		DestroyQSurfaceDefault():void;
 	}
 	function NewQSurfaceFromPointer(ptr:number):QSurface;
-	function NewQSurfaceFormat():QSurfaceFormat;
-	function NewQSurfaceFormat2(options:number):QSurfaceFormat;
-	function NewQSurfaceFormat3(other:QSurfaceFormat_ITF):QSurfaceFormat;
 	const QSurface__Window: number;
 	const QSurface__Offscreen: number;
 	const QSurface__RasterSurface: number;
@@ -2844,10 +2830,6 @@ declare namespace gui {
 	function NewQTextDocumentFromPointer(ptr:number):QTextDocument;
 	function NewQTextDocument(parent:core.QObject_ITF):QTextDocument;
 	function NewQTextDocument2(text:string,parent:core.QObject_ITF):QTextDocument;
-	function NewQTextDocumentFragment():QTextDocumentFragment;
-	function NewQTextDocumentFragment2(document:QTextDocument_ITF):QTextDocumentFragment;
-	function NewQTextDocumentFragment3(cursor:QTextCursor_ITF):QTextDocumentFragment;
-	function NewQTextDocumentFragment4(other:QTextDocumentFragment_ITF):QTextDocumentFragment;
 	const QTextDocument__DocumentTitle: number;
 	const QTextDocument__DocumentUrl: number;
 	const QTextDocument__FindBackward: number;
@@ -3177,7 +3159,7 @@ declare namespace gui {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQTransform():void;
-		Dy():number;
+		Inverted(invertible:boolean):QTransform;
 		Map(x:number,y:number,tx:number,ty:number):void;
 		Map2(point:core.QPoint_ITF):core.QPoint;
 		Map3(p:core.QPointF_ITF):core.QPointF;
@@ -3318,6 +3300,35 @@ declare namespace gui {
 	function NewQVector4D9(vector:QVector3D_ITF,wpos:number):QVector4D;
 	const QVulkanInstance__NoDebugOutputRedirect: number;
 	const QVulkanWindow__PersistentResources: number;
+	interface QWheelEvent_ITF extends QInputEvent_ITF {
+		QWheelEvent_PTR():QWheelEvent;
+	}
+
+	class QWheelEvent extends QInputEvent {
+		___pointer: number;
+		QWheelEvent_PTR():QWheelEvent;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQWheelEvent():void;
+		AngleDelta():core.QPoint;
+		Buttons():number;
+		GlobalPos():core.QPoint;
+		GlobalPosF():core.QPointF;
+		Inverted():boolean;
+		Phase():number;
+		PixelDelta():core.QPoint;
+		Pos():core.QPoint;
+		PosF():core.QPointF;
+		Source():number;
+		X():number;
+		Y():number;
+	}
+	function NewQWheelEventFromPointer(ptr:number):QWheelEvent;
+	function NewQWheelEvent3(pos:core.QPointF_ITF,globalPos:core.QPointF_ITF,pixelDelta:core.QPoint_ITF,angleDelta:core.QPoint_ITF,qt4Delta:number,qt4Orientation:number,buttons:number,modifiers:number):QWheelEvent;
+	function NewQWheelEvent4(pos:core.QPointF_ITF,globalPos:core.QPointF_ITF,pixelDelta:core.QPoint_ITF,angleDelta:core.QPoint_ITF,qt4Delta:number,qt4Orientation:number,buttons:number,modifiers:number,phase:number):QWheelEvent;
+	function NewQWheelEvent5(pos:core.QPointF_ITF,globalPos:core.QPointF_ITF,pixelDelta:core.QPoint_ITF,angleDelta:core.QPoint_ITF,qt4Delta:number,qt4Orientation:number,buttons:number,modifiers:number,phase:number,source:number):QWheelEvent;
+	function NewQWheelEvent6(pos:core.QPointF_ITF,globalPos:core.QPointF_ITF,pixelDelta:core.QPoint_ITF,angleDelta:core.QPoint_ITF,qt4Delta:number,qt4Orientation:number,buttons:number,modifiers:number,phase:number,source:number,inverted:boolean):QWheelEvent;
+	function NewQWheelEvent7(pos:core.QPointF_ITF,globalPos:core.QPointF_ITF,pixelDelta:core.QPoint_ITF,angleDelta:core.QPoint_ITF,buttons:number,modifiers:number,phase:number,inverted:boolean,source:number):QWheelEvent;
 	interface QWindow_ITF extends QSurface_ITF {
 		QWindow_PTR():QWindow;
 		QObject_PTR():core.QObject;
@@ -3419,6 +3430,10 @@ declare namespace gui {
 		SizeDefault():core.QSize;
 		Title():string;
 		Type():number;
+		ConnectWheelEvent(f:(ev:QWheelEvent)=>void):void;
+		DisconnectWheelEvent():void;
+		WheelEvent(ev:QWheelEvent_ITF):void;
+		WheelEventDefault(ev:QWheelEvent_ITF):void;
 		Width():number;
 		X():number;
 		Y():number;

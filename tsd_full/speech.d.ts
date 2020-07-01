@@ -86,7 +86,6 @@ declare namespace speech {
 	function NewQTextToSpeech(parent:core.QObject_ITF):QTextToSpeech;
 	function NewQTextToSpeech2(engine:string,parent:core.QObject_ITF):QTextToSpeech;
 	function QTextToSpeech_AvailableEngines():string[];
-	function NewQTextToSpeechEngine(parent:core.QObject_ITF):QTextToSpeechEngine;
 	const QTextToSpeech__Ready: number;
 	const QTextToSpeech__Speaking: number;
 	const QTextToSpeech__Paused: number;
@@ -170,6 +169,76 @@ declare namespace speech {
 	function NewQTextToSpeechEngine(parent:core.QObject_ITF):QTextToSpeechEngine;
 	function QTextToSpeechEngine_CreateVoice(name:string,gender:number,age:number,data:core.QVariant_ITF):QVoice;
 	function QTextToSpeechEngine_VoiceData(voice:QVoice_ITF):core.QVariant;
+	interface QTextToSpeechEngineAndroid_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineAndroid_PTR():QTextToSpeechEngineAndroid;
+	}
+
+	class QTextToSpeechEngineAndroid extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineAndroid_PTR():QTextToSpeechEngineAndroid;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineFlite_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineFlite_PTR():QTextToSpeechEngineFlite;
+	}
+
+	class QTextToSpeechEngineFlite extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineFlite_PTR():QTextToSpeechEngineFlite;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineIos_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineIos_PTR():QTextToSpeechEngineIos;
+	}
+
+	class QTextToSpeechEngineIos extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineIos_PTR():QTextToSpeechEngineIos;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineOsx_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineOsx_PTR():QTextToSpeechEngineOsx;
+	}
+
+	class QTextToSpeechEngineOsx extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineOsx_PTR():QTextToSpeechEngineOsx;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineSapi_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineSapi_PTR():QTextToSpeechEngineSapi;
+	}
+
+	class QTextToSpeechEngineSapi extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineSapi_PTR():QTextToSpeechEngineSapi;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineSpeechd_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineSpeechd_PTR():QTextToSpeechEngineSpeechd;
+	}
+
+	class QTextToSpeechEngineSpeechd extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineSpeechd_PTR():QTextToSpeechEngineSpeechd;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechEngineWinRT_ITF extends QTextToSpeechEngine_ITF {
+		QTextToSpeechEngineWinRT_PTR():QTextToSpeechEngineWinRT;
+	}
+
+	class QTextToSpeechEngineWinRT extends QTextToSpeechEngine {
+		___pointer: number;
+		QTextToSpeechEngineWinRT_PTR():QTextToSpeechEngineWinRT;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QTextToSpeechPlugin_ITF {
 		QTextToSpeechPlugin_PTR():QTextToSpeechPlugin;
 	}
@@ -186,6 +255,101 @@ declare namespace speech {
 		CreateTextToSpeechEngineDefault(parameters:Map<string,core.QVariant>,parent:core.QObject_ITF,errorString:string):QTextToSpeechEngine;
 	}
 	function NewQTextToSpeechPluginFromPointer(ptr:number):QTextToSpeechPlugin;
+	interface QTextToSpeechPluginAndroid_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginAndroid_PTR():QTextToSpeechPluginAndroid;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginAndroid extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginAndroid_PTR():QTextToSpeechPluginAndroid;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginFlite_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginFlite_PTR():QTextToSpeechPluginFlite;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginFlite extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginFlite_PTR():QTextToSpeechPluginFlite;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginIos_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginIos_PTR():QTextToSpeechPluginIos;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginIos extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginIos_PTR():QTextToSpeechPluginIos;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginOsx_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginOsx_PTR():QTextToSpeechPluginOsx;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginOsx extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginOsx_PTR():QTextToSpeechPluginOsx;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginSapi_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginSapi_PTR():QTextToSpeechPluginSapi;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginSapi extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginSapi_PTR():QTextToSpeechPluginSapi;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginSpeechd_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginSpeechd_PTR():QTextToSpeechPluginSpeechd;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginSpeechd extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginSpeechd_PTR():QTextToSpeechPluginSpeechd;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechPluginWinRT_ITF extends QTextToSpeechPlugin_ITF {
+		QTextToSpeechPluginWinRT_PTR():QTextToSpeechPluginWinRT;
+		QObject_PTR():core.QObject;
+	}
+
+	class QTextToSpeechPluginWinRT extends QTextToSpeechPlugin {
+		QObject_PTR():core.QObject
+		___pointer: number;
+		QTextToSpeechPluginWinRT_PTR():QTextToSpeechPluginWinRT;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QTextToSpeechProcessorFlite_ITF {
+		QTextToSpeechProcessorFlite_PTR():QTextToSpeechProcessorFlite;
+	}
+
+	class QTextToSpeechProcessorFlite {
+		___pointer: number;
+		QTextToSpeechProcessorFlite_PTR():QTextToSpeechProcessorFlite;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQTextToSpeechProcessorFlite():void;
+	}
 	interface QVoice_ITF {
 		QVoice_PTR():QVoice;
 	}

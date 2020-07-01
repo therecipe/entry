@@ -662,6 +662,61 @@ declare namespace core {
 		Value(key:QVariant_ITF):QVariant;
 	}
 	function NewQAssociativeIterableFromPointer(ptr:number):QAssociativeIterable;
+	interface QAtomicInt_ITF extends QAtomicInteger_ITF {
+		QAtomicInt_PTR():QAtomicInt;
+	}
+
+	class QAtomicInt extends QAtomicInteger {
+		___pointer: number;
+		QAtomicInt_PTR():QAtomicInt;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQAtomicInt():void;
+	}
+	interface QAtomicInteger_ITF extends QBasicAtomicInteger_ITF {
+		QAtomicInteger_PTR():QAtomicInteger;
+	}
+
+	class QAtomicInteger extends QBasicAtomicInteger {
+		___pointer: number;
+		QAtomicInteger_PTR():QAtomicInteger;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQAtomicInteger():void;
+	}
+	interface QAtomicOps_ITF {
+		QAtomicOps_PTR():QAtomicOps;
+	}
+
+	class QAtomicOps {
+		___pointer: number;
+		QAtomicOps_PTR():QAtomicOps;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQAtomicOps():void;
+	}
+	interface QAtomicPointer_ITF extends QBasicAtomicPointer_ITF {
+		QAtomicPointer_PTR():QAtomicPointer;
+	}
+
+	class QAtomicPointer extends QBasicAtomicPointer {
+		___pointer: number;
+		QAtomicPointer_PTR():QAtomicPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQAtomicPointer():void;
+	}
+	interface QAtomicTraits_ITF {
+		QAtomicTraits_PTR():QAtomicTraits;
+	}
+
+	class QAtomicTraits {
+		___pointer: number;
+		QAtomicTraits_PTR():QAtomicTraits;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQAtomicTraits():void;
+	}
 	interface QBEInteger_ITF {
 		QBEInteger_PTR():QBEInteger;
 	}
@@ -961,10 +1016,6 @@ declare namespace core {
 	function QByteArray_Number3(n:number,base:number):QByteArray;
 	function QByteArray_Number4(n:number,base:number):QByteArray;
 	function QByteArray_Number5(n:number,ff:string,prec:number):QByteArray;
-	function NewQByteArrayMatcher():QByteArrayMatcher;
-	function NewQByteArrayMatcher2(pattern:QByteArray_ITF):QByteArrayMatcher;
-	function NewQByteArrayMatcher3(pattern:string,length:number):QByteArrayMatcher;
-	function NewQByteArrayMatcher4(other:QByteArrayMatcher_ITF):QByteArrayMatcher;
 	const QByteArray__Base64Encoding: number;
 	const QByteArray__Base64UrlEncoding: number;
 	const QByteArray__KeepTrailingEquals: number;
@@ -1017,6 +1068,16 @@ declare namespace core {
 		DestroyQByteRef():void;
 	}
 	function NewQByteRefFromPointer(ptr:number):QByteRef;
+	interface QCache_ITF {
+		QCache_PTR():QCache;
+	}
+
+	class QCache {
+		___pointer: number;
+		QCache_PTR():QCache;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QCborArray_ITF {
 		QCborArray_PTR():QCborArray;
 	}
@@ -1148,6 +1209,16 @@ declare namespace core {
 		SetError(vqc:QCborError_ITF):void;
 	}
 	function NewQCborParserErrorFromPointer(ptr:number):QCborParserError;
+	interface QCborStreamReader_ITF {
+		QCborStreamReader_PTR():QCborStreamReader;
+	}
+
+	class QCborStreamReader {
+		___pointer: number;
+		QCborStreamReader_PTR():QCborStreamReader;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QCborStreamReader__UnsignedInteger: number;
 	const QCborStreamReader__NegativeInteger: number;
 	const QCborStreamReader__ByteString: number;
@@ -1166,6 +1237,26 @@ declare namespace core {
 	const QCborStreamReader__EndOfString: number;
 	const QCborStreamReader__Ok: number;
 	const QCborStreamReader__Error: number;
+	interface QCborStreamWriter_ITF {
+		QCborStreamWriter_PTR():QCborStreamWriter;
+	}
+
+	class QCborStreamWriter {
+		___pointer: number;
+		QCborStreamWriter_PTR():QCborStreamWriter;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QCborValue_ITF {
+		QCborValue_PTR():QCborValue;
+	}
+
+	class QCborValue {
+		___pointer: number;
+		QCborValue_PTR():QCborValue;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QCborValue__SortKeysInMaps: number;
 	const QCborValue__UseFloat: number;
 	const QCborValue__UseFloat16: number;
@@ -1634,7 +1725,6 @@ declare namespace core {
 	function NewQCollator(locale:QLocale_ITF):QCollator;
 	function NewQCollator2(other:QCollator_ITF):QCollator;
 	function NewQCollator3(other:QCollator_ITF):QCollator;
-	function NewQCollatorSortKey(other:QCollatorSortKey_ITF):QCollatorSortKey;
 	interface QCollatorSortKey_ITF {
 		QCollatorSortKey_PTR():QCollatorSortKey;
 	}
@@ -1763,6 +1853,16 @@ declare namespace core {
 	}
 	function NewQConcatenateTablesProxyModelFromPointer(ptr:number):QConcatenateTablesProxyModel;
 	function NewQConcatenateTablesProxyModel(parent:QObject_ITF):QConcatenateTablesProxyModel;
+	interface QContiguousCache_ITF {
+		QContiguousCache_PTR():QContiguousCache;
+	}
+
+	class QContiguousCache {
+		___pointer: number;
+		QContiguousCache_PTR():QContiguousCache;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QContiguousCacheData_ITF {
 		QContiguousCacheData_PTR():QContiguousCacheData;
 	}
@@ -2060,13 +2160,6 @@ declare namespace core {
 	function QDate_FromString2(stri:string,format:string):QDate;
 	function QDate_IsLeapYear(year:number):boolean;
 	function QDate_IsValid2(year:number,month:number,day:number):boolean;
-	function NewQDateTime():QDateTime;
-	function NewQDateTime2(date:QDate_ITF):QDateTime;
-	function NewQDateTime3(date:QDate_ITF,ti:QTime_ITF,spec:number):QDateTime;
-	function NewQDateTime4(date:QDate_ITF,ti:QTime_ITF,spec:number,offsetSeconds:number):QDateTime;
-	function NewQDateTime5(date:QDate_ITF,ti:QTime_ITF,timeZone:QTimeZone_ITF):QDateTime;
-	function NewQDateTime6(other:QDateTime_ITF):QDateTime;
-	function NewQDateTime7(other:QDateTime_ITF):QDateTime;
 	const QDate__DateFormat: number;
 	const QDate__StandaloneFormat: number;
 	interface QDateTime_ITF {
@@ -2202,7 +2295,6 @@ declare namespace core {
 	function NewQDebug(device:QIODevice_ITF):QDebug;
 	function NewQDebug2(stri:string):QDebug;
 	function NewQDebug4(o:QDebug_ITF):QDebug;
-	function NewQDebugStateSaver(dbg:QDebug_ITF):QDebugStateSaver;
 	const QDebug__MinimumVerbosity: number;
 	const QDebug__DefaultVerbosity: number;
 	const QDebug__MaximumVerbosity: number;
@@ -2362,6 +2454,16 @@ declare namespace core {
 	const QDir__LocaleAware: number;
 	const QDir__Type: number;
 	const QDir__NoSort: number;
+	interface QDirIterator_ITF {
+		QDirIterator_PTR():QDirIterator;
+	}
+
+	class QDirIterator {
+		___pointer: number;
+		QDirIterator_PTR():QDirIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QDirIterator__NoIteratorFlags: number;
 	const QDirIterator__FollowSymlinks: number;
 	const QDirIterator__Subdirectories: number;
@@ -2524,12 +2626,6 @@ declare namespace core {
 	function NewQEventFromPointer(ptr:number):QEvent;
 	function NewQEvent(ty:number):QEvent;
 	function QEvent_RegisterEventType(hint:number):number;
-	function NewQEventLoop(parent:QObject_ITF):QEventLoop;
-	function NewQEventLoopLocker():QEventLoopLocker;
-	function NewQEventLoopLocker2(loop:QEventLoop_ITF):QEventLoopLocker;
-	function NewQEventLoopLocker3(thread:QThread_ITF):QEventLoopLocker;
-	function NewQEventTransition(sourceState:QState_ITF):QEventTransition;
-	function NewQEventTransition2(object:QObject_ITF,ty:number,sourceState:QState_ITF):QEventTransition;
 	const QEvent__None: number;
 	const QEvent__Timer: number;
 	const QEvent__MouseButtonPress: number;
@@ -2730,9 +2826,6 @@ declare namespace core {
 	}
 	function NewQEventLoopFromPointer(ptr:number):QEventLoop;
 	function NewQEventLoop(parent:QObject_ITF):QEventLoop;
-	function NewQEventLoopLocker():QEventLoopLocker;
-	function NewQEventLoopLocker2(loop:QEventLoop_ITF):QEventLoopLocker;
-	function NewQEventLoopLocker3(thread:QThread_ITF):QEventLoopLocker;
 	const QEventLoop__AllEvents: number;
 	const QEventLoop__ExcludeUserInputEvents: number;
 	const QEventLoop__ExcludeSocketNotifiers: number;
@@ -2784,6 +2877,27 @@ declare namespace core {
 	function NewQEventTransitionFromPointer(ptr:number):QEventTransition;
 	function NewQEventTransition(sourceState:QState_ITF):QEventTransition;
 	function NewQEventTransition2(object:QObject_ITF,ty:number,sourceState:QState_ITF):QEventTransition;
+	interface QException_ITF {
+		QException_PTR():QException;
+	}
+
+	class QException {
+		___pointer: number;
+		QException_PTR():QException;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQException():void;
+	}
+	interface QExplicitlySharedDataPointer_ITF {
+		QExplicitlySharedDataPointer_PTR():QExplicitlySharedDataPointer;
+	}
+
+	class QExplicitlySharedDataPointer {
+		___pointer: number;
+		QExplicitlySharedDataPointer_PTR():QExplicitlySharedDataPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QFactoryInterface_ITF {
 		QFactoryInterface_PTR():QFactoryInterface;
 	}
@@ -2847,14 +2961,6 @@ declare namespace core {
 	function QFile_Resize2(fileName:string,sz:number):boolean;
 	function QFile_SetPermissions2(fileName:string,permissions:number):boolean;
 	function QFile_SymLinkTarget(fileName:string):string;
-	function NewQFileInfo2():QFileInfo;
-	function NewQFileInfo3(file:string):QFileInfo;
-	function NewQFileInfo4(file:QFile_ITF):QFileInfo;
-	function NewQFileInfo5(dir:QDir_ITF,file:string):QFileInfo;
-	function NewQFileInfo6(fileinfo:QFileInfo_ITF):QFileInfo;
-	function NewQFileSelector(parent:QObject_ITF):QFileSelector;
-	function NewQFileSystemWatcher(parent:QObject_ITF):QFileSystemWatcher;
-	function NewQFileSystemWatcher2(paths:string[],parent:QObject_ITF):QFileSystemWatcher;
 	interface QFileDevice_ITF extends QIODevice_ITF {
 		QFileDevice_PTR():QFileDevice;
 	}
@@ -3089,6 +3195,27 @@ declare namespace core {
 	function NewQFlag2(value:number):QFlag;
 	function NewQFlag3(value:number):QFlag;
 	function NewQFlag4(value:number):QFlag;
+	interface QFlags_ITF {
+		QFlags_PTR():QFlags;
+	}
+
+	class QFlags {
+		___pointer: number;
+		QFlags_PTR():QFlags;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQFlags():void;
+	}
+	interface QFuture_ITF {
+		QFuture_PTR():QFuture;
+	}
+
+	class QFuture {
+		___pointer: number;
+		QFuture_PTR():QFuture;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QFutureInterface_ITF extends QFutureInterfaceBase_ITF {
 		QFutureInterface_PTR():QFutureInterface;
 	}
@@ -3113,6 +3240,37 @@ declare namespace core {
 		DestroyQFutureInterfaceBase():void;
 	}
 	function NewQFutureInterfaceBaseFromPointer(ptr:number):QFutureInterfaceBase;
+	interface QFutureIterator_ITF {
+		QFutureIterator_PTR():QFutureIterator;
+	}
+
+	class QFutureIterator {
+		___pointer: number;
+		QFutureIterator_PTR():QFutureIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQFutureIterator():void;
+	}
+	interface QFutureSynchronizer_ITF {
+		QFutureSynchronizer_PTR():QFutureSynchronizer;
+	}
+
+	class QFutureSynchronizer {
+		___pointer: number;
+		QFutureSynchronizer_PTR():QFutureSynchronizer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QFutureWatcher_ITF extends QObject_ITF {
+		QFutureWatcher_PTR():QFutureWatcher;
+	}
+
+	class QFutureWatcher extends QObject {
+		___pointer: number;
+		QFutureWatcher_PTR():QFutureWatcher;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QFutureWatcherBase_ITF extends QObject_ITF {
 		QFutureWatcherBase_PTR():QFutureWatcherBase;
 	}
@@ -3164,6 +3322,27 @@ declare namespace core {
 	}
 	function NewQGenericReturnArgumentFromPointer(ptr:number):QGenericReturnArgument;
 	function NewQGenericReturnArgument(name:string,data:number):QGenericReturnArgument;
+	interface QGlobalStatic_ITF {
+		QGlobalStatic_PTR():QGlobalStatic;
+	}
+
+	class QGlobalStatic {
+		___pointer: number;
+		QGlobalStatic_PTR():QGlobalStatic;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQGlobalStatic():void;
+	}
+	interface QHash_ITF {
+		QHash_PTR():QHash;
+	}
+
+	class QHash {
+		___pointer: number;
+		QHash_PTR():QHash;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QHashData_ITF {
 		QHashData_PTR():QHashData;
 	}
@@ -3176,6 +3355,17 @@ declare namespace core {
 		DestroyQHashData():void;
 	}
 	function NewQHashDataFromPointer(ptr:number):QHashData;
+	interface QHashIterator_ITF {
+		QHashIterator_PTR():QHashIterator;
+	}
+
+	class QHashIterator {
+		___pointer: number;
+		QHashIterator_PTR():QHashIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQHashIterator():void;
+	}
 	interface QHashNode_ITF {
 		QHashNode_PTR():QHashNode;
 	}
@@ -3451,12 +3641,6 @@ declare namespace core {
 	function NewQItemSelection():QItemSelection;
 	function NewQItemSelection2(topLeft:QModelIndex_ITF,bottomRight:QModelIndex_ITF):QItemSelection;
 	function QItemSelection_Split(ran:QItemSelectionRange_ITF,other:QItemSelectionRange_ITF,result:QItemSelection_ITF):void;
-	function NewQItemSelectionModel(model:QAbstractItemModel_ITF):QItemSelectionModel;
-	function NewQItemSelectionModel2(model:QAbstractItemModel_ITF,parent:QObject_ITF):QItemSelectionModel;
-	function NewQItemSelectionRange():QItemSelectionRange;
-	function NewQItemSelectionRange2(other:QItemSelectionRange_ITF):QItemSelectionRange;
-	function NewQItemSelectionRange4(topLeft:QModelIndex_ITF,bottomRight:QModelIndex_ITF):QItemSelectionRange;
-	function NewQItemSelectionRange5(index:QModelIndex_ITF):QItemSelectionRange;
 	interface QItemSelectionModel_ITF extends QObject_ITF {
 		QItemSelectionModel_PTR():QItemSelectionModel;
 	}
@@ -3801,6 +3985,17 @@ declare namespace core {
 		DestroyQJsonValueRefPtr():void;
 	}
 	function NewQJsonValueRefPtrFromPointer(ptr:number):QJsonValueRefPtr;
+	interface QKeyValueIterator_ITF {
+		QKeyValueIterator_PTR():QKeyValueIterator;
+	}
+
+	class QKeyValueIterator {
+		___pointer: number;
+		QKeyValueIterator_PTR():QKeyValueIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQKeyValueIterator():void;
+	}
 	interface QLEInteger_ITF {
 		QLEInteger_PTR():QLEInteger;
 	}
@@ -3881,6 +4076,10 @@ declare namespace core {
 		IsLoaded():boolean;
 		Load():boolean;
 		LoadHints():number;
+		Resolve(symbol:string):number;
+		Resolve2(fileName:string,symbol:string):number;
+		Resolve3(fileName:string,verNum:number,symbol:string):number;
+		Resolve4(fileName:string,version:string,symbol:string):number;
 		SetFileName(fileName:string):void;
 		SetFileNameAndVersion(fileName:string,versionNumber:number):void;
 		SetFileNameAndVersion2(fileName:string,version:string):void;
@@ -3897,6 +4096,9 @@ declare namespace core {
 	function NewQLibrary3(fileName:string,verNum:number,parent:QObject_ITF):QLibrary;
 	function NewQLibrary4(fileName:string,version:string,parent:QObject_ITF):QLibrary;
 	function QLibrary_IsLibrary(fileName:string):boolean;
+	function QLibrary_Resolve2(fileName:string,symbol:string):number;
+	function QLibrary_Resolve3(fileName:string,verNum:number,symbol:string):number;
+	function QLibrary_Resolve4(fileName:string,version:string,symbol:string):number;
 	const QLibrary__ResolveAllSymbolsHint: number;
 	const QLibrary__ExportExternalSymbolsHint: number;
 	const QLibrary__LoadArchiveMemberHint: number;
@@ -3968,10 +4170,6 @@ declare namespace core {
 	function NewQLine():QLine;
 	function NewQLine2(p1:QPoint_ITF,p2:QPoint_ITF):QLine;
 	function NewQLine3(x1:number,y1:number,x2:number,y2:number):QLine;
-	function NewQLineF():QLineF;
-	function NewQLineF2(p1:QPointF_ITF,p2:QPointF_ITF):QLineF;
-	function NewQLineF3(x1:number,y1:number,x2:number,y2:number):QLineF;
-	function NewQLineF4(line:QLine_ITF):QLineF;
 	interface QLineF_ITF {
 		QLineF_PTR():QLineF;
 	}
@@ -4021,6 +4219,27 @@ declare namespace core {
 	const QLineF__NoIntersection: number;
 	const QLineF__BoundedIntersection: number;
 	const QLineF__UnboundedIntersection: number;
+	interface QLinkedList_ITF {
+		QLinkedList_PTR():QLinkedList;
+	}
+
+	class QLinkedList {
+		___pointer: number;
+		QLinkedList_PTR():QLinkedList;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QLinkedListIterator_ITF {
+		QLinkedListIterator_PTR():QLinkedListIterator;
+	}
+
+	class QLinkedListIterator {
+		___pointer: number;
+		QLinkedListIterator_PTR():QLinkedListIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQLinkedListIterator():void;
+	}
 	interface QLinkedListNode_ITF {
 		QLinkedListNode_PTR():QLinkedListNode;
 	}
@@ -4045,6 +4264,17 @@ declare namespace core {
 		DestroyQListData():void;
 	}
 	function NewQListDataFromPointer(ptr:number):QListData;
+	interface QListIterator_ITF {
+		QListIterator_PTR():QListIterator;
+	}
+
+	class QListIterator {
+		___pointer: number;
+		QListIterator_PTR():QListIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQListIterator():void;
+	}
 	interface QListSpecialMethods_ITF {
 		QListSpecialMethods_PTR():QListSpecialMethods;
 	}
@@ -5073,6 +5303,16 @@ declare namespace core {
 	function NewQLoggingCategory2(category:string):QLoggingCategory;
 	function QLoggingCategory_DefaultCategory():QLoggingCategory;
 	function QLoggingCategory_SetFilterRules(rules:string):void;
+	interface QMap_ITF {
+		QMap_PTR():QMap;
+	}
+
+	class QMap {
+		___pointer: number;
+		QMap_PTR():QMap;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QMapData_ITF {
 		QMapData_PTR():QMapData;
 	}
@@ -5097,6 +5337,17 @@ declare namespace core {
 		DestroyQMapDataBase():void;
 	}
 	function NewQMapDataBaseFromPointer(ptr:number):QMapDataBase;
+	interface QMapIterator_ITF {
+		QMapIterator_PTR():QMapIterator;
+	}
+
+	class QMapIterator {
+		___pointer: number;
+		QMapIterator_PTR():QMapIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMapIterator():void;
+	}
 	interface QMapNode_ITF {
 		QMapNode_PTR():QMapNode;
 	}
@@ -5144,9 +5395,6 @@ declare namespace core {
 	function NewQMarginsFromPointer(ptr:number):QMargins;
 	function NewQMargins():QMargins;
 	function NewQMargins2(left:number,top:number,right:number,bottom:number):QMargins;
-	function NewQMarginsF():QMarginsF;
-	function NewQMarginsF2(left:number,top:number,right:number,bottom:number):QMarginsF;
-	function NewQMarginsF3(margins:QMargins_ITF):QMarginsF;
 	interface QMarginsF_ITF {
 		QMarginsF_PTR():QMarginsF;
 	}
@@ -5407,15 +5655,15 @@ declare namespace core {
 		Pointer():number;
 		SetPointer(p:number):void;
 		Compare(lhs:number,rhs:number,typeId:number,result:number):boolean;
-		Construct2(ty:number,where:number,copy:number):number;
-		Construct3(where:number,copy:number):number;
+		Construct2(ty:number,whe:number,copy:number):number;
+		Construct3(whe:number,copy:number):number;
 		Convert(from:number,fromTypeId:number,to:number,toTypeId:number):boolean;
 		Create(ty:number,copy:number):number;
 		Create2(copy:number):number;
 		DebugStream(dbg:QDebug_ITF,rhs:number,typeId:number):boolean;
 		Destroy(ty:number,data:number):void;
 		Destroy2(data:number):void;
-		Destruct(ty:number,where:number):void;
+		Destruct(ty:number,whe:number):void;
 		Destruct2(data:number):void;
 		Equals(lhs:number,rhs:number,typeId:number,result:number):boolean;
 		Flags():number;
@@ -5438,12 +5686,12 @@ declare namespace core {
 	function NewQMetaTypeFromPointer(ptr:number):QMetaType;
 	function NewQMetaType(typeId:number):QMetaType;
 	function QMetaType_Compare(lhs:number,rhs:number,typeId:number,result:number):boolean;
-	function QMetaType_Construct2(ty:number,where:number,copy:number):number;
+	function QMetaType_Construct2(ty:number,whe:number,copy:number):number;
 	function QMetaType_Convert(from:number,fromTypeId:number,to:number,toTypeId:number):boolean;
 	function QMetaType_Create(ty:number,copy:number):number;
 	function QMetaType_DebugStream(dbg:QDebug_ITF,rhs:number,typeId:number):boolean;
 	function QMetaType_Destroy(ty:number,data:number):void;
-	function QMetaType_Destruct(ty:number,where:number):void;
+	function QMetaType_Destruct(ty:number,whe:number):void;
 	function QMetaType_Equals(lhs:number,rhs:number,typeId:number,result:number):boolean;
 	function QMetaType_IsRegistered(ty:number):boolean;
 	function QMetaType_Load(stream:QDataStream_ITF,ty:number,data:number):boolean;
@@ -5595,7 +5843,6 @@ declare namespace core {
 	}
 	function NewQMimeDataFromPointer(ptr:number):QMimeData;
 	function NewQMimeData():QMimeData;
-	function NewQMimeDatabase2():QMimeDatabase;
 	interface QMimeDatabase_ITF {
 		QMimeDatabase_PTR():QMimeDatabase;
 	}
@@ -5677,6 +5924,94 @@ declare namespace core {
 	}
 	function NewQModelIndexFromPointer(ptr:number):QModelIndex;
 	function NewQModelIndex():QModelIndex;
+	interface QMultiHash_ITF extends QHash_ITF {
+		QMultiHash_PTR():QMultiHash;
+	}
+
+	class QMultiHash extends QHash {
+		___pointer: number;
+		QMultiHash_PTR():QMultiHash;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMultiHash():void;
+	}
+	interface QMultiMap_ITF extends QMap_ITF {
+		QMultiMap_PTR():QMultiMap;
+	}
+
+	class QMultiMap extends QMap {
+		___pointer: number;
+		QMultiMap_PTR():QMultiMap;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMultiMap():void;
+	}
+	interface QMutableHashIterator_ITF {
+		QMutableHashIterator_PTR():QMutableHashIterator;
+	}
+
+	class QMutableHashIterator {
+		___pointer: number;
+		QMutableHashIterator_PTR():QMutableHashIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableHashIterator():void;
+	}
+	interface QMutableLinkedListIterator_ITF {
+		QMutableLinkedListIterator_PTR():QMutableLinkedListIterator;
+	}
+
+	class QMutableLinkedListIterator {
+		___pointer: number;
+		QMutableLinkedListIterator_PTR():QMutableLinkedListIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableLinkedListIterator():void;
+	}
+	interface QMutableListIterator_ITF {
+		QMutableListIterator_PTR():QMutableListIterator;
+	}
+
+	class QMutableListIterator {
+		___pointer: number;
+		QMutableListIterator_PTR():QMutableListIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableListIterator():void;
+	}
+	interface QMutableMapIterator_ITF {
+		QMutableMapIterator_PTR():QMutableMapIterator;
+	}
+
+	class QMutableMapIterator {
+		___pointer: number;
+		QMutableMapIterator_PTR():QMutableMapIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableMapIterator():void;
+	}
+	interface QMutableSetIterator_ITF {
+		QMutableSetIterator_PTR():QMutableSetIterator;
+	}
+
+	class QMutableSetIterator {
+		___pointer: number;
+		QMutableSetIterator_PTR():QMutableSetIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableSetIterator():void;
+	}
+	interface QMutableVectorIterator_ITF {
+		QMutableVectorIterator_PTR():QMutableVectorIterator;
+	}
+
+	class QMutableVectorIterator {
+		___pointer: number;
+		QMutableVectorIterator_PTR():QMutableVectorIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMutableVectorIterator():void;
+	}
 	interface QMutex_ITF extends QBasicMutex_ITF {
 		QMutex_PTR():QMutex;
 	}
@@ -5694,7 +6029,6 @@ declare namespace core {
 	}
 	function NewQMutexFromPointer(ptr:number):QMutex;
 	function NewQMutex(mode:number):QMutex;
-	function NewQMutexLocker(mutex:QMutex_ITF):QMutexLocker;
 	const QMutex__NonRecursive: number;
 	const QMutex__Recursive: number;
 	interface QMutexLocker_ITF {
@@ -5821,7 +6155,6 @@ declare namespace core {
 	function QObject_Disconnect(sender:QObject_ITF,sign:string,receiver:QObject_ITF,method:string):boolean;
 	function QObject_Disconnect2(sender:QObject_ITF,sign:QMetaMethod_ITF,receiver:QObject_ITF,method:QMetaMethod_ITF):boolean;
 	function QObject_Tr(sourceText:string,disambiguation:string,n:number):string;
-	function NewQObjectCleanupHandler():QObjectCleanupHandler;
 	interface QObjectCleanupHandler_ITF extends QObject_ITF {
 		QObjectCleanupHandler_PTR():QObjectCleanupHandler;
 	}
@@ -5937,6 +6270,17 @@ declare namespace core {
 	const QOperatingSystemVersion__TvOS: number;
 	const QOperatingSystemVersion__WatchOS: number;
 	const QOperatingSystemVersion__Android: number;
+	interface QPair_ITF {
+		QPair_PTR():QPair;
+	}
+
+	class QPair {
+		___pointer: number;
+		QPair_PTR():QPair;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPair():void;
+	}
 	interface QParallelAnimationGroup_ITF extends QAnimationGroup_ITF {
 		QParallelAnimationGroup_PTR():QParallelAnimationGroup;
 	}
@@ -6064,9 +6408,6 @@ declare namespace core {
 	function NewQPoint():QPoint;
 	function NewQPoint2(xpos:number,ypos:number):QPoint;
 	function QPoint_DotProduct(p1:QPoint_ITF,p2:QPoint_ITF):number;
-	function NewQPointF():QPointF;
-	function NewQPointF2(point:QPoint_ITF):QPointF;
-	function NewQPointF3(xpos:number,ypos:number):QPointF;
 	interface QPointF_ITF {
 		QPointF_PTR():QPointF;
 	}
@@ -6093,6 +6434,16 @@ declare namespace core {
 	function NewQPointF2(point:QPoint_ITF):QPointF;
 	function NewQPointF3(xpos:number,ypos:number):QPointF;
 	function QPointF_DotProduct(p1:QPointF_ITF,p2:QPointF_ITF):number;
+	interface QPointer_ITF {
+		QPointer_PTR():QPointer;
+	}
+
+	class QPointer {
+		___pointer: number;
+		QPointer_PTR():QPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QProcess_ITF extends QIODevice_ITF {
 		QProcess_PTR():QProcess;
 	}
@@ -6191,8 +6542,6 @@ declare namespace core {
 	function QProcess_StartDetached2(program:string,arguments:string[],workingDirectory:string,pid:number):boolean;
 	function QProcess_StartDetached3(command:string):boolean;
 	function QProcess_SystemEnvironment():string[];
-	function NewQProcessEnvironment():QProcessEnvironment;
-	function NewQProcessEnvironment2(other:QProcessEnvironment_ITF):QProcessEnvironment;
 	const QProcess__FailedToStart: number;
 	const QProcess__Crashed: number;
 	const QProcess__Timedout: number;
@@ -6260,6 +6609,17 @@ declare namespace core {
 	function NewQPropertyAnimationFromPointer(ptr:number):QPropertyAnimation;
 	function NewQPropertyAnimation(parent:QObject_ITF):QPropertyAnimation;
 	function NewQPropertyAnimation2(target:QObject_ITF,propertyName:QByteArray_ITF,parent:QObject_ITF):QPropertyAnimation;
+	interface QQueue_ITF {
+		QQueue_PTR():QQueue;
+	}
+
+	class QQueue {
+		___pointer: number;
+		QQueue_PTR():QQueue;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQueue():void;
+	}
 	interface QRandomGenerator_ITF {
 		QRandomGenerator_PTR():QRandomGenerator;
 	}
@@ -6420,11 +6780,6 @@ declare namespace core {
 	function NewQRect2(topLeft:QPoint_ITF,bottomRight:QPoint_ITF):QRect;
 	function NewQRect3(topLeft:QPoint_ITF,size:QSize_ITF):QRect;
 	function NewQRect4(x:number,y:number,width:number,height:number):QRect;
-	function NewQRectF():QRectF;
-	function NewQRectF2(topLeft:QPointF_ITF,size:QSizeF_ITF):QRectF;
-	function NewQRectF3(topLeft:QPointF_ITF,bottomRight:QPointF_ITF):QRectF;
-	function NewQRectF4(x:number,y:number,width:number,height:number):QRectF;
-	function NewQRectF5(rectangle:QRect_ITF):QRectF;
 	interface QRectF_ITF {
 		QRectF_PTR():QRectF;
 	}
@@ -6587,8 +6942,6 @@ declare namespace core {
 	function QRegularExpression_AnchoredPattern(expression:string):string;
 	function QRegularExpression_Escape(str:string):string;
 	function QRegularExpression_WildcardToRegularExpression(pattern:string):string;
-	function NewQRegularExpressionMatch():QRegularExpressionMatch;
-	function NewQRegularExpressionMatch2(match:QRegularExpressionMatch_ITF):QRegularExpressionMatch;
 	const QRegularExpression__NoPatternOption: number;
 	const QRegularExpression__CaseInsensitiveOption: number;
 	const QRegularExpression__DotMatchesEverythingOption: number;
@@ -6646,6 +6999,16 @@ declare namespace core {
 	function NewQRegularExpressionMatchFromPointer(ptr:number):QRegularExpressionMatch;
 	function NewQRegularExpressionMatch():QRegularExpressionMatch;
 	function NewQRegularExpressionMatch2(match:QRegularExpressionMatch_ITF):QRegularExpressionMatch;
+	interface QRegularExpressionMatchIterator_ITF {
+		QRegularExpressionMatchIterator_PTR():QRegularExpressionMatchIterator;
+	}
+
+	class QRegularExpressionMatchIterator {
+		___pointer: number;
+		QRegularExpressionMatchIterator_PTR():QRegularExpressionMatchIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QResource_ITF {
 		QResource_PTR():QResource;
 	}
@@ -6740,6 +7103,38 @@ declare namespace core {
 	function NewQSaveFile(name:string):QSaveFile;
 	function NewQSaveFile2(parent:QObject_ITF):QSaveFile;
 	function NewQSaveFile3(name:string,parent:QObject_ITF):QSaveFile;
+	interface QScopeGuard_ITF {
+		QScopeGuard_PTR():QScopeGuard;
+	}
+
+	class QScopeGuard {
+		___pointer: number;
+		QScopeGuard_PTR():QScopeGuard;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQScopeGuard():void;
+	}
+	interface QScopedArrayPointer_ITF extends QScopedPointer_ITF {
+		QScopedArrayPointer_PTR():QScopedArrayPointer;
+	}
+
+	class QScopedArrayPointer extends QScopedPointer {
+		___pointer: number;
+		QScopedArrayPointer_PTR():QScopedArrayPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQScopedArrayPointer():void;
+	}
+	interface QScopedPointer_ITF {
+		QScopedPointer_PTR():QScopedPointer;
+	}
+
+	class QScopedPointer {
+		___pointer: number;
+		QScopedPointer_PTR():QScopedPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QScopedPointerArrayDeleter_ITF {
 		QScopedPointerArrayDeleter_PTR():QScopedPointerArrayDeleter;
 	}
@@ -6788,6 +7183,16 @@ declare namespace core {
 		DestroyQScopedPointerPodDeleter():void;
 	}
 	function NewQScopedPointerPodDeleterFromPointer(ptr:number):QScopedPointerPodDeleter;
+	interface QScopedValueRollback_ITF {
+		QScopedValueRollback_PTR():QScopedValueRollback;
+	}
+
+	class QScopedValueRollback {
+		___pointer: number;
+		QScopedValueRollback_PTR():QScopedValueRollback;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSemaphore_ITF {
 		QSemaphore_PTR():QSemaphore;
 	}
@@ -6806,9 +7211,6 @@ declare namespace core {
 	}
 	function NewQSemaphoreFromPointer(ptr:number):QSemaphore;
 	function NewQSemaphore(n:number):QSemaphore;
-	function NewQSemaphoreReleaser():QSemaphoreReleaser;
-	function NewQSemaphoreReleaser2(sem:QSemaphore_ITF,n:number):QSemaphoreReleaser;
-	function NewQSemaphoreReleaser3(sem:QSemaphore_ITF,n:number):QSemaphoreReleaser;
 	interface QSemaphoreReleaser_ITF {
 		QSemaphoreReleaser_PTR():QSemaphoreReleaser;
 	}
@@ -6872,6 +7274,28 @@ declare namespace core {
 		Size():number;
 	}
 	function NewQSequentialIterableFromPointer(ptr:number):QSequentialIterable;
+	interface QSet_ITF {
+		QSet_PTR():QSet;
+	}
+
+	class QSet {
+		___pointer: number;
+		QSet_PTR():QSet;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSet():void;
+	}
+	interface QSetIterator_ITF {
+		QSetIterator_PTR():QSetIterator;
+	}
+
+	class QSetIterator {
+		___pointer: number;
+		QSetIterator_PTR():QSetIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSetIterator():void;
+	}
 	interface QSettings_ITF extends QObject_ITF {
 		QSettings_PTR():QSettings;
 	}
@@ -6969,6 +7393,16 @@ declare namespace core {
 	function NewQSharedDataFromPointer(ptr:number):QSharedData;
 	function NewQSharedData():QSharedData;
 	function NewQSharedData2(vqs:QSharedData_ITF):QSharedData;
+	interface QSharedDataPointer_ITF {
+		QSharedDataPointer_PTR():QSharedDataPointer;
+	}
+
+	class QSharedDataPointer {
+		___pointer: number;
+		QSharedDataPointer_PTR():QSharedDataPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSharedMemory_ITF extends QObject_ITF {
 		QSharedMemory_PTR():QSharedMemory;
 	}
@@ -7013,6 +7447,16 @@ declare namespace core {
 	const QSharedMemory__LockError: number;
 	const QSharedMemory__OutOfResources: number;
 	const QSharedMemory__UnknownError: number;
+	interface QSharedPointer_ITF {
+		QSharedPointer_PTR():QSharedPointer;
+	}
+
+	class QSharedPointer {
+		___pointer: number;
+		QSharedPointer_PTR():QSharedPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSignalBlocker_ITF {
 		QSignalBlocker_PTR():QSignalBlocker;
 	}
@@ -7029,6 +7473,16 @@ declare namespace core {
 	function NewQSignalBlockerFromPointer(ptr:number):QSignalBlocker;
 	function NewQSignalBlocker(object:QObject_ITF):QSignalBlocker;
 	function NewQSignalBlocker2(object:QObject_ITF):QSignalBlocker;
+	interface QSignalMapper_ITF extends QObject_ITF {
+		QSignalMapper_PTR():QSignalMapper;
+	}
+
+	class QSignalMapper extends QObject {
+		___pointer: number;
+		QSignalMapper_PTR():QSignalMapper;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSignalTransition_ITF extends QAbstractTransition_ITF {
 		QSignalTransition_PTR():QSignalTransition;
 	}
@@ -7093,9 +7547,6 @@ declare namespace core {
 	function NewQSizeFromPointer(ptr:number):QSize;
 	function NewQSize():QSize;
 	function NewQSize2(width:number,height:number):QSize;
-	function NewQSizeF():QSizeF;
-	function NewQSizeF2(size:QSize_ITF):QSizeF;
-	function NewQSizeF3(width:number,height:number):QSizeF;
 	interface QSizeF_ITF {
 		QSizeF_PTR():QSizeF;
 	}
@@ -7268,6 +7719,17 @@ declare namespace core {
 		DestroyQSpecialInteger():void;
 	}
 	function NewQSpecialIntegerFromPointer(ptr:number):QSpecialInteger;
+	interface QStack_ITF extends QVector_ITF {
+		QStack_PTR():QStack;
+	}
+
+	class QStack extends QVector {
+		___pointer: number;
+		QStack_PTR():QStack;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQStack():void;
+	}
 	interface QStandardPaths_ITF {
 		QStandardPaths_PTR():QStandardPaths;
 	}
@@ -7363,8 +7825,6 @@ declare namespace core {
 	function NewQStateFromPointer(ptr:number):QState;
 	function NewQState(parent:QState_ITF):QState;
 	function NewQState2(childMode:number,parent:QState_ITF):QState;
-	function NewQStateMachine(parent:QObject_ITF):QStateMachine;
-	function NewQStateMachine2(childMode:number,parent:QObject_ITF):QStateMachine;
 	const QState__ExclusiveStates: number;
 	const QState__ParallelStates: number;
 	const QState__DontRestoreProperties: number;
@@ -7439,6 +7899,17 @@ declare namespace core {
 		DestroyQStaticByteArrayData():void;
 	}
 	function NewQStaticByteArrayDataFromPointer(ptr:number):QStaticByteArrayData;
+	interface QStaticByteArrayMatcher_ITF {
+		QStaticByteArrayMatcher_PTR():QStaticByteArrayMatcher;
+	}
+
+	class QStaticByteArrayMatcher {
+		___pointer: number;
+		QStaticByteArrayMatcher_PTR():QStaticByteArrayMatcher;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQStaticByteArrayMatcher():void;
+	}
 	interface QStaticPlugin_ITF {
 		QStaticPlugin_PTR():QStaticPlugin;
 	}
@@ -7503,6 +7974,16 @@ declare namespace core {
 	function NewQStorageInfo4(other:QStorageInfo_ITF):QStorageInfo;
 	function QStorageInfo_MountedVolumes():QStorageInfo[];
 	function QStorageInfo_Root():QStorageInfo;
+	interface QString_ITF {
+		QString_PTR():QString;
+	}
+
+	class QString {
+		___pointer: number;
+		QString_PTR():QString;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QString__SectionDefault: number;
 	const QString__SectionSkipEmpty: number;
 	const QString__SectionIncludeLeadingSep: number;
@@ -7526,6 +8007,17 @@ declare namespace core {
 		DestroyQStringBuilderCommon():void;
 	}
 	function NewQStringBuilderCommonFromPointer(ptr:number):QStringBuilderCommon;
+	interface QStringList_ITF {
+		QStringList_PTR():QStringList;
+	}
+
+	class QStringList {
+		___pointer: number;
+		QStringList_PTR():QStringList;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQStringList():void;
+	}
 	interface QStringListModel_ITF extends QAbstractListModel_ITF {
 		QStringListModel_PTR():QStringListModel;
 	}
@@ -8103,7 +8595,6 @@ declare namespace core {
 	function QThread_Sleep(secs:number):void;
 	function QThread_Usleep(usecs:number):void;
 	function QThread_YieldCurrentThread():void;
-	function NewQThreadPool(parent:QObject_ITF):QThreadPool;
 	const QThread__IdlePriority: number;
 	const QThread__LowestPriority: number;
 	const QThread__LowPriority: number;
@@ -8144,6 +8635,16 @@ declare namespace core {
 	function NewQThreadPoolFromPointer(ptr:number):QThreadPool;
 	function NewQThreadPool(parent:QObject_ITF):QThreadPool;
 	function QThreadPool_GlobalInstance():QThreadPool;
+	interface QThreadStorage_ITF {
+		QThreadStorage_PTR():QThreadStorage;
+	}
+
+	class QThreadStorage {
+		___pointer: number;
+		QThreadStorage_PTR():QThreadStorage;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QThreadStorageData_ITF {
 		QThreadStorageData_PTR():QThreadStorageData;
 	}
@@ -8198,14 +8699,6 @@ declare namespace core {
 	function QTime_FromString(stri:string,format:number):QTime;
 	function QTime_FromString2(stri:string,format:string):QTime;
 	function QTime_IsValid2(h:number,m:number,s:number,ms:number):boolean;
-	function NewQTimeLine(duration:number,parent:QObject_ITF):QTimeLine;
-	function NewQTimeZone():QTimeZone;
-	function NewQTimeZone2(ianaId:QByteArray_ITF):QTimeZone;
-	function NewQTimeZone3(offsetSeconds:number):QTimeZone;
-	function NewQTimeZone4(ianaId:QByteArray_ITF,offsetSeconds:number,name:string,abbreviation:string,country:number,comment:string):QTimeZone;
-	function NewQTimeZone5(other:QTimeZone_ITF):QTimeZone;
-	function NewQTimer(parent:QObject_ITF):QTimer;
-	function NewQTimerEvent(timerId:number):QTimerEvent;
 	interface QTimeLine_ITF extends QObject_ITF {
 		QTimeLine_PTR():QTimeLine;
 	}
@@ -8396,7 +8889,6 @@ declare namespace core {
 	function NewQTimer(parent:QObject_ITF):QTimer;
 	function QTimer_SingleShot(msec:number,receiver:QObject_ITF,member:string):void;
 	function QTimer_SingleShot2(msec:number,timerType:number,receiver:QObject_ITF,member:string):void;
-	function NewQTimerEvent(timerId:number):QTimerEvent;
 	interface QTimerEvent_ITF extends QEvent_ITF {
 		QTimerEvent_PTR():QTimerEvent;
 	}
@@ -8584,10 +9076,6 @@ declare namespace core {
 	function QUrl_ToAce(domai:string):QByteArray;
 	function QUrl_ToPercentEncoding(input:string,exclude:QByteArray_ITF,include:QByteArray_ITF):QByteArray;
 	function QUrl_ToStringList(urls:QUrl[],options:number):string[];
-	function NewQUrlQuery():QUrlQuery;
-	function NewQUrlQuery2(url:QUrl_ITF):QUrlQuery;
-	function NewQUrlQuery3(queryString:string):QUrlQuery;
-	function NewQUrlQuery5(other:QUrlQuery_ITF):QUrlQuery;
 	const QUrl__TolerantMode: number;
 	const QUrl__StrictMode: number;
 	const QUrl__DecodedMode: number;
@@ -8716,6 +9204,16 @@ declare namespace core {
 	const QUuid__WithBraces: number;
 	const QUuid__WithoutBraces: number;
 	const QUuid__Id128: number;
+	interface QVarLengthArray_ITF {
+		QVarLengthArray_PTR():QVarLengthArray;
+	}
+
+	class QVarLengthArray {
+		___pointer: number;
+		QVarLengthArray_PTR():QVarLengthArray;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QVariant_ITF {
 		QVariant_PTR():QVariant;
 	}
@@ -8786,7 +9284,6 @@ declare namespace core {
 		ToBrush():number;
 	}
 	function NewQVariantFromPointer(ptr:number):QVariant;
-	function NewQVariant1(i:any):QVariant;
 	function NewQVariant():QVariant;
 	function NewQVariant2(ty:number):QVariant;
 	function NewQVariant3(typeId:number,copy:number):QVariant;
@@ -8834,7 +9331,6 @@ declare namespace core {
 	function NewQVariant45(other:QVariant_ITF):QVariant;
 	function QVariant_NameToType(name:string):number;
 	function QVariant_TypeToName(typeId:number):string;
-	function NewQVariantAnimation(parent:QObject_ITF):QVariantAnimation;
 	const QVariant__Invalid: number;
 	const QVariant__Bool: number;
 	const QVariant__Int: number;
@@ -8940,6 +9436,27 @@ declare namespace core {
 	}
 	function NewQVariantAnimationFromPointer(ptr:number):QVariantAnimation;
 	function NewQVariantAnimation(parent:QObject_ITF):QVariantAnimation;
+	interface QVector_ITF {
+		QVector_PTR():QVector;
+	}
+
+	class QVector {
+		___pointer: number;
+		QVector_PTR():QVector;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QVectorIterator_ITF {
+		QVectorIterator_PTR():QVectorIterator;
+	}
+
+	class QVectorIterator {
+		___pointer: number;
+		QVectorIterator_PTR():QVectorIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVectorIterator():void;
+	}
 	interface QVersionNumber_ITF {
 		QVersionNumber_PTR():QVersionNumber;
 	}
@@ -8998,6 +9515,26 @@ declare namespace core {
 	}
 	function NewQWaitConditionFromPointer(ptr:number):QWaitCondition;
 	function NewQWaitCondition():QWaitCondition;
+	interface QWeakPointer_ITF {
+		QWeakPointer_PTR():QWeakPointer;
+	}
+
+	class QWeakPointer {
+		___pointer: number;
+		QWeakPointer_PTR():QWeakPointer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QWinEventNotifier_ITF extends QObject_ITF {
+		QWinEventNotifier_PTR():QWinEventNotifier;
+	}
+
+	class QWinEventNotifier extends QObject {
+		___pointer: number;
+		QWinEventNotifier_PTR():QWinEventNotifier;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QWriteLocker_ITF {
 		QWriteLocker_PTR():QWriteLocker;
 	}
@@ -9036,7 +9573,6 @@ declare namespace core {
 	function NewQXmlStreamAttribute2(qualifiedName:string,value:string):QXmlStreamAttribute;
 	function NewQXmlStreamAttribute3(namespaceUri:string,name:string,value:string):QXmlStreamAttribute;
 	function NewQXmlStreamAttribute4(other:QXmlStreamAttribute_ITF):QXmlStreamAttribute;
-	function NewQXmlStreamAttributes():QXmlStreamAttributes;
 	interface QXmlStreamAttributes_ITF extends QVector_ITF {
 		QXmlStreamAttributes_PTR():QXmlStreamAttributes;
 	}
@@ -10497,4 +11033,15 @@ declare namespace core {
 	function QtGlobal_qgetenv(varName:string):QByteArray;
 	function QtGlobal_qputenv(varName:string,value:QByteArray_ITF):boolean;
 	function QtGlobal_qunsetenv(varName:string):boolean;
+	interface qfloat16_ITF {
+		qfloat16_PTR():qfloat16;
+	}
+
+	class qfloat16 {
+		___pointer: number;
+		qfloat16_PTR():qfloat16;
+		Pointer():number;
+		SetPointer(p:number):void;
+		Destroyqfloat16():void;
+	}
 }

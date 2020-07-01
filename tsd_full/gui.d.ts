@@ -1,5 +1,15 @@
 /// <reference path="core.d.ts" />
 declare namespace gui {
+	interface QAbstractOpenGLFunctions_ITF {
+		QAbstractOpenGLFunctions_PTR():QAbstractOpenGLFunctions;
+	}
+
+	class QAbstractOpenGLFunctions {
+		___pointer: number;
+		QAbstractOpenGLFunctions_PTR():QAbstractOpenGLFunctions;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QAbstractTextDocumentLayout_ITF extends core.QObject_ITF {
 		QAbstractTextDocumentLayout_PTR():QAbstractTextDocumentLayout;
 	}
@@ -104,23 +114,6 @@ declare namespace gui {
 	function QAccessible_QueryAccessibleInterface(object:core.QObject_ITF):QAccessibleInterface;
 	function QAccessible_SetRootObject(object:core.QObject_ITF):void;
 	function QAccessible_UpdateAccessibility2(event:QAccessibleEvent_ITF):void;
-	function NewQAccessibleEvent2(object:core.QObject_ITF,ty:number):QAccessibleEvent;
-	function NewQAccessibleEvent3(interfa:QAccessibleInterface_ITF,ty:number):QAccessibleEvent;
-	function NewQAccessiblePlugin(parent:core.QObject_ITF):QAccessiblePlugin;
-	function NewQAccessibleTableModelChangeEvent(object:core.QObject_ITF,changeType:number):QAccessibleTableModelChangeEvent;
-	function NewQAccessibleTableModelChangeEvent2(iface:QAccessibleInterface_ITF,changeType:number):QAccessibleTableModelChangeEvent;
-	function NewQAccessibleTextCursorEvent(object:core.QObject_ITF,cursorPos:number):QAccessibleTextCursorEvent;
-	function NewQAccessibleTextCursorEvent2(iface:QAccessibleInterface_ITF,cursorPos:number):QAccessibleTextCursorEvent;
-	function NewQAccessibleTextInsertEvent(object:core.QObject_ITF,position:number,text:string):QAccessibleTextInsertEvent;
-	function NewQAccessibleTextInsertEvent2(iface:QAccessibleInterface_ITF,position:number,text:string):QAccessibleTextInsertEvent;
-	function NewQAccessibleTextRemoveEvent(object:core.QObject_ITF,position:number,text:string):QAccessibleTextRemoveEvent;
-	function NewQAccessibleTextRemoveEvent2(iface:QAccessibleInterface_ITF,position:number,text:string):QAccessibleTextRemoveEvent;
-	function NewQAccessibleTextSelectionEvent(object:core.QObject_ITF,start:number,end:number):QAccessibleTextSelectionEvent;
-	function NewQAccessibleTextSelectionEvent2(iface:QAccessibleInterface_ITF,start:number,end:number):QAccessibleTextSelectionEvent;
-	function NewQAccessibleTextUpdateEvent(object:core.QObject_ITF,position:number,oldText:string,text:string):QAccessibleTextUpdateEvent;
-	function NewQAccessibleTextUpdateEvent2(iface:QAccessibleInterface_ITF,position:number,oldText:string,text:string):QAccessibleTextUpdateEvent;
-	function NewQAccessibleValueChangeEvent(object:core.QObject_ITF,value:core.QVariant_ITF):QAccessibleValueChangeEvent;
-	function NewQAccessibleValueChangeEvent2(iface:QAccessibleInterface_ITF,val:core.QVariant_ITF):QAccessibleValueChangeEvent;
 	const QAccessible__SoundPlayed: number;
 	const QAccessible__Alert: number;
 	const QAccessible__ForegroundChanged: number;
@@ -1416,9 +1409,6 @@ declare namespace gui {
 	function NewQDragFromPointer(ptr:number):QDrag;
 	function NewQDrag(dragSource:core.QObject_ITF):QDrag;
 	function QDrag_Cancel():void;
-	function NewQDragEnterEvent(point:core.QPoint_ITF,actions:number,data:core.QMimeData_ITF,buttons:number,modifiers:number):QDragEnterEvent;
-	function NewQDragLeaveEvent():QDragLeaveEvent;
-	function NewQDragMoveEvent(pos:core.QPoint_ITF,actions:number,data:core.QMimeData_ITF,buttons:number,modifiers:number,ty:number):QDragMoveEvent;
 	interface QDragEnterEvent_ITF extends QDragMoveEvent_ITF {
 		QDragEnterEvent_PTR():QDragEnterEvent;
 	}
@@ -1524,6 +1514,17 @@ declare namespace gui {
 	}
 	function NewQExposeEventFromPointer(ptr:number):QExposeEvent;
 	function NewQExposeEvent(exposeRegion:QRegion_ITF):QExposeEvent;
+	interface QFileDialogOptions_ITF {
+		QFileDialogOptions_PTR():QFileDialogOptions;
+	}
+
+	class QFileDialogOptions {
+		___pointer: number;
+		QFileDialogOptions_PTR():QFileDialogOptions;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQFileDialogOptions():void;
+	}
 	interface QFileOpenEvent_ITF extends core.QEvent_ITF {
 		QFileOpenEvent_PTR():QFileOpenEvent;
 	}
@@ -1637,16 +1638,6 @@ declare namespace gui {
 	function QFont_Substitute(familyName:string):string;
 	function QFont_Substitutes(familyName:string):string[];
 	function QFont_Substitutions():string[];
-	function NewQFontDatabase():QFontDatabase;
-	function NewQFontInfo(font:QFont_ITF):QFontInfo;
-	function NewQFontInfo2(fi:QFontInfo_ITF):QFontInfo;
-	function NewQFontMetrics(font:QFont_ITF):QFontMetrics;
-	function NewQFontMetrics3(font:QFont_ITF,paintdevice:QPaintDevice_ITF):QFontMetrics;
-	function NewQFontMetrics4(fm:QFontMetrics_ITF):QFontMetrics;
-	function NewQFontMetricsF(font:QFont_ITF):QFontMetricsF;
-	function NewQFontMetricsF3(font:QFont_ITF,paintdevice:QPaintDevice_ITF):QFontMetricsF;
-	function NewQFontMetricsF4(fontMetrics:QFontMetrics_ITF):QFontMetricsF;
-	function NewQFontMetricsF5(fm:QFontMetricsF_ITF):QFontMetricsF;
 	const QFont__Helvetica: number;
 	const QFont__SansSerif: number;
 	const QFont__Times: number;
@@ -1872,10 +1863,6 @@ declare namespace gui {
 	function NewQFontMetrics(font:QFont_ITF):QFontMetrics;
 	function NewQFontMetrics3(font:QFont_ITF,paintdevice:QPaintDevice_ITF):QFontMetrics;
 	function NewQFontMetrics4(fm:QFontMetrics_ITF):QFontMetrics;
-	function NewQFontMetricsF(font:QFont_ITF):QFontMetricsF;
-	function NewQFontMetricsF3(font:QFont_ITF,paintdevice:QPaintDevice_ITF):QFontMetricsF;
-	function NewQFontMetricsF4(fontMetrics:QFontMetrics_ITF):QFontMetricsF;
-	function NewQFontMetricsF5(fm:QFontMetricsF_ITF):QFontMetricsF;
 	interface QFontMetricsF_ITF {
 		QFontMetricsF_PTR():QFontMetricsF;
 	}
@@ -1920,6 +1907,17 @@ declare namespace gui {
 	function NewQFontMetricsF3(font:QFont_ITF,paintdevice:QPaintDevice_ITF):QFontMetricsF;
 	function NewQFontMetricsF4(fontMetrics:QFontMetrics_ITF):QFontMetricsF;
 	function NewQFontMetricsF5(fm:QFontMetricsF_ITF):QFontMetricsF;
+	interface QGenericMatrix_ITF {
+		QGenericMatrix_PTR():QGenericMatrix;
+	}
+
+	class QGenericMatrix {
+		___pointer: number;
+		QGenericMatrix_PTR():QGenericMatrix;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQGenericMatrix():void;
+	}
 	interface QGenericPlugin_ITF extends core.QObject_ITF {
 		QGenericPlugin_PTR():QGenericPlugin;
 	}
@@ -2267,6 +2265,7 @@ declare namespace gui {
 		ConnectPaletteChanged(f:(palette:QPalette)=>void):void;
 		DisconnectPaletteChanged():void;
 		PaletteChanged(palette:QPalette_ITF):void;
+		PlatformFunction(func:core.QByteArray_ITF):number;
 		PlatformName():string;
 		PrimaryScreen():QScreen;
 		ConnectPrimaryScreenChanged(f:(screen:QScreen)=>void):void;
@@ -2338,6 +2337,7 @@ declare namespace gui {
 	function QGuiApplication_MouseButtons():number;
 	function QGuiApplication_OverrideCursor():QCursor;
 	function QGuiApplication_Palette():QPalette;
+	function QGuiApplication_PlatformFunction(func:core.QByteArray_ITF):number;
 	function QGuiApplication_PlatformName():string;
 	function QGuiApplication_PrimaryScreen():QScreen;
 	function QGuiApplication_QueryKeyboardModifiers():number;
@@ -2466,9 +2466,6 @@ declare namespace gui {
 	function QIcon_SetThemeSearchPaths(paths:string[]):void;
 	function QIcon_ThemeName():string;
 	function QIcon_ThemeSearchPaths():string[];
-	function NewQIconDragEvent():QIconDragEvent;
-	function NewQIconEngine():QIconEngine;
-	function NewQIconEnginePlugin(parent:core.QObject_ITF):QIconEnginePlugin;
 	const QIcon__Normal: number;
 	const QIcon__Disabled: number;
 	const QIcon__Active: number;
@@ -2552,7 +2549,6 @@ declare namespace gui {
 	}
 	function NewQIconEngineFromPointer(ptr:number):QIconEngine;
 	function NewQIconEngine():QIconEngine;
-	function NewQIconEnginePlugin(parent:core.QObject_ITF):QIconEnginePlugin;
 	const QIconEngine__AvailableSizesHook: number;
 	const QIconEngine__IconNameHook: number;
 	const QIconEngine__IsNullHook: number;
@@ -2702,14 +2698,6 @@ declare namespace gui {
 	function QImage_ToPixelFormat(format:number):QPixelFormat;
 	function QImage_TrueMatrix(matrix:QMatrix_ITF,width:number,height:number):QMatrix;
 	function QImage_TrueMatrix2(matrix:QTransform_ITF,width:number,height:number):QTransform;
-	function NewQImageIOHandler():QImageIOHandler;
-	function NewQImageIOPlugin(parent:core.QObject_ITF):QImageIOPlugin;
-	function NewQImageReader():QImageReader;
-	function NewQImageReader2(device:core.QIODevice_ITF,format:core.QByteArray_ITF):QImageReader;
-	function NewQImageReader3(fileName:string,format:core.QByteArray_ITF):QImageReader;
-	function NewQImageWriter():QImageWriter;
-	function NewQImageWriter2(device:core.QIODevice_ITF,format:core.QByteArray_ITF):QImageWriter;
-	function NewQImageWriter3(fileName:string,format:core.QByteArray_ITF):QImageWriter;
 	const QImage__InvertRgb: number;
 	const QImage__InvertRgba: number;
 	const QImage__Format_Invalid: number;
@@ -3110,9 +3098,6 @@ declare namespace gui {
 	}
 	function NewQInputMethodFromPointer(ptr:number):QInputMethod;
 	function QInputMethod_QueryFocusObject(query:number,argument:core.QVariant_ITF):core.QVariant;
-	function NewQInputMethodEvent():QInputMethodEvent;
-	function NewQInputMethodEvent3(other:QInputMethodEvent_ITF):QInputMethodEvent;
-	function NewQInputMethodQueryEvent(queries:number):QInputMethodQueryEvent;
 	const QInputMethod__Click: number;
 	const QInputMethod__ContextMenu: number;
 	interface QInputMethodEvent_ITF extends core.QEvent_ITF {
@@ -3385,10 +3370,6 @@ declare namespace gui {
 	function NewQMatrix2():QMatrix;
 	function NewQMatrix3(m11:number,m12:number,m21:number,m22:number,dx:number,dy:number):QMatrix;
 	function NewQMatrix5(matrix:QMatrix_ITF):QMatrix;
-	function NewQMatrix4x4():QMatrix4x4;
-	function NewQMatrix4x43(values:number):QMatrix4x4;
-	function NewQMatrix4x44(m11:number,m12:number,m13:number,m14:number,m21:number,m22:number,m23:number,m24:number,m31:number,m32:number,m33:number,m34:number,m41:number,m42:number,m43:number,m44:number):QMatrix4x4;
-	function NewQMatrix4x46(matrix:QMatrix_ITF):QMatrix4x4;
 	interface QMatrix4x4_ITF {
 		QMatrix4x4_PTR():QMatrix4x4;
 	}
@@ -3449,6 +3430,17 @@ declare namespace gui {
 	function NewQMatrix4x43(values:number):QMatrix4x4;
 	function NewQMatrix4x44(m11:number,m12:number,m13:number,m14:number,m21:number,m22:number,m23:number,m24:number,m31:number,m32:number,m33:number,m34:number,m41:number,m42:number,m43:number,m44:number):QMatrix4x4;
 	function NewQMatrix4x46(matrix:QMatrix_ITF):QMatrix4x4;
+	interface QMessageDialogOptions_ITF {
+		QMessageDialogOptions_PTR():QMessageDialogOptions;
+	}
+
+	class QMessageDialogOptions {
+		___pointer: number;
+		QMessageDialogOptions_PTR():QMessageDialogOptions;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQMessageDialogOptions():void;
+	}
 	interface QMouseEvent_ITF extends QInputEvent_ITF {
 		QMouseEvent_PTR():QMouseEvent;
 	}
@@ -3751,8 +3743,10 @@ declare namespace gui {
 		ExtraFunctions():QOpenGLExtraFunctions;
 		Format():QSurfaceFormat;
 		Functions():QOpenGLFunctions;
+		GetProcAddress(procName:core.QByteArray_ITF):number;
+		GetProcAddress2(procName:string):number;
 		GlobalShareContext():QOpenGLContext;
-		HasExtension(extension:core.QByteArray_ITF):boolean;
+		HasExtension(extensi:core.QByteArray_ITF):boolean;
 		IsOpenGLES():boolean;
 		IsValid():boolean;
 		MakeCurrent(surface:QSurface_ITF):boolean;
@@ -4173,8 +4167,6 @@ declare namespace gui {
 	function QOpenGLFramebufferObject_BlitFramebuffer4(target:QOpenGLFramebufferObject_ITF,source:QOpenGLFramebufferObject_ITF,buffers:number,filter:number):void;
 	function QOpenGLFramebufferObject_HasOpenGLFramebufferBlit():boolean;
 	function QOpenGLFramebufferObject_HasOpenGLFramebufferObjects():boolean;
-	function NewQOpenGLFramebufferObjectFormat():QOpenGLFramebufferObjectFormat;
-	function NewQOpenGLFramebufferObjectFormat2(other:QOpenGLFramebufferObjectFormat_ITF):QOpenGLFramebufferObjectFormat;
 	const QOpenGLFramebufferObject__NoAttachment: number;
 	const QOpenGLFramebufferObject__CombinedDepthStencil: number;
 	const QOpenGLFramebufferObject__Depth: number;
@@ -4379,6 +4371,600 @@ declare namespace gui {
 	const QOpenGLFunctions__TextureRGFormats: number;
 	const QOpenGLFunctions__MultipleRenderTargets: number;
 	const QOpenGLFunctions__BlendEquationAdvanced: number;
+	interface QOpenGLFunctions_1_0_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_0_PTR():QOpenGLFunctions_1_0;
+	}
+
+	class QOpenGLFunctions_1_0 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_0_PTR():QOpenGLFunctions_1_0;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_0():void;
+	}
+	interface QOpenGLFunctions_1_0_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_0_CoreBackend_PTR():QOpenGLFunctions_1_0_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_0_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_0_CoreBackend_PTR():QOpenGLFunctions_1_0_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_0_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_1_0_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_0_DeprecatedBackend_PTR():QOpenGLFunctions_1_0_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_1_0_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_0_DeprecatedBackend_PTR():QOpenGLFunctions_1_0_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_0_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_1_1_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_1_PTR():QOpenGLFunctions_1_1;
+	}
+
+	class QOpenGLFunctions_1_1 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_1_PTR():QOpenGLFunctions_1_1;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_1():void;
+	}
+	interface QOpenGLFunctions_1_1_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_1_CoreBackend_PTR():QOpenGLFunctions_1_1_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_1_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_1_CoreBackend_PTR():QOpenGLFunctions_1_1_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_1_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_1_1_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_1_DeprecatedBackend_PTR():QOpenGLFunctions_1_1_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_1_1_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_1_DeprecatedBackend_PTR():QOpenGLFunctions_1_1_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_1_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_1_2_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_2_PTR():QOpenGLFunctions_1_2;
+	}
+
+	class QOpenGLFunctions_1_2 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_2_PTR():QOpenGLFunctions_1_2;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_2():void;
+	}
+	interface QOpenGLFunctions_1_2_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_2_CoreBackend_PTR():QOpenGLFunctions_1_2_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_2_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_2_CoreBackend_PTR():QOpenGLFunctions_1_2_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_2_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_1_2_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_2_DeprecatedBackend_PTR():QOpenGLFunctions_1_2_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_1_2_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_2_DeprecatedBackend_PTR():QOpenGLFunctions_1_2_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_2_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_1_3_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_3_PTR():QOpenGLFunctions_1_3;
+	}
+
+	class QOpenGLFunctions_1_3 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_3_PTR():QOpenGLFunctions_1_3;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_3():void;
+	}
+	interface QOpenGLFunctions_1_3_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_3_CoreBackend_PTR():QOpenGLFunctions_1_3_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_3_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_3_CoreBackend_PTR():QOpenGLFunctions_1_3_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_3_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_1_3_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_3_DeprecatedBackend_PTR():QOpenGLFunctions_1_3_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_1_3_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_3_DeprecatedBackend_PTR():QOpenGLFunctions_1_3_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_3_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_1_4_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_4_PTR():QOpenGLFunctions_1_4;
+	}
+
+	class QOpenGLFunctions_1_4 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_4_PTR():QOpenGLFunctions_1_4;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_4():void;
+	}
+	interface QOpenGLFunctions_1_4_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_4_CoreBackend_PTR():QOpenGLFunctions_1_4_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_4_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_4_CoreBackend_PTR():QOpenGLFunctions_1_4_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_4_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_1_4_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_4_DeprecatedBackend_PTR():QOpenGLFunctions_1_4_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_1_4_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_4_DeprecatedBackend_PTR():QOpenGLFunctions_1_4_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_4_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_1_5_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_1_5_PTR():QOpenGLFunctions_1_5;
+	}
+
+	class QOpenGLFunctions_1_5 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_1_5_PTR():QOpenGLFunctions_1_5;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_5():void;
+	}
+	interface QOpenGLFunctions_1_5_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_1_5_CoreBackend_PTR():QOpenGLFunctions_1_5_CoreBackend;
+	}
+
+	class QOpenGLFunctions_1_5_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_1_5_CoreBackend_PTR():QOpenGLFunctions_1_5_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_1_5_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_2_0_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_2_0_PTR():QOpenGLFunctions_2_0;
+	}
+
+	class QOpenGLFunctions_2_0 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_2_0_PTR():QOpenGLFunctions_2_0;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_2_0():void;
+	}
+	interface QOpenGLFunctions_2_0_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_2_0_CoreBackend_PTR():QOpenGLFunctions_2_0_CoreBackend;
+	}
+
+	class QOpenGLFunctions_2_0_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_2_0_CoreBackend_PTR():QOpenGLFunctions_2_0_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_2_0_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_2_0_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_2_0_DeprecatedBackend_PTR():QOpenGLFunctions_2_0_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_2_0_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_2_0_DeprecatedBackend_PTR():QOpenGLFunctions_2_0_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_2_0_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_2_1_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_2_1_PTR():QOpenGLFunctions_2_1;
+	}
+
+	class QOpenGLFunctions_2_1 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_2_1_PTR():QOpenGLFunctions_2_1;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_2_1():void;
+	}
+	interface QOpenGLFunctions_2_1_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_2_1_CoreBackend_PTR():QOpenGLFunctions_2_1_CoreBackend;
+	}
+
+	class QOpenGLFunctions_2_1_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_2_1_CoreBackend_PTR():QOpenGLFunctions_2_1_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_2_1_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_3_0_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_0_PTR():QOpenGLFunctions_3_0;
+	}
+
+	class QOpenGLFunctions_3_0 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_0_PTR():QOpenGLFunctions_3_0;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_0():void;
+	}
+	interface QOpenGLFunctions_3_0_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_0_CoreBackend_PTR():QOpenGLFunctions_3_0_CoreBackend;
+	}
+
+	class QOpenGLFunctions_3_0_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_0_CoreBackend_PTR():QOpenGLFunctions_3_0_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_0_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_3_0_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_0_DeprecatedBackend_PTR():QOpenGLFunctions_3_0_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_3_0_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_0_DeprecatedBackend_PTR():QOpenGLFunctions_3_0_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_0_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_3_1_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_1_PTR():QOpenGLFunctions_3_1;
+	}
+
+	class QOpenGLFunctions_3_1 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_1_PTR():QOpenGLFunctions_3_1;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_1():void;
+	}
+	interface QOpenGLFunctions_3_1_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_1_CoreBackend_PTR():QOpenGLFunctions_3_1_CoreBackend;
+	}
+
+	class QOpenGLFunctions_3_1_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_1_CoreBackend_PTR():QOpenGLFunctions_3_1_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_1_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_3_2_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_2_Compatibility_PTR():QOpenGLFunctions_3_2_Compatibility;
+	}
+
+	class QOpenGLFunctions_3_2_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_2_Compatibility_PTR():QOpenGLFunctions_3_2_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_2_Compatibility():void;
+	}
+	interface QOpenGLFunctions_3_2_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_2_Core_PTR():QOpenGLFunctions_3_2_Core;
+	}
+
+	class QOpenGLFunctions_3_2_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_2_Core_PTR():QOpenGLFunctions_3_2_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_2_Core():void;
+	}
+	interface QOpenGLFunctions_3_2_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_2_CoreBackend_PTR():QOpenGLFunctions_3_2_CoreBackend;
+	}
+
+	class QOpenGLFunctions_3_2_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_2_CoreBackend_PTR():QOpenGLFunctions_3_2_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_2_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_3_3_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_3_Compatibility_PTR():QOpenGLFunctions_3_3_Compatibility;
+	}
+
+	class QOpenGLFunctions_3_3_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_3_Compatibility_PTR():QOpenGLFunctions_3_3_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_3_Compatibility():void;
+	}
+	interface QOpenGLFunctions_3_3_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_3_3_Core_PTR():QOpenGLFunctions_3_3_Core;
+	}
+
+	class QOpenGLFunctions_3_3_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_3_3_Core_PTR():QOpenGLFunctions_3_3_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_3_Core():void;
+	}
+	interface QOpenGLFunctions_3_3_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_3_CoreBackend_PTR():QOpenGLFunctions_3_3_CoreBackend;
+	}
+
+	class QOpenGLFunctions_3_3_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_3_CoreBackend_PTR():QOpenGLFunctions_3_3_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_3_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_3_3_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_3_3_DeprecatedBackend_PTR():QOpenGLFunctions_3_3_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_3_3_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_3_3_DeprecatedBackend_PTR():QOpenGLFunctions_3_3_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_3_3_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_4_0_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_0_Compatibility_PTR():QOpenGLFunctions_4_0_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_0_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_0_Compatibility_PTR():QOpenGLFunctions_4_0_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_0_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_0_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_0_Core_PTR():QOpenGLFunctions_4_0_Core;
+	}
+
+	class QOpenGLFunctions_4_0_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_0_Core_PTR():QOpenGLFunctions_4_0_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_0_Core():void;
+	}
+	interface QOpenGLFunctions_4_0_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_0_CoreBackend_PTR():QOpenGLFunctions_4_0_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_0_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_0_CoreBackend_PTR():QOpenGLFunctions_4_0_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_0_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_1_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_1_Compatibility_PTR():QOpenGLFunctions_4_1_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_1_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_1_Compatibility_PTR():QOpenGLFunctions_4_1_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_1_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_1_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_1_Core_PTR():QOpenGLFunctions_4_1_Core;
+	}
+
+	class QOpenGLFunctions_4_1_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_1_Core_PTR():QOpenGLFunctions_4_1_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_1_Core():void;
+	}
+	interface QOpenGLFunctions_4_1_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_1_CoreBackend_PTR():QOpenGLFunctions_4_1_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_1_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_1_CoreBackend_PTR():QOpenGLFunctions_4_1_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_1_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_2_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_2_Compatibility_PTR():QOpenGLFunctions_4_2_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_2_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_2_Compatibility_PTR():QOpenGLFunctions_4_2_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_2_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_2_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_2_Core_PTR():QOpenGLFunctions_4_2_Core;
+	}
+
+	class QOpenGLFunctions_4_2_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_2_Core_PTR():QOpenGLFunctions_4_2_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_2_Core():void;
+	}
+	interface QOpenGLFunctions_4_2_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_2_CoreBackend_PTR():QOpenGLFunctions_4_2_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_2_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_2_CoreBackend_PTR():QOpenGLFunctions_4_2_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_2_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_3_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_3_Compatibility_PTR():QOpenGLFunctions_4_3_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_3_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_3_Compatibility_PTR():QOpenGLFunctions_4_3_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_3_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_3_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_3_Core_PTR():QOpenGLFunctions_4_3_Core;
+	}
+
+	class QOpenGLFunctions_4_3_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_3_Core_PTR():QOpenGLFunctions_4_3_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_3_Core():void;
+	}
+	interface QOpenGLFunctions_4_3_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_3_CoreBackend_PTR():QOpenGLFunctions_4_3_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_3_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_3_CoreBackend_PTR():QOpenGLFunctions_4_3_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_3_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_4_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_4_Compatibility_PTR():QOpenGLFunctions_4_4_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_4_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_4_Compatibility_PTR():QOpenGLFunctions_4_4_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_4_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_4_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_4_Core_PTR():QOpenGLFunctions_4_4_Core;
+	}
+
+	class QOpenGLFunctions_4_4_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_4_Core_PTR():QOpenGLFunctions_4_4_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_4_Core():void;
+	}
+	interface QOpenGLFunctions_4_4_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_4_CoreBackend_PTR():QOpenGLFunctions_4_4_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_4_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_4_CoreBackend_PTR():QOpenGLFunctions_4_4_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_4_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_5_Compatibility_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_5_Compatibility_PTR():QOpenGLFunctions_4_5_Compatibility;
+	}
+
+	class QOpenGLFunctions_4_5_Compatibility extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_5_Compatibility_PTR():QOpenGLFunctions_4_5_Compatibility;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_5_Compatibility():void;
+	}
+	interface QOpenGLFunctions_4_5_Core_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_4_5_Core_PTR():QOpenGLFunctions_4_5_Core;
+	}
+
+	class QOpenGLFunctions_4_5_Core extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_4_5_Core_PTR():QOpenGLFunctions_4_5_Core;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_5_Core():void;
+	}
+	interface QOpenGLFunctions_4_5_CoreBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_5_CoreBackend_PTR():QOpenGLFunctions_4_5_CoreBackend;
+	}
+
+	class QOpenGLFunctions_4_5_CoreBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_5_CoreBackend_PTR():QOpenGLFunctions_4_5_CoreBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_5_CoreBackend():void;
+	}
+	interface QOpenGLFunctions_4_5_DeprecatedBackend_ITF extends QOpenGLVersionFunctionsBackend_ITF {
+		QOpenGLFunctions_4_5_DeprecatedBackend_PTR():QOpenGLFunctions_4_5_DeprecatedBackend;
+	}
+
+	class QOpenGLFunctions_4_5_DeprecatedBackend extends QOpenGLVersionFunctionsBackend {
+		___pointer: number;
+		QOpenGLFunctions_4_5_DeprecatedBackend_PTR():QOpenGLFunctions_4_5_DeprecatedBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_4_5_DeprecatedBackend():void;
+	}
+	interface QOpenGLFunctions_ES2_ITF extends QAbstractOpenGLFunctions_ITF {
+		QOpenGLFunctions_ES2_PTR():QOpenGLFunctions_ES2;
+	}
+
+	class QOpenGLFunctions_ES2 extends QAbstractOpenGLFunctions {
+		___pointer: number;
+		QOpenGLFunctions_ES2_PTR():QOpenGLFunctions_ES2;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQOpenGLFunctions_ES2():void;
+	}
 	interface QOpenGLPaintDevice_ITF extends QPaintDevice_ITF {
 		QOpenGLPaintDevice_PTR():QOpenGLPaintDevice;
 	}
@@ -4480,7 +5066,6 @@ declare namespace gui {
 	function NewQOpenGLShaderFromPointer(ptr:number):QOpenGLShader;
 	function NewQOpenGLShader(ty:number,parent:core.QObject_ITF):QOpenGLShader;
 	function QOpenGLShader_HasOpenGLShaders(ty:number,context:QOpenGLContext_ITF):boolean;
-	function NewQOpenGLShaderProgram(parent:core.QObject_ITF):QOpenGLShaderProgram;
 	const QOpenGLShader__Vertex: number;
 	const QOpenGLShader__Fragment: number;
 	const QOpenGLShader__Geometry: number;
@@ -4738,7 +5323,6 @@ declare namespace gui {
 	function QOpenGLTexture_BoundTextureId(target:number):number;
 	function QOpenGLTexture_BoundTextureId2(unit:number,target:number):number;
 	function QOpenGLTexture_HasFeature(feature:number):boolean;
-	function NewQOpenGLTextureBlitter():QOpenGLTextureBlitter;
 	const QOpenGLTexture__Target1D: number;
 	const QOpenGLTexture__Target1DArray: number;
 	const QOpenGLTexture__Target2D: number;
@@ -6108,11 +6692,6 @@ declare namespace gui {
 	function NewQPainterFromPointer(ptr:number):QPainter;
 	function NewQPainter():QPainter;
 	function NewQPainter2(device:QPaintDevice_ITF):QPainter;
-	function NewQPainterPath():QPainterPath;
-	function NewQPainterPath2(startPoint:core.QPointF_ITF):QPainterPath;
-	function NewQPainterPath3(path:QPainterPath_ITF):QPainterPath;
-	function NewQPainterPathStroker():QPainterPathStroker;
-	function NewQPainterPathStroker2(pen:QPen_ITF):QPainterPathStroker;
 	const QPainter__Antialiasing: number;
 	const QPainter__TextAntialiasing: number;
 	const QPainter__SmoothPixmapTransform: number;
@@ -6237,8 +6816,6 @@ declare namespace gui {
 	function NewQPainterPath():QPainterPath;
 	function NewQPainterPath2(startPoint:core.QPointF_ITF):QPainterPath;
 	function NewQPainterPath3(path:QPainterPath_ITF):QPainterPath;
-	function NewQPainterPathStroker():QPainterPathStroker;
-	function NewQPainterPathStroker2(pen:QPen_ITF):QPainterPathStroker;
 	const QPainterPath__MoveToElement: number;
 	const QPainterPath__LineToElement: number;
 	const QPainterPath__CurveToElement: number;
@@ -6489,10 +7066,6 @@ declare namespace gui {
 	function NewQPictureFromPointer(ptr:number):QPicture;
 	function NewQPicture(formatVersion:number):QPicture;
 	function NewQPicture2(pic:QPicture_ITF):QPicture;
-	function NewQPictureFormatPlugin(parent:core.QObject_ITF):QPictureFormatPlugin;
-	function NewQPictureIO():QPictureIO;
-	function NewQPictureIO2(ioDevice:core.QIODevice_ITF,format:string):QPictureIO;
-	function NewQPictureIO3(fileName:string,format:string):QPictureIO;
 	interface QPictureFormatPlugin_ITF extends core.QObject_ITF {
 		QPictureFormatPlugin_PTR():QPictureFormatPlugin;
 	}
@@ -6697,6 +7270,7 @@ declare namespace gui {
 		DisconnectDestroyQPixmap():void;
 		DestroyQPixmap():void;
 		DestroyQPixmapDefault():void;
+		ToVariant():core.QVariant;
 		PaintEngine():QPaintEngine;
 		PaintEngineDefault():QPaintEngine;
 	}
@@ -6735,6 +7309,90 @@ declare namespace gui {
 	function QPixmapCache_Insert(key:string,pixmap:QPixmap_ITF):boolean;
 	function QPixmapCache_Remove(key:string):void;
 	function QPixmapCache_SetCacheLimit(n:number):void;
+	interface QPlatformDragQtResponse_ITF extends QPlatformDropQtResponse_ITF {
+		QPlatformDragQtResponse_PTR():QPlatformDragQtResponse;
+	}
+
+	class QPlatformDragQtResponse extends QPlatformDropQtResponse {
+		___pointer: number;
+		QPlatformDragQtResponse_PTR():QPlatformDragQtResponse;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPlatformDragQtResponse():void;
+	}
+	interface QPlatformDropQtResponse_ITF {
+		QPlatformDropQtResponse_PTR():QPlatformDropQtResponse;
+	}
+
+	class QPlatformDropQtResponse {
+		___pointer: number;
+		QPlatformDropQtResponse_PTR():QPlatformDropQtResponse;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPlatformDropQtResponse():void;
+	}
+	interface QPlatformIntegrationPlugin_ITF extends core.QObject_ITF {
+		QPlatformIntegrationPlugin_PTR():QPlatformIntegrationPlugin;
+	}
+
+	class QPlatformIntegrationPlugin extends core.QObject {
+		___pointer: number;
+		QPlatformIntegrationPlugin_PTR():QPlatformIntegrationPlugin;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlatformMenu_ITF extends core.QObject_ITF {
+		QPlatformMenu_PTR():QPlatformMenu;
+	}
+
+	class QPlatformMenu extends core.QObject {
+		___pointer: number;
+		QPlatformMenu_PTR():QPlatformMenu;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlatformMenuBar_ITF extends core.QObject_ITF {
+		QPlatformMenuBar_PTR():QPlatformMenuBar;
+	}
+
+	class QPlatformMenuBar extends core.QObject {
+		___pointer: number;
+		QPlatformMenuBar_PTR():QPlatformMenuBar;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlatformMenuItem_ITF extends core.QObject_ITF {
+		QPlatformMenuItem_PTR():QPlatformMenuItem;
+	}
+
+	class QPlatformMenuItem extends core.QObject {
+		___pointer: number;
+		QPlatformMenuItem_PTR():QPlatformMenuItem;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QPlatformOffscreenSurface_ITF {
+		QPlatformOffscreenSurface_PTR():QPlatformOffscreenSurface;
+	}
+
+	class QPlatformOffscreenSurface {
+		___pointer: number;
+		QPlatformOffscreenSurface_PTR():QPlatformOffscreenSurface;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPlatformOffscreenSurface():void;
+	}
+	interface QPlatformSessionManager_ITF {
+		QPlatformSessionManager_PTR():QPlatformSessionManager;
+	}
+
+	class QPlatformSessionManager {
+		___pointer: number;
+		QPlatformSessionManager_PTR():QPlatformSessionManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPlatformSessionManager():void;
+	}
 	interface QPlatformSurfaceEvent_ITF extends core.QEvent_ITF {
 		QPlatformSurfaceEvent_PTR():QPlatformSurfaceEvent;
 	}
@@ -6751,6 +7409,16 @@ declare namespace gui {
 	function NewQPlatformSurfaceEvent(surfaceEventType:number):QPlatformSurfaceEvent;
 	const QPlatformSurfaceEvent__SurfaceCreated: number;
 	const QPlatformSurfaceEvent__SurfaceAboutToBeDestroyed: number;
+	interface QPlatformTextureList_ITF extends core.QObject_ITF {
+		QPlatformTextureList_PTR():QPlatformTextureList;
+	}
+
+	class QPlatformTextureList extends core.QObject {
+		___pointer: number;
+		QPlatformTextureList_PTR():QPlatformTextureList;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QPointingDeviceUniqueId_ITF {
 		QPointingDeviceUniqueId_PTR():QPointingDeviceUniqueId;
 	}
@@ -6801,12 +7469,6 @@ declare namespace gui {
 	function NewQPolygon2(size:number):QPolygon;
 	function NewQPolygon3(points:core.QPoint[]):QPolygon;
 	function NewQPolygon5(rectangle:core.QRect_ITF,closed:boolean):QPolygon;
-	function NewQPolygonF():QPolygonF;
-	function NewQPolygonF2(size:number):QPolygonF;
-	function NewQPolygonF3(points:core.QPointF[]):QPolygonF;
-	function NewQPolygonF5(rectangle:core.QRectF_ITF):QPolygonF;
-	function NewQPolygonF6(polygon:QPolygon_ITF):QPolygonF;
-	function NewQPolygonF7(polygon:QPolygonF_ITF):QPolygonF;
 	interface QPolygonF_ITF extends core.QVector_ITF {
 		QPolygonF_PTR():QPolygonF;
 	}
@@ -6931,6 +7593,16 @@ declare namespace gui {
 	function NewQRadialGradient5(cx:number,cy:number,radius:number):QRadialGradient;
 	function NewQRadialGradient6(center:core.QPointF_ITF,centerRadius:number,focalPoint:core.QPointF_ITF,focalRadius:number):QRadialGradient;
 	function NewQRadialGradient7(cx:number,cy:number,centerRadius:number,fx:number,fy:number,focalRadius:number):QRadialGradient;
+	interface QRasterPaintEngine_ITF extends QPaintEngine_ITF {
+		QRasterPaintEngine_PTR():QRasterPaintEngine;
+	}
+
+	class QRasterPaintEngine extends QPaintEngine {
+		___pointer: number;
+		QRasterPaintEngine_PTR():QRasterPaintEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QRasterWindow_ITF extends QPaintDeviceWindow_ITF {
 		QRasterWindow_PTR():QRasterWindow;
 	}
@@ -7224,7 +7896,6 @@ declare namespace gui {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQScreenFromPointer(ptr:number):QScreen;
-	function NewQScreenOrientationChangeEvent(screen:QScreen_ITF,screenOrientation:number):QScreenOrientationChangeEvent;
 	interface QScreenOrientationChangeEvent_ITF extends core.QEvent_ITF {
 		QScreenOrientationChangeEvent_PTR():QScreenOrientationChangeEvent;
 	}
@@ -7481,8 +8152,6 @@ declare namespace gui {
 	function NewQStandardItem3(icon:QIcon_ITF,text:string):QStandardItem;
 	function NewQStandardItem4(rows:number,columns:number):QStandardItem;
 	function NewQStandardItem5(other:QStandardItem_ITF):QStandardItem;
-	function NewQStandardItemModel(parent:core.QObject_ITF):QStandardItemModel;
-	function NewQStandardItemModel2(rows:number,columns:number,parent:core.QObject_ITF):QStandardItemModel;
 	const QStandardItem__Type: number;
 	const QStandardItem__UserType: number;
 	interface QStandardItemModel_ITF extends core.QAbstractItemModel_ITF {
@@ -7717,6 +8386,16 @@ declare namespace gui {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQStyleHintsFromPointer(ptr:number):QStyleHints;
+	interface QSupportedWritingSystems_ITF {
+		QSupportedWritingSystems_PTR():QSupportedWritingSystems;
+	}
+
+	class QSupportedWritingSystems {
+		___pointer: number;
+		QSupportedWritingSystems_PTR():QSupportedWritingSystems;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QSurface_ITF {
 		QSurface_PTR():QSurface;
 	}
@@ -7743,9 +8422,6 @@ declare namespace gui {
 		DestroyQSurfaceDefault():void;
 	}
 	function NewQSurfaceFromPointer(ptr:number):QSurface;
-	function NewQSurfaceFormat():QSurfaceFormat;
-	function NewQSurfaceFormat2(options:number):QSurfaceFormat;
-	function NewQSurfaceFormat3(other:QSurfaceFormat_ITF):QSurfaceFormat;
 	const QSurface__Window: number;
 	const QSurface__Offscreen: number;
 	const QSurface__RasterSurface: number;
@@ -7960,8 +8636,6 @@ declare namespace gui {
 	}
 	function NewQTextBlockFromPointer(ptr:number):QTextBlock;
 	function NewQTextBlock3(other:QTextBlock_ITF):QTextBlock;
-	function NewQTextBlockFormat():QTextBlockFormat;
-	function NewQTextBlockGroup(document:QTextDocument_ITF):QTextBlockGroup;
 	interface QTextBlockFormat_ITF extends QTextFormat_ITF {
 		QTextBlockFormat_PTR():QTextBlockFormat;
 	}
@@ -8404,13 +9078,6 @@ declare namespace gui {
 	function NewQTextDocumentFromPointer(ptr:number):QTextDocument;
 	function NewQTextDocument(parent:core.QObject_ITF):QTextDocument;
 	function NewQTextDocument2(text:string,parent:core.QObject_ITF):QTextDocument;
-	function NewQTextDocumentFragment():QTextDocumentFragment;
-	function NewQTextDocumentFragment2(document:QTextDocument_ITF):QTextDocumentFragment;
-	function NewQTextDocumentFragment3(cursor:QTextCursor_ITF):QTextDocumentFragment;
-	function NewQTextDocumentFragment4(other:QTextDocumentFragment_ITF):QTextDocumentFragment;
-	function NewQTextDocumentWriter():QTextDocumentWriter;
-	function NewQTextDocumentWriter2(device:core.QIODevice_ITF,format:core.QByteArray_ITF):QTextDocumentWriter;
-	function NewQTextDocumentWriter3(fileName:string,format:core.QByteArray_ITF):QTextDocumentWriter;
 	const QTextDocument__DocumentTitle: number;
 	const QTextDocument__DocumentUrl: number;
 	const QTextDocument__FindBackward: number;
@@ -8683,7 +9350,6 @@ declare namespace gui {
 	}
 	function NewQTextFrameFromPointer(ptr:number):QTextFrame;
 	function NewQTextFrame(document:QTextDocument_ITF):QTextFrame;
-	function NewQTextFrameFormat():QTextFrameFormat;
 	interface QTextFrameFormat_ITF extends QTextFormat_ITF {
 		QTextFrameFormat_PTR():QTextFrameFormat;
 	}
@@ -8954,7 +9620,6 @@ declare namespace gui {
 		SetFormat(format:QTextListFormat_ITF):void;
 	}
 	function NewQTextListFromPointer(ptr:number):QTextList;
-	function NewQTextListFormat():QTextListFormat;
 	interface QTextListFormat_ITF extends QTextFormat_ITF {
 		QTextListFormat_PTR():QTextListFormat;
 	}
@@ -9110,10 +9775,6 @@ declare namespace gui {
 		SplitCell(row:number,column:number,numRows:number,numCols:number):void;
 	}
 	function NewQTextTableFromPointer(ptr:number):QTextTable;
-	function NewQTextTableCell():QTextTableCell;
-	function NewQTextTableCell2(other:QTextTableCell_ITF):QTextTableCell;
-	function NewQTextTableCellFormat():QTextTableCellFormat;
-	function NewQTextTableFormat():QTextTableFormat;
 	interface QTextTableCell_ITF {
 		QTextTableCell_PTR():QTextTableCell;
 	}
@@ -9138,7 +9799,6 @@ declare namespace gui {
 	function NewQTextTableCellFromPointer(ptr:number):QTextTableCell;
 	function NewQTextTableCell():QTextTableCell;
 	function NewQTextTableCell2(other:QTextTableCell_ITF):QTextTableCell;
-	function NewQTextTableCellFormat():QTextTableCellFormat;
 	interface QTextTableCellFormat_ITF extends QTextCharFormat_ITF {
 		QTextTableCellFormat_PTR():QTextTableCellFormat;
 	}
@@ -9475,8 +10135,93 @@ declare namespace gui {
 	function NewQVector4D8(vector:QVector3D_ITF):QVector4D;
 	function NewQVector4D9(vector:QVector3D_ITF,wpos:number):QVector4D;
 	function QVector4D_DotProduct(v1:QVector4D_ITF,v2:QVector4D_ITF):number;
+	interface QVulkanDeviceFunctions_ITF {
+		QVulkanDeviceFunctions_PTR():QVulkanDeviceFunctions;
+	}
+
+	class QVulkanDeviceFunctions {
+		___pointer: number;
+		QVulkanDeviceFunctions_PTR():QVulkanDeviceFunctions;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVulkanDeviceFunctions():void;
+	}
+	interface QVulkanExtension_ITF {
+		QVulkanExtension_PTR():QVulkanExtension;
+	}
+
+	class QVulkanExtension {
+		___pointer: number;
+		QVulkanExtension_PTR():QVulkanExtension;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVulkanExtension():void;
+	}
+	interface QVulkanFunctions_ITF {
+		QVulkanFunctions_PTR():QVulkanFunctions;
+	}
+
+	class QVulkanFunctions {
+		___pointer: number;
+		QVulkanFunctions_PTR():QVulkanFunctions;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVulkanFunctions():void;
+	}
+	interface QVulkanInfoVector_ITF extends core.QVector_ITF {
+		QVulkanInfoVector_PTR():QVulkanInfoVector;
+	}
+
+	class QVulkanInfoVector extends core.QVector {
+		___pointer: number;
+		QVulkanInfoVector_PTR():QVulkanInfoVector;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVulkanInfoVector():void;
+	}
+	interface QVulkanInstance_ITF {
+		QVulkanInstance_PTR():QVulkanInstance;
+	}
+
+	class QVulkanInstance {
+		___pointer: number;
+		QVulkanInstance_PTR():QVulkanInstance;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QVulkanInstance__NoDebugOutputRedirect: number;
+	interface QVulkanLayer_ITF {
+		QVulkanLayer_PTR():QVulkanLayer;
+	}
+
+	class QVulkanLayer {
+		___pointer: number;
+		QVulkanLayer_PTR():QVulkanLayer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQVulkanLayer():void;
+	}
+	interface QVulkanWindow_ITF extends QWindow_ITF {
+		QVulkanWindow_PTR():QVulkanWindow;
+	}
+
+	class QVulkanWindow extends QWindow {
+		___pointer: number;
+		QVulkanWindow_PTR():QVulkanWindow;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QVulkanWindow__PersistentResources: number;
+	interface QVulkanWindowRenderer_ITF {
+		QVulkanWindowRenderer_PTR():QVulkanWindowRenderer;
+	}
+
+	class QVulkanWindowRenderer {
+		___pointer: number;
+		QVulkanWindowRenderer_PTR():QVulkanWindowRenderer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QWhatsThisClickedEvent_ITF extends core.QEvent_ITF {
 		QWhatsThisClickedEvent_PTR():QWhatsThisClickedEvent;
 	}

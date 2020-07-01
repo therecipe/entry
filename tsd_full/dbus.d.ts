@@ -12,35 +12,6 @@ declare namespace dbus {
 		DestroyQDBus():void;
 	}
 	function NewQDBusFromPointer(ptr:number):QDBus;
-	function NewQDBusAbstractAdaptor(obj:core.QObject_ITF):QDBusAbstractAdaptor;
-	function NewQDBusArgument():QDBusArgument;
-	function NewQDBusArgument2(other:QDBusArgument_ITF):QDBusArgument;
-	function NewQDBusConnection(name:string):QDBusConnection;
-	function NewQDBusConnection2(other:QDBusConnection_ITF):QDBusConnection;
-	function NewQDBusContext():QDBusContext;
-	function NewQDBusInterface2(service:string,path:string,interfa:string,connection:QDBusConnection_ITF,parent:core.QObject_ITF):QDBusInterface;
-	function NewQDBusMessage():QDBusMessage;
-	function NewQDBusMessage2(other:QDBusMessage_ITF):QDBusMessage;
-	function NewQDBusObjectPath():QDBusObjectPath;
-	function NewQDBusObjectPath2(path:string):QDBusObjectPath;
-	function NewQDBusObjectPath3(path:core.QLatin1String_ITF):QDBusObjectPath;
-	function NewQDBusObjectPath4(path:string):QDBusObjectPath;
-	function NewQDBusPendingCall(other:QDBusPendingCall_ITF):QDBusPendingCall;
-	function NewQDBusPendingCallWatcher(call:QDBusPendingCall_ITF,parent:core.QObject_ITF):QDBusPendingCallWatcher;
-	function NewQDBusServer(address:string,parent:core.QObject_ITF):QDBusServer;
-	function NewQDBusServer2(parent:core.QObject_ITF):QDBusServer;
-	function NewQDBusServiceWatcher(parent:core.QObject_ITF):QDBusServiceWatcher;
-	function NewQDBusServiceWatcher2(service:string,connection:QDBusConnection_ITF,watchMode:number,parent:core.QObject_ITF):QDBusServiceWatcher;
-	function NewQDBusSignature():QDBusSignature;
-	function NewQDBusSignature2(signature:string):QDBusSignature;
-	function NewQDBusSignature3(signature:core.QLatin1String_ITF):QDBusSignature;
-	function NewQDBusSignature4(signature:string):QDBusSignature;
-	function NewQDBusUnixFileDescriptor():QDBusUnixFileDescriptor;
-	function NewQDBusUnixFileDescriptor2(fileDescriptor:number):QDBusUnixFileDescriptor;
-	function NewQDBusUnixFileDescriptor3(other:QDBusUnixFileDescriptor_ITF):QDBusUnixFileDescriptor;
-	function NewQDBusVariant():QDBusVariant;
-	function NewQDBusVariant2(variant:core.QVariant_ITF):QDBusVariant;
-	function NewQDBusVirtualObject(parent:core.QObject_ITF):QDBusVirtualObject;
 	const QDBus__NoBlock: number;
 	const QDBus__Block: number;
 	const QDBus__BlockWithGui: number;
@@ -443,7 +414,6 @@ declare namespace dbus {
 	function NewQDBusPendingCall(other:QDBusPendingCall_ITF):QDBusPendingCall;
 	function QDBusPendingCall_FromCompletedCall(msg:QDBusMessage_ITF):QDBusPendingCall;
 	function QDBusPendingCall_FromError(error:QDBusError_ITF):QDBusPendingCall;
-	function NewQDBusPendingCallWatcher(call:QDBusPendingCall_ITF,parent:core.QObject_ITF):QDBusPendingCallWatcher;
 	interface QDBusPendingCallWatcher_ITF extends QDBusPendingCall_ITF {
 		QDBusPendingCallWatcher_PTR():QDBusPendingCallWatcher;
 		QObject_PTR():core.QObject;
@@ -455,9 +425,9 @@ declare namespace dbus {
 		QDBusPendingCallWatcher_PTR():QDBusPendingCallWatcher;
 		Pointer():number;
 		SetPointer(p:number):void;
-		ConnectFinished(f:(self:QDBusPendingCallWatcher)=>void):void;
+		ConnectFinished(f:(se:QDBusPendingCallWatcher)=>void):void;
 		DisconnectFinished():void;
-		Finished(self:QDBusPendingCallWatcher_ITF):void;
+		Finished(se:QDBusPendingCallWatcher_ITF):void;
 		IsFinished():boolean;
 		WaitForFinished():void;
 		ConnectDestroyQDBusPendingCallWatcher(f:()=>void):void;
@@ -485,6 +455,17 @@ declare namespace dbus {
 	}
 	function NewQDBusPendingCallWatcherFromPointer(ptr:number):QDBusPendingCallWatcher;
 	function NewQDBusPendingCallWatcher(call:QDBusPendingCall_ITF,parent:core.QObject_ITF):QDBusPendingCallWatcher;
+	interface QDBusPendingReply_ITF extends QDBusPendingCall_ITF {
+		QDBusPendingReply_PTR():QDBusPendingReply;
+	}
+
+	class QDBusPendingReply extends QDBusPendingCall {
+		___pointer: number;
+		QDBusPendingReply_PTR():QDBusPendingReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQDBusPendingReply():void;
+	}
 	interface QDBusPendingReplyData_ITF extends QDBusPendingCall_ITF {
 		QDBusPendingReplyData_PTR():QDBusPendingReplyData;
 	}
@@ -497,6 +478,17 @@ declare namespace dbus {
 		DestroyQDBusPendingReplyData():void;
 	}
 	function NewQDBusPendingReplyDataFromPointer(ptr:number):QDBusPendingReplyData;
+	interface QDBusReply_ITF {
+		QDBusReply_PTR():QDBusReply;
+	}
+
+	class QDBusReply {
+		___pointer: number;
+		QDBusReply_PTR():QDBusReply;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQDBusReply():void;
+	}
 	interface QDBusServer_ITF extends core.QObject_ITF {
 		QDBusServer_PTR():QDBusServer;
 	}

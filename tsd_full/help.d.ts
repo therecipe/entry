@@ -281,7 +281,6 @@ declare namespace help {
 	}
 	function NewQHelpEngineFromPointer(ptr:number):QHelpEngine;
 	function NewQHelpEngine(collectionFile:string,parent:core.QObject_ITF):QHelpEngine;
-	function NewQHelpEngineCore(collectionFile:string,parent:core.QObject_ITF):QHelpEngineCore;
 	interface QHelpEngineCore_ITF extends core.QObject_ITF {
 		QHelpEngineCore_PTR():QHelpEngineCore;
 	}
@@ -673,7 +672,6 @@ declare namespace help {
 	}
 	function NewQHelpSearchQueryFromPointer(ptr:number):QHelpSearchQuery;
 	function NewQHelpSearchQuery():QHelpSearchQuery;
-	function NewQHelpSearchQueryWidget(parent:widgets.QWidget_ITF):QHelpSearchQueryWidget;
 	interface QHelpSearchQueryWidget_ITF extends widgets.QWidget_ITF {
 		QHelpSearchQueryWidget_PTR():QHelpSearchQueryWidget;
 	}

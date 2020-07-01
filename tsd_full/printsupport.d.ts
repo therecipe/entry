@@ -201,6 +201,27 @@ declare namespace printsupport {
 	function NewQPageSetupDialogFromPointer(ptr:number):QPageSetupDialog;
 	function NewQPageSetupDialog(printer:QPrinter_ITF,parent:widgets.QWidget_ITF):QPageSetupDialog;
 	function NewQPageSetupDialog2(parent:widgets.QWidget_ITF):QPageSetupDialog;
+	interface QPlatformPrintDevice_ITF {
+		QPlatformPrintDevice_PTR():QPlatformPrintDevice;
+	}
+
+	class QPlatformPrintDevice {
+		___pointer: number;
+		QPlatformPrintDevice_PTR():QPlatformPrintDevice;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQPlatformPrintDevice():void;
+	}
+	interface QPlatformPrinterSupportPlugin_ITF extends core.QObject_ITF {
+		QPlatformPrinterSupportPlugin_PTR():QPlatformPrinterSupportPlugin;
+	}
+
+	class QPlatformPrinterSupportPlugin extends core.QObject {
+		___pointer: number;
+		QPlatformPrinterSupportPlugin_PTR():QPlatformPrinterSupportPlugin;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QPrintDialog_ITF extends QAbstractPrintDialog_ITF {
 		QPrintDialog_PTR():QPrintDialog;
 	}
@@ -634,9 +655,6 @@ declare namespace printsupport {
 	function NewQPrinterFromPointer(ptr:number):QPrinter;
 	function NewQPrinter(mode:number):QPrinter;
 	function NewQPrinter2(printer:QPrinterInfo_ITF,mode:number):QPrinter;
-	function NewQPrinterInfo():QPrinterInfo;
-	function NewQPrinterInfo2(other:QPrinterInfo_ITF):QPrinterInfo;
-	function NewQPrinterInfo3(printer:QPrinter_ITF):QPrinterInfo;
 	const QPrinter__ScreenResolution: number;
 	const QPrinter__PrinterResolution: number;
 	const QPrinter__HighResolution: number;

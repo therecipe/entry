@@ -105,6 +105,28 @@ declare namespace svg {
 	}
 	function NewQSvgGeneratorFromPointer(ptr:number):QSvgGenerator;
 	function NewQSvgGenerator():QSvgGenerator;
+	interface QSvgIOHandler_ITF extends gui.QImageIOHandler_ITF {
+		QSvgIOHandler_PTR():QSvgIOHandler;
+	}
+
+	class QSvgIOHandler extends gui.QImageIOHandler {
+		___pointer: number;
+		QSvgIOHandler_PTR():QSvgIOHandler;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSvgIOHandler():void;
+	}
+	interface QSvgIconEngine_ITF extends gui.QIconEngine_ITF {
+		QSvgIconEngine_PTR():QSvgIconEngine;
+	}
+
+	class QSvgIconEngine extends gui.QIconEngine {
+		___pointer: number;
+		QSvgIconEngine_PTR():QSvgIconEngine;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSvgIconEngine():void;
+	}
 	interface QSvgRenderer_ITF extends core.QObject_ITF {
 		QSvgRenderer_PTR():QSvgRenderer;
 	}

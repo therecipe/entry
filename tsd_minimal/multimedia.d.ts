@@ -547,7 +547,6 @@ declare namespace multimedia {
 		QMediaResource_PTR():QMediaResource;
 		Pointer():number;
 		SetPointer(p:number):void;
-		Request():network.QNetworkRequest;
 		Resolution():core.QSize;
 		Url():core.QUrl;
 		DestroyQMediaResource():void;
@@ -851,6 +850,8 @@ declare namespace multimedia {
 		ShowDefault():void;
 		Update():void;
 		UpdateDefault():void;
+		WheelEvent(event:gui.QWheelEvent_ITF):void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
 		ChildEvent(event:core.QChildEvent_ITF):void;
 		ChildEventDefault(event:core.QChildEvent_ITF):void;
 		ConnectNotify(sign:core.QMetaMethod_ITF):void;

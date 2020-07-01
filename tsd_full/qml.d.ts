@@ -7,9 +7,7 @@ declare namespace qml {
 
 	class QJSEngine extends core.QObject {
 		___pointer: number;
-		ToGoType(jsval:QJSValue, dst:any):void
 		NewJSType(property:QJSValue, name:string, i:any):void
-		NewGoType(i:any[]):QJSValue
 		QJSEngine_PTR():QJSEngine;
 		Pointer():number;
 		SetPointer(p:number):void;
@@ -110,7 +108,6 @@ declare namespace qml {
 	function NewQJSValue8(value:string):QJSValue;
 	function NewQJSValue9(value:core.QLatin1String_ITF):QJSValue;
 	function NewQJSValue10(value:string):QJSValue;
-	function NewQJSValueIterator(object:QJSValue_ITF):QJSValueIterator;
 	const QJSValue__NullValue: number;
 	const QJSValue__UndefinedValue: number;
 	const QJSValue__NoError: number;
@@ -632,6 +629,17 @@ declare namespace qml {
 		DestroyQQmlInfo():void;
 	}
 	function NewQQmlInfoFromPointer(ptr:number):QQmlInfo;
+	interface QQmlListProperty_ITF {
+		QQmlListProperty_PTR():QQmlListProperty;
+	}
+
+	class QQmlListProperty {
+		___pointer: number;
+		QQmlListProperty_PTR():QQmlListProperty;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQQmlListProperty():void;
+	}
 	interface QQmlListReference_ITF {
 		QQmlListReference_PTR():QQmlListReference;
 	}
@@ -749,8 +757,6 @@ declare namespace qml {
 	function QQmlProperty_Write2(object:core.QObject_ITF,name:string,value:core.QVariant_ITF):boolean;
 	function QQmlProperty_Write3(object:core.QObject_ITF,name:string,value:core.QVariant_ITF,ctxt:QQmlContext_ITF):boolean;
 	function QQmlProperty_Write4(object:core.QObject_ITF,name:string,value:core.QVariant_ITF,engine:QQmlEngine_ITF):boolean;
-	function NewQQmlPropertyMap(parent:core.QObject_ITF):QQmlPropertyMap;
-	function NewQQmlPropertyValueSource():QQmlPropertyValueSource;
 	const QQmlProperty__InvalidCategory: number;
 	const QQmlProperty__List: number;
 	const QQmlProperty__Object: number;

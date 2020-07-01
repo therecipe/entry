@@ -5,6 +5,60 @@
 /// <reference path="webchannel.d.ts" />
 /// <reference path="printsupport.d.ts" />
 declare namespace webengine {
+	interface CertificateErrorController_ITF {
+		CertificateErrorController_PTR():CertificateErrorController;
+	}
+
+	class CertificateErrorController {
+		___pointer: number;
+		CertificateErrorController_PTR():CertificateErrorController;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyCertificateErrorController():void;
+	}
+	interface ClientCertSelectController_ITF {
+		ClientCertSelectController_PTR():ClientCertSelectController;
+	}
+
+	class ClientCertSelectController {
+		___pointer: number;
+		ClientCertSelectController_PTR():ClientCertSelectController;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyClientCertSelectController():void;
+	}
+	interface CommandLinePrefStoreQt_ITF {
+		CommandLinePrefStoreQt_PTR():CommandLinePrefStoreQt;
+	}
+
+	class CommandLinePrefStoreQt {
+		___pointer: number;
+		CommandLinePrefStoreQt_PTR():CommandLinePrefStoreQt;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyCommandLinePrefStoreQt():void;
+	}
+	interface GLContextHelper_ITF extends core.QObject_ITF {
+		GLContextHelper_PTR():GLContextHelper;
+	}
+
+	class GLContextHelper extends core.QObject {
+		___pointer: number;
+		GLContextHelper_PTR():GLContextHelper;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface ProxyConfigServiceQt_ITF {
+		ProxyConfigServiceQt_PTR():ProxyConfigServiceQt;
+	}
+
+	class ProxyConfigServiceQt {
+		___pointer: number;
+		ProxyConfigServiceQt_PTR():ProxyConfigServiceQt;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyProxyConfigServiceQt():void;
+	}
 	interface QQuickWebEngineProfile_ITF extends core.QObject_ITF {
 		QQuickWebEngineProfile_PTR():QQuickWebEngineProfile;
 	}
@@ -954,7 +1008,6 @@ declare namespace webengine {
 	function NewQWebEngineUrlScheme4(that:QWebEngineUrlScheme_ITF):QWebEngineUrlScheme;
 	function QWebEngineUrlScheme_RegisterScheme(scheme:QWebEngineUrlScheme_ITF):void;
 	function QWebEngineUrlScheme_SchemeByName(name:core.QByteArray_ITF):QWebEngineUrlScheme;
-	function NewQWebEngineUrlSchemeHandler(parent:core.QObject_ITF):QWebEngineUrlSchemeHandler;
 	const QWebEngineUrlScheme__HostPortAndUserInformation: number;
 	const QWebEngineUrlScheme__HostAndPort: number;
 	const QWebEngineUrlScheme__Host: number;
@@ -1148,4 +1201,81 @@ declare namespace webengine {
 	}
 	function NewQtWebEngineFromPointer(ptr:number):QtWebEngine;
 	function QtWebEngine_Initialize():void;
+	interface RenderViewObserverQt_ITF {
+		RenderViewObserverQt_PTR():RenderViewObserverQt;
+	}
+
+	class RenderViewObserverQt {
+		___pointer: number;
+		RenderViewObserverQt_PTR():RenderViewObserverQt;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyRenderViewObserverQt():void;
+	}
+	interface ServiceQt_ITF {
+		ServiceQt_PTR():ServiceQt;
+	}
+
+	class ServiceQt {
+		___pointer: number;
+		ServiceQt_PTR():ServiceQt;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyServiceQt():void;
+	}
+	interface UserResourceController_ITF {
+		UserResourceController_PTR():UserResourceController;
+	}
+
+	class UserResourceController {
+		___pointer: number;
+		UserResourceController_PTR():UserResourceController;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyUserResourceController():void;
+	}
+	interface UserScriptData_ITF {
+		UserScriptData_PTR():UserScriptData;
+	}
+
+	class UserScriptData {
+		___pointer: number;
+		UserScriptData_PTR():UserScriptData;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyUserScriptData():void;
+	}
+	interface WebEngineError_ITF {
+		WebEngineError_PTR():WebEngineError;
+	}
+
+	class WebEngineError {
+		___pointer: number;
+		WebEngineError_PTR():WebEngineError;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyWebEngineError():void;
+	}
+	interface WebEngineLibraryInfo_ITF {
+		WebEngineLibraryInfo_PTR():WebEngineLibraryInfo;
+	}
+
+	class WebEngineLibraryInfo {
+		___pointer: number;
+		WebEngineLibraryInfo_PTR():WebEngineLibraryInfo;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyWebEngineLibraryInfo():void;
+	}
+	interface WebEventFactory_ITF {
+		WebEventFactory_PTR():WebEventFactory;
+	}
+
+	class WebEventFactory {
+		___pointer: number;
+		WebEventFactory_PTR():WebEventFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyWebEventFactory():void;
+	}
 }

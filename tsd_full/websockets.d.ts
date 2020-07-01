@@ -32,6 +32,26 @@ declare namespace websockets {
 	}
 	function NewQMaskGeneratorFromPointer(ptr:number):QMaskGenerator;
 	function NewQMaskGenerator2(parent:core.QObject_ITF):QMaskGenerator;
+	interface QQmlWebSocket_ITF extends core.QObject_ITF {
+		QQmlWebSocket_PTR():QQmlWebSocket;
+	}
+
+	class QQmlWebSocket extends core.QObject {
+		___pointer: number;
+		QQmlWebSocket_PTR():QQmlWebSocket;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QQmlWebSocketServer_ITF extends core.QObject_ITF {
+		QQmlWebSocketServer_PTR():QQmlWebSocketServer;
+	}
+
+	class QQmlWebSocketServer extends core.QObject {
+		___pointer: number;
+		QQmlWebSocketServer_PTR():QQmlWebSocketServer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QWebSocket_ITF extends core.QObject_ITF {
 		QWebSocket_PTR():QWebSocket;
 	}
@@ -155,10 +175,6 @@ declare namespace websockets {
 	}
 	function NewQWebSocketFromPointer(ptr:number):QWebSocket;
 	function NewQWebSocket2(origi:string,version:number,parent:core.QObject_ITF):QWebSocket;
-	function NewQWebSocketCorsAuthenticator(origi:string):QWebSocketCorsAuthenticator;
-	function NewQWebSocketCorsAuthenticator2(other:QWebSocketCorsAuthenticator_ITF):QWebSocketCorsAuthenticator;
-	function NewQWebSocketCorsAuthenticator3(other:QWebSocketCorsAuthenticator_ITF):QWebSocketCorsAuthenticator;
-	function NewQWebSocketServer2(serverName:string,secureMode:number,parent:core.QObject_ITF):QWebSocketServer;
 	interface QWebSocketCorsAuthenticator_ITF {
 		QWebSocketCorsAuthenticator_PTR():QWebSocketCorsAuthenticator;
 	}

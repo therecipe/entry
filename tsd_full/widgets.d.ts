@@ -901,7 +901,6 @@ declare namespace widgets {
 	function NewQAction(parent:core.QObject_ITF):QAction;
 	function NewQAction2(text:string,parent:core.QObject_ITF):QAction;
 	function NewQAction3(icon:gui.QIcon_ITF,text:string,parent:core.QObject_ITF):QAction;
-	function NewQActionGroup(parent:core.QObject_ITF):QActionGroup;
 	const QAction__NoRole: number;
 	const QAction__TextHeuristicRole: number;
 	const QAction__ApplicationSpecificRole: number;
@@ -2108,11 +2107,6 @@ declare namespace widgets {
 	}
 	function NewQDialFromPointer(ptr:number):QDial;
 	function NewQDial(parent:QWidget_ITF):QDial;
-	function NewQDialog(parent:QWidget_ITF,ff:number):QDialog;
-	function NewQDialogButtonBox(parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox2(orientation:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox3(buttons:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox4(buttons:number,orientation:number,parent:QWidget_ITF):QDialogButtonBox;
 	interface QDialog_ITF extends QWidget_ITF {
 		QDialog_PTR():QDialog;
 	}
@@ -2167,10 +2161,6 @@ declare namespace widgets {
 	}
 	function NewQDialogFromPointer(ptr:number):QDialog;
 	function NewQDialog(parent:QWidget_ITF,ff:number):QDialog;
-	function NewQDialogButtonBox(parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox2(orientation:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox3(buttons:number,parent:QWidget_ITF):QDialogButtonBox;
-	function NewQDialogButtonBox4(buttons:number,orientation:number,parent:QWidget_ITF):QDialogButtonBox;
 	const QDialog__Rejected: number;
 	const QDialog__Accepted: number;
 	interface QDialogButtonBox_ITF extends QWidget_ITF {
@@ -3037,8 +3027,6 @@ declare namespace widgets {
 	}
 	function NewQGestureFromPointer(ptr:number):QGesture;
 	function NewQGesture(parent:core.QObject_ITF):QGesture;
-	function NewQGestureEvent(gestures:QGesture[]):QGestureEvent;
-	function NewQGestureRecognizer():QGestureRecognizer;
 	const QGesture__CancelNone: number;
 	const QGesture__CancelAllInContext: number;
 	interface QGestureEvent_ITF extends core.QEvent_ITF {
@@ -3139,7 +3127,6 @@ declare namespace widgets {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQGraphicsAnchorFromPointer(ptr:number):QGraphicsAnchor;
-	function NewQGraphicsAnchorLayout(parent:QGraphicsLayoutItem_ITF):QGraphicsAnchorLayout;
 	interface QGraphicsAnchorLayout_ITF extends QGraphicsLayout_ITF {
 		QGraphicsAnchorLayout_PTR():QGraphicsAnchorLayout;
 	}
@@ -3787,8 +3774,6 @@ declare namespace widgets {
 	}
 	function NewQGraphicsItemFromPointer(ptr:number):QGraphicsItem;
 	function NewQGraphicsItem(parent:QGraphicsItem_ITF):QGraphicsItem;
-	function NewQGraphicsItemAnimation(parent:core.QObject_ITF):QGraphicsItemAnimation;
-	function NewQGraphicsItemGroup(parent:QGraphicsItem_ITF):QGraphicsItemGroup;
 	const QGraphicsItem__ItemIsMovable: number;
 	const QGraphicsItem__ItemIsSelectable: number;
 	const QGraphicsItem__ItemIsFocusable: number;
@@ -3973,7 +3958,6 @@ declare namespace widgets {
 	}
 	function NewQGraphicsLayoutFromPointer(ptr:number):QGraphicsLayout;
 	function NewQGraphicsLayout(parent:QGraphicsLayoutItem_ITF):QGraphicsLayout;
-	function NewQGraphicsLayoutItem(parent:QGraphicsLayoutItem_ITF,isLayout:boolean):QGraphicsLayoutItem;
 	interface QGraphicsLayoutItem_ITF {
 		QGraphicsLayoutItem_PTR():QGraphicsLayoutItem;
 	}
@@ -4697,8 +4681,6 @@ declare namespace widgets {
 	function NewQGraphicsScene(parent:core.QObject_ITF):QGraphicsScene;
 	function NewQGraphicsScene2(sceneRect:core.QRectF_ITF,parent:core.QObject_ITF):QGraphicsScene;
 	function NewQGraphicsScene3(x:number,y:number,width:number,height:number,parent:core.QObject_ITF):QGraphicsScene;
-	function NewQGraphicsSceneMoveEvent2():QGraphicsSceneMoveEvent;
-	function NewQGraphicsSceneResizeEvent2():QGraphicsSceneResizeEvent;
 	const QGraphicsScene__ItemLayer: number;
 	const QGraphicsScene__BackgroundLayer: number;
 	const QGraphicsScene__ForegroundLayer: number;
@@ -5751,6 +5733,17 @@ declare namespace widgets {
 	}
 	function NewQItemDelegateFromPointer(ptr:number):QItemDelegate;
 	function NewQItemDelegate(parent:core.QObject_ITF):QItemDelegate;
+	interface QItemEditorCreator_ITF extends QItemEditorCreatorBase_ITF {
+		QItemEditorCreator_PTR():QItemEditorCreator;
+	}
+
+	class QItemEditorCreator extends QItemEditorCreatorBase {
+		___pointer: number;
+		QItemEditorCreator_PTR():QItemEditorCreator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQItemEditorCreator():void;
+	}
 	interface QItemEditorCreatorBase_ITF {
 		QItemEditorCreatorBase_PTR():QItemEditorCreatorBase;
 	}
@@ -6117,7 +6110,6 @@ declare namespace widgets {
 	function NewQLayout(parent:QWidget_ITF):QLayout;
 	function NewQLayout2():QLayout;
 	function QLayout_ClosestAcceptableSize(widget:QWidget_ITF,size:core.QSize_ITF):core.QSize;
-	function NewQLayoutItem(alignment:number):QLayoutItem;
 	const QLayout__SetDefaultConstraint: number;
 	const QLayout__SetNoConstraint: number;
 	const QLayout__SetMinimumSize: number;
@@ -6554,10 +6546,6 @@ declare namespace widgets {
 	}
 	function NewQListWidgetFromPointer(ptr:number):QListWidget;
 	function NewQListWidget(parent:QWidget_ITF):QListWidget;
-	function NewQListWidgetItem(parent:QListWidget_ITF,ty:number):QListWidgetItem;
-	function NewQListWidgetItem2(text:string,parent:QListWidget_ITF,ty:number):QListWidgetItem;
-	function NewQListWidgetItem3(icon:gui.QIcon_ITF,text:string,parent:QListWidget_ITF,ty:number):QListWidgetItem;
-	function NewQListWidgetItem4(other:QListWidgetItem_ITF):QListWidgetItem;
 	interface QListWidgetItem_ITF {
 		QListWidgetItem_PTR():QListWidgetItem;
 	}
@@ -6923,7 +6911,6 @@ declare namespace widgets {
 	function NewQMenu(parent:QWidget_ITF):QMenu;
 	function NewQMenu2(title:string,parent:QWidget_ITF):QMenu;
 	function QMenu_Exec3(actions:QAction[],pos:core.QPoint_ITF,at:QAction_ITF,parent:QWidget_ITF):QAction;
-	function NewQMenuBar(parent:QWidget_ITF):QMenuBar;
 	interface QMenuBar_ITF extends QWidget_ITF {
 		QMenuBar_PTR():QMenuBar;
 	}
@@ -7814,8 +7801,6 @@ declare namespace widgets {
 	function QScroller_Scroller(target:core.QObject_ITF):QScroller;
 	function QScroller_Scroller2(target:core.QObject_ITF):QScroller;
 	function QScroller_UngrabGesture(target:core.QObject_ITF):void;
-	function NewQScrollerProperties():QScrollerProperties;
-	function NewQScrollerProperties2(sp:QScrollerProperties_ITF):QScrollerProperties;
 	const QScroller__Inactive: number;
 	const QScroller__Pressed: number;
 	const QScroller__Dragging: number;
@@ -8214,7 +8199,6 @@ declare namespace widgets {
 	function NewQSplitterFromPointer(ptr:number):QSplitter;
 	function NewQSplitter(parent:QWidget_ITF):QSplitter;
 	function NewQSplitter2(orientation:number,parent:QWidget_ITF):QSplitter;
-	function NewQSplitterHandle(orientation:number,parent:QSplitter_ITF):QSplitterHandle;
 	interface QSplitterHandle_ITF extends QWidget_ITF {
 		QSplitterHandle_PTR():QSplitterHandle;
 	}
@@ -8336,6 +8320,17 @@ declare namespace widgets {
 	}
 	function NewQStackedWidgetFromPointer(ptr:number):QStackedWidget;
 	function NewQStackedWidget(parent:QWidget_ITF):QStackedWidget;
+	interface QStandardItemEditorCreator_ITF extends QItemEditorCreatorBase_ITF {
+		QStandardItemEditorCreator_PTR():QStandardItemEditorCreator;
+	}
+
+	class QStandardItemEditorCreator extends QItemEditorCreatorBase {
+		___pointer: number;
+		QStandardItemEditorCreator_PTR():QStandardItemEditorCreator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQStandardItemEditorCreator():void;
+	}
 	interface QStatusBar_ITF extends QWidget_ITF {
 		QStatusBar_PTR():QStatusBar;
 	}
@@ -8491,62 +8486,6 @@ declare namespace widgets {
 	function QStyle_VisualAlignment(direction:number,alignment:number):number;
 	function QStyle_VisualPos(direction:number,boundingRectangle:core.QRect_ITF,logicalPosition:core.QPoint_ITF):core.QPoint;
 	function QStyle_VisualRect(direction:number,boundingRectangle:core.QRect_ITF,logicalRectangle:core.QRect_ITF):core.QRect;
-	function NewQStyleHintReturn(version:number,ty:number):QStyleHintReturn;
-	function NewQStyleHintReturnMask():QStyleHintReturnMask;
-	function NewQStyleHintReturnVariant():QStyleHintReturnVariant;
-	function NewQStyleOption(version:number,ty:number):QStyleOption;
-	function NewQStyleOption2(other:QStyleOption_ITF):QStyleOption;
-	function NewQStyleOptionButton():QStyleOptionButton;
-	function NewQStyleOptionButton2(other:QStyleOptionButton_ITF):QStyleOptionButton;
-	function NewQStyleOptionComboBox():QStyleOptionComboBox;
-	function NewQStyleOptionComboBox2(other:QStyleOptionComboBox_ITF):QStyleOptionComboBox;
-	function NewQStyleOptionComplex(version:number,ty:number):QStyleOptionComplex;
-	function NewQStyleOptionComplex2(other:QStyleOptionComplex_ITF):QStyleOptionComplex;
-	function NewQStyleOptionDockWidget():QStyleOptionDockWidget;
-	function NewQStyleOptionDockWidget2(other:QStyleOptionDockWidget_ITF):QStyleOptionDockWidget;
-	function NewQStyleOptionFocusRect():QStyleOptionFocusRect;
-	function NewQStyleOptionFocusRect2(other:QStyleOptionFocusRect_ITF):QStyleOptionFocusRect;
-	function NewQStyleOptionFrame():QStyleOptionFrame;
-	function NewQStyleOptionFrame2(other:QStyleOptionFrame_ITF):QStyleOptionFrame;
-	function NewQStyleOptionGraphicsItem():QStyleOptionGraphicsItem;
-	function NewQStyleOptionGraphicsItem2(other:QStyleOptionGraphicsItem_ITF):QStyleOptionGraphicsItem;
-	function NewQStyleOptionGroupBox():QStyleOptionGroupBox;
-	function NewQStyleOptionGroupBox2(other:QStyleOptionGroupBox_ITF):QStyleOptionGroupBox;
-	function NewQStyleOptionHeader():QStyleOptionHeader;
-	function NewQStyleOptionHeader2(other:QStyleOptionHeader_ITF):QStyleOptionHeader;
-	function NewQStyleOptionMenuItem():QStyleOptionMenuItem;
-	function NewQStyleOptionMenuItem2(other:QStyleOptionMenuItem_ITF):QStyleOptionMenuItem;
-	function NewQStyleOptionProgressBar():QStyleOptionProgressBar;
-	function NewQStyleOptionProgressBar2(other:QStyleOptionProgressBar_ITF):QStyleOptionProgressBar;
-	function NewQStyleOptionRubberBand():QStyleOptionRubberBand;
-	function NewQStyleOptionRubberBand2(other:QStyleOptionRubberBand_ITF):QStyleOptionRubberBand;
-	function NewQStyleOptionSizeGrip():QStyleOptionSizeGrip;
-	function NewQStyleOptionSizeGrip2(other:QStyleOptionSizeGrip_ITF):QStyleOptionSizeGrip;
-	function NewQStyleOptionSlider():QStyleOptionSlider;
-	function NewQStyleOptionSlider2(other:QStyleOptionSlider_ITF):QStyleOptionSlider;
-	function NewQStyleOptionSpinBox():QStyleOptionSpinBox;
-	function NewQStyleOptionSpinBox2(other:QStyleOptionSpinBox_ITF):QStyleOptionSpinBox;
-	function NewQStyleOptionTab():QStyleOptionTab;
-	function NewQStyleOptionTab2(other:QStyleOptionTab_ITF):QStyleOptionTab;
-	function NewQStyleOptionTabBarBase():QStyleOptionTabBarBase;
-	function NewQStyleOptionTabBarBase2(other:QStyleOptionTabBarBase_ITF):QStyleOptionTabBarBase;
-	function NewQStyleOptionTabWidgetFrame():QStyleOptionTabWidgetFrame;
-	function NewQStyleOptionTabWidgetFrame2(other:QStyleOptionTabWidgetFrame_ITF):QStyleOptionTabWidgetFrame;
-	function NewQStyleOptionTitleBar():QStyleOptionTitleBar;
-	function NewQStyleOptionTitleBar2(other:QStyleOptionTitleBar_ITF):QStyleOptionTitleBar;
-	function NewQStyleOptionToolBar():QStyleOptionToolBar;
-	function NewQStyleOptionToolBar2(other:QStyleOptionToolBar_ITF):QStyleOptionToolBar;
-	function NewQStyleOptionToolBox():QStyleOptionToolBox;
-	function NewQStyleOptionToolBox2(other:QStyleOptionToolBox_ITF):QStyleOptionToolBox;
-	function NewQStyleOptionToolButton():QStyleOptionToolButton;
-	function NewQStyleOptionToolButton2(other:QStyleOptionToolButton_ITF):QStyleOptionToolButton;
-	function NewQStyleOptionViewItem():QStyleOptionViewItem;
-	function NewQStyleOptionViewItem2(other:QStyleOptionViewItem_ITF):QStyleOptionViewItem;
-	function NewQStylePainter():QStylePainter;
-	function NewQStylePainter2(widget:QWidget_ITF):QStylePainter;
-	function NewQStylePainter3(pd:gui.QPaintDevice_ITF,widget:QWidget_ITF):QStylePainter;
-	function NewQStylePlugin(parent:core.QObject_ITF):QStylePlugin;
-	function NewQStyledItemDelegate(parent:core.QObject_ITF):QStyledItemDelegate;
 	const QStyle__State_None: number;
 	const QStyle__State_Enabled: number;
 	const QStyle__State_Raised: number;
@@ -9141,8 +9080,6 @@ declare namespace widgets {
 	}
 	function NewQStyleHintReturnFromPointer(ptr:number):QStyleHintReturn;
 	function NewQStyleHintReturn(version:number,ty:number):QStyleHintReturn;
-	function NewQStyleHintReturnMask():QStyleHintReturnMask;
-	function NewQStyleHintReturnVariant():QStyleHintReturnVariant;
 	const QStyleHintReturn__SH_Default: number;
 	const QStyleHintReturn__SH_Mask: number;
 	const QStyleHintReturn__SH_Variant: number;
@@ -9213,52 +9150,6 @@ declare namespace widgets {
 	function NewQStyleOptionFromPointer(ptr:number):QStyleOption;
 	function NewQStyleOption(version:number,ty:number):QStyleOption;
 	function NewQStyleOption2(other:QStyleOption_ITF):QStyleOption;
-	function NewQStyleOptionButton():QStyleOptionButton;
-	function NewQStyleOptionButton2(other:QStyleOptionButton_ITF):QStyleOptionButton;
-	function NewQStyleOptionComboBox():QStyleOptionComboBox;
-	function NewQStyleOptionComboBox2(other:QStyleOptionComboBox_ITF):QStyleOptionComboBox;
-	function NewQStyleOptionComplex(version:number,ty:number):QStyleOptionComplex;
-	function NewQStyleOptionComplex2(other:QStyleOptionComplex_ITF):QStyleOptionComplex;
-	function NewQStyleOptionDockWidget():QStyleOptionDockWidget;
-	function NewQStyleOptionDockWidget2(other:QStyleOptionDockWidget_ITF):QStyleOptionDockWidget;
-	function NewQStyleOptionFocusRect():QStyleOptionFocusRect;
-	function NewQStyleOptionFocusRect2(other:QStyleOptionFocusRect_ITF):QStyleOptionFocusRect;
-	function NewQStyleOptionFrame():QStyleOptionFrame;
-	function NewQStyleOptionFrame2(other:QStyleOptionFrame_ITF):QStyleOptionFrame;
-	function NewQStyleOptionGraphicsItem():QStyleOptionGraphicsItem;
-	function NewQStyleOptionGraphicsItem2(other:QStyleOptionGraphicsItem_ITF):QStyleOptionGraphicsItem;
-	function NewQStyleOptionGroupBox():QStyleOptionGroupBox;
-	function NewQStyleOptionGroupBox2(other:QStyleOptionGroupBox_ITF):QStyleOptionGroupBox;
-	function NewQStyleOptionHeader():QStyleOptionHeader;
-	function NewQStyleOptionHeader2(other:QStyleOptionHeader_ITF):QStyleOptionHeader;
-	function NewQStyleOptionMenuItem():QStyleOptionMenuItem;
-	function NewQStyleOptionMenuItem2(other:QStyleOptionMenuItem_ITF):QStyleOptionMenuItem;
-	function NewQStyleOptionProgressBar():QStyleOptionProgressBar;
-	function NewQStyleOptionProgressBar2(other:QStyleOptionProgressBar_ITF):QStyleOptionProgressBar;
-	function NewQStyleOptionRubberBand():QStyleOptionRubberBand;
-	function NewQStyleOptionRubberBand2(other:QStyleOptionRubberBand_ITF):QStyleOptionRubberBand;
-	function NewQStyleOptionSizeGrip():QStyleOptionSizeGrip;
-	function NewQStyleOptionSizeGrip2(other:QStyleOptionSizeGrip_ITF):QStyleOptionSizeGrip;
-	function NewQStyleOptionSlider():QStyleOptionSlider;
-	function NewQStyleOptionSlider2(other:QStyleOptionSlider_ITF):QStyleOptionSlider;
-	function NewQStyleOptionSpinBox():QStyleOptionSpinBox;
-	function NewQStyleOptionSpinBox2(other:QStyleOptionSpinBox_ITF):QStyleOptionSpinBox;
-	function NewQStyleOptionTab():QStyleOptionTab;
-	function NewQStyleOptionTab2(other:QStyleOptionTab_ITF):QStyleOptionTab;
-	function NewQStyleOptionTabBarBase():QStyleOptionTabBarBase;
-	function NewQStyleOptionTabBarBase2(other:QStyleOptionTabBarBase_ITF):QStyleOptionTabBarBase;
-	function NewQStyleOptionTabWidgetFrame():QStyleOptionTabWidgetFrame;
-	function NewQStyleOptionTabWidgetFrame2(other:QStyleOptionTabWidgetFrame_ITF):QStyleOptionTabWidgetFrame;
-	function NewQStyleOptionTitleBar():QStyleOptionTitleBar;
-	function NewQStyleOptionTitleBar2(other:QStyleOptionTitleBar_ITF):QStyleOptionTitleBar;
-	function NewQStyleOptionToolBar():QStyleOptionToolBar;
-	function NewQStyleOptionToolBar2(other:QStyleOptionToolBar_ITF):QStyleOptionToolBar;
-	function NewQStyleOptionToolBox():QStyleOptionToolBox;
-	function NewQStyleOptionToolBox2(other:QStyleOptionToolBox_ITF):QStyleOptionToolBox;
-	function NewQStyleOptionToolButton():QStyleOptionToolButton;
-	function NewQStyleOptionToolButton2(other:QStyleOptionToolButton_ITF):QStyleOptionToolButton;
-	function NewQStyleOptionViewItem():QStyleOptionViewItem;
-	function NewQStyleOptionViewItem2(other:QStyleOptionViewItem_ITF):QStyleOptionViewItem;
 	const QStyleOption__SO_Default: number;
 	const QStyleOption__SO_FocusRect: number;
 	const QStyleOption__SO_Button: number;
@@ -9742,10 +9633,6 @@ declare namespace widgets {
 	function NewQStyleOptionTabFromPointer(ptr:number):QStyleOptionTab;
 	function NewQStyleOptionTab():QStyleOptionTab;
 	function NewQStyleOptionTab2(other:QStyleOptionTab_ITF):QStyleOptionTab;
-	function NewQStyleOptionTabBarBase():QStyleOptionTabBarBase;
-	function NewQStyleOptionTabBarBase2(other:QStyleOptionTabBarBase_ITF):QStyleOptionTabBarBase;
-	function NewQStyleOptionTabWidgetFrame():QStyleOptionTabWidgetFrame;
-	function NewQStyleOptionTabWidgetFrame2(other:QStyleOptionTabWidgetFrame_ITF):QStyleOptionTabWidgetFrame;
 	const QStyleOptionTab__Type: number;
 	const QStyleOptionTab__Version: number;
 	const QStyleOptionTab__Beginning: number;
@@ -10712,13 +10599,6 @@ declare namespace widgets {
 	function NewQTableWidgetFromPointer(ptr:number):QTableWidget;
 	function NewQTableWidget(parent:QWidget_ITF):QTableWidget;
 	function NewQTableWidget2(rows:number,columns:number,parent:QWidget_ITF):QTableWidget;
-	function NewQTableWidgetItem(ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem2(text:string,ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem3(icon:gui.QIcon_ITF,text:string,ty:number):QTableWidgetItem;
-	function NewQTableWidgetItem4(other:QTableWidgetItem_ITF):QTableWidgetItem;
-	function NewQTableWidgetSelectionRange():QTableWidgetSelectionRange;
-	function NewQTableWidgetSelectionRange2(top:number,left:number,bottom:number,right:number):QTableWidgetSelectionRange;
-	function NewQTableWidgetSelectionRange3(other:QTableWidgetSelectionRange_ITF):QTableWidgetSelectionRange;
 	interface QTableWidgetItem_ITF {
 		QTableWidgetItem_PTR():QTableWidgetItem;
 	}
@@ -11699,15 +11579,6 @@ declare namespace widgets {
 	}
 	function NewQTreeWidgetFromPointer(ptr:number):QTreeWidget;
 	function NewQTreeWidget(parent:QWidget_ITF):QTreeWidget;
-	function NewQTreeWidgetItem(ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem2(stri:string[],ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem3(parent:QTreeWidget_ITF,ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem4(parent:QTreeWidget_ITF,stri:string[],ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem5(parent:QTreeWidget_ITF,preceding:QTreeWidgetItem_ITF,ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem6(parent:QTreeWidgetItem_ITF,ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem7(parent:QTreeWidgetItem_ITF,stri:string[],ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem8(parent:QTreeWidgetItem_ITF,preceding:QTreeWidgetItem_ITF,ty:number):QTreeWidgetItem;
-	function NewQTreeWidgetItem9(other:QTreeWidgetItem_ITF):QTreeWidgetItem;
 	interface QTreeWidgetItem_ITF {
 		QTreeWidgetItem_PTR():QTreeWidgetItem;
 	}
@@ -11809,6 +11680,16 @@ declare namespace widgets {
 	const QTreeWidgetItem__ShowIndicator: number;
 	const QTreeWidgetItem__DontShowIndicator: number;
 	const QTreeWidgetItem__DontShowIndicatorWhenChildless: number;
+	interface QTreeWidgetItemIterator_ITF {
+		QTreeWidgetItemIterator_PTR():QTreeWidgetItemIterator;
+	}
+
+	class QTreeWidgetItemIterator {
+		___pointer: number;
+		QTreeWidgetItemIterator_PTR():QTreeWidgetItemIterator;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QTreeWidgetItemIterator__All: number;
 	const QTreeWidgetItemIterator__Hidden: number;
 	const QTreeWidgetItemIterator__NotHidden: number;
@@ -12592,8 +12473,6 @@ declare namespace widgets {
 	function QWidget_KeyboardGrabber():QWidget;
 	function QWidget_MouseGrabber():QWidget;
 	function QWidget_SetTabOrder(first:QWidget_ITF,second:QWidget_ITF):void;
-	function NewQWidgetAction(parent:core.QObject_ITF):QWidgetAction;
-	function NewQWidgetItem2(widget:QWidget_ITF):QWidgetItem;
 	const QWidget__DrawWindowBackground: number;
 	const QWidget__DrawChildren: number;
 	const QWidget__IgnoreMask: number;
@@ -12765,7 +12644,6 @@ declare namespace widgets {
 	}
 	function NewQWizardFromPointer(ptr:number):QWizard;
 	function NewQWizard(parent:QWidget_ITF,flags:number):QWizard;
-	function NewQWizardPage(parent:QWidget_ITF):QWizardPage;
 	const QWizard__BackButton: number;
 	const QWizard__NextButton: number;
 	const QWizard__CommitButton: number;

@@ -112,10 +112,6 @@ declare namespace xml {
 	function NewQDomDocument2(name:string):QDomDocument;
 	function NewQDomDocument3(doctype:QDomDocumentType_ITF):QDomDocument;
 	function NewQDomDocument4(x:QDomDocument_ITF):QDomDocument;
-	function NewQDomDocumentFragment():QDomDocumentFragment;
-	function NewQDomDocumentFragment2(x:QDomDocumentFragment_ITF):QDomDocumentFragment;
-	function NewQDomDocumentType():QDomDocumentType;
-	function NewQDomDocumentType2(n:QDomDocumentType_ITF):QDomDocumentType;
 	interface QDomDocumentFragment_ITF extends QDomNode_ITF {
 		QDomDocumentFragment_PTR():QDomDocumentFragment;
 	}
@@ -210,8 +206,6 @@ declare namespace xml {
 	function NewQDomEntityFromPointer(ptr:number):QDomEntity;
 	function NewQDomEntity():QDomEntity;
 	function NewQDomEntity2(x:QDomEntity_ITF):QDomEntity;
-	function NewQDomEntityReference():QDomEntityReference;
-	function NewQDomEntityReference2(x:QDomEntityReference_ITF):QDomEntityReference;
 	interface QDomEntityReference_ITF extends QDomNode_ITF {
 		QDomEntityReference_PTR():QDomEntityReference;
 	}
@@ -352,8 +346,6 @@ declare namespace xml {
 	function NewQDomNodeFromPointer(ptr:number):QDomNode;
 	function NewQDomNode():QDomNode;
 	function NewQDomNode2(n:QDomNode_ITF):QDomNode;
-	function NewQDomNodeList():QDomNodeList;
-	function NewQDomNodeList2(n:QDomNodeList_ITF):QDomNodeList;
 	const QDomNode__ElementNode: number;
 	const QDomNode__AttributeNode: number;
 	const QDomNode__TextNode: number;
@@ -577,18 +569,18 @@ declare namespace xml {
 	interface QXmlDefaultHandler_ITF extends QXmlDeclHandler_ITF {
 		QXmlDefaultHandler_PTR():QXmlDefaultHandler;
 		QXmlContentHandler_PTR():QXmlContentHandler;
-		QXmlErrorHandler_PTR():QXmlContentHandler;
-		QXmlDTDHandler_PTR():QXmlContentHandler;
-		QXmlEntityResolver_PTR():QXmlContentHandler;
-		QXmlLexicalHandler_PTR():QXmlContentHandler;
+		QXmlErrorHandler_PTR():QXmlErrorHandler;
+		QXmlDTDHandler_PTR():QXmlDTDHandler;
+		QXmlEntityResolver_PTR():QXmlEntityResolver;
+		QXmlLexicalHandler_PTR():QXmlLexicalHandler;
 	}
 
 	class QXmlDefaultHandler extends QXmlDeclHandler {
 		QXmlContentHandler_PTR():QXmlContentHandler
-		QXmlErrorHandler_PTR():QXmlContentHandler
-		QXmlDTDHandler_PTR():QXmlContentHandler
-		QXmlEntityResolver_PTR():QXmlContentHandler
-		QXmlLexicalHandler_PTR():QXmlContentHandler
+		QXmlErrorHandler_PTR():QXmlErrorHandler
+		QXmlDTDHandler_PTR():QXmlDTDHandler
+		QXmlEntityResolver_PTR():QXmlEntityResolver
+		QXmlLexicalHandler_PTR():QXmlLexicalHandler
 		___pointer: number;
 		QXmlDefaultHandler_PTR():QXmlDefaultHandler;
 		Pointer():number;

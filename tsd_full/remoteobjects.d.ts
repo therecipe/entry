@@ -1,5 +1,38 @@
 /// <reference path="core.d.ts" />
 declare namespace remoteobjects {
+	interface DataEntries_ITF {
+		DataEntries_PTR():DataEntries;
+	}
+
+	class DataEntries {
+		___pointer: number;
+		DataEntries_PTR():DataEntries;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyDataEntries():void;
+	}
+	interface IndexValuePair_ITF {
+		IndexValuePair_PTR():IndexValuePair;
+	}
+
+	class IndexValuePair {
+		___pointer: number;
+		IndexValuePair_PTR():IndexValuePair;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyIndexValuePair():void;
+	}
+	interface ModelIndex_ITF {
+		ModelIndex_PTR():ModelIndex;
+	}
+
+	class ModelIndex {
+		___pointer: number;
+		ModelIndex_PTR():ModelIndex;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyModelIndex():void;
+	}
 	interface QAbstractItemModelReplica_ITF extends core.QAbstractItemModel_ITF {
 		QAbstractItemModelReplica_PTR():QAbstractItemModelReplica;
 	}
@@ -60,6 +93,16 @@ declare namespace remoteobjects {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQAbstractItemModelReplicaFromPointer(ptr:number):QAbstractItemModelReplica;
+	interface QIOQnxSource_ITF extends core.QIODevice_ITF {
+		QIOQnxSource_PTR():QIOQnxSource;
+	}
+
+	class QIOQnxSource extends core.QIODevice {
+		___pointer: number;
+		QIOQnxSource_PTR():QIOQnxSource;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QMetaTypeId_ITF {
 		QMetaTypeId_PTR():QMetaTypeId;
 	}
@@ -72,6 +115,26 @@ declare namespace remoteobjects {
 		DestroyQMetaTypeId():void;
 	}
 	function NewQMetaTypeIdFromPointer(ptr:number):QMetaTypeId;
+	interface QQnxNativeIo_ITF extends core.QIODevice_ITF {
+		QQnxNativeIo_PTR():QQnxNativeIo;
+	}
+
+	class QQnxNativeIo extends core.QIODevice {
+		___pointer: number;
+		QQnxNativeIo_PTR():QQnxNativeIo;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QQnxNativeServer_ITF extends core.QObject_ITF {
+		QQnxNativeServer_PTR():QQnxNativeServer;
+	}
+
+	class QQnxNativeServer extends core.QObject {
+		___pointer: number;
+		QQnxNativeServer_PTR():QQnxNativeServer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QRemoteObjectAbstractPersistedStore_ITF extends core.QObject_ITF {
 		QRemoteObjectAbstractPersistedStore_PTR():QRemoteObjectAbstractPersistedStore;
 	}
@@ -280,7 +343,6 @@ declare namespace remoteobjects {
 		DestroyQRemoteObjectRegistryDefault():void;
 	}
 	function NewQRemoteObjectRegistryFromPointer(ptr:number):QRemoteObjectRegistry;
-	function NewQRemoteObjectRegistryHost(registryAddress:core.QUrl_ITF,parent:core.QObject_ITF):QRemoteObjectRegistryHost;
 	interface QRemoteObjectRegistryHost_ITF extends QRemoteObjectHostBase_ITF {
 		QRemoteObjectRegistryHost_PTR():QRemoteObjectRegistryHost;
 	}
@@ -372,4 +434,37 @@ declare namespace remoteobjects {
 		DestroyQTypeInfo():void;
 	}
 	function NewQTypeInfoFromPointer(ptr:number):QTypeInfo;
+	interface QtROClientFactory_ITF {
+		QtROClientFactory_PTR():QtROClientFactory;
+	}
+
+	class QtROClientFactory {
+		___pointer: number;
+		QtROClientFactory_PTR():QtROClientFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQtROClientFactory():void;
+	}
+	interface QtROServerFactory_ITF {
+		QtROServerFactory_PTR():QtROServerFactory;
+	}
+
+	class QtROServerFactory {
+		___pointer: number;
+		QtROServerFactory_PTR():QtROServerFactory;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQtROServerFactory():void;
+	}
+	interface SourceApiMap_ITF {
+		SourceApiMap_PTR():SourceApiMap;
+	}
+
+	class SourceApiMap {
+		___pointer: number;
+		SourceApiMap_PTR():SourceApiMap;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroySourceApiMap():void;
+	}
 }

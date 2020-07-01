@@ -264,7 +264,7 @@ declare namespace virtualkeyboard {
 		ConnectVirtualKeyClicked(f:(key:number,text:string,modifiers:number,isAutoRepeat:boolean)=>void):void;
 		DisconnectVirtualKeyClicked():void;
 		VirtualKeyClicked(key:number,text:string,modifiers:number,isAutoRepeat:boolean):void;
-		VirtualKeyPress(key:number,text:string,modifiers:number,repeat:boolean):boolean;
+		VirtualKeyPress(key:number,text:string,modifiers:number,repe:boolean):boolean;
 		VirtualKeyRelease(key:number,text:string,modifiers:number):boolean;
 		WordCandidateListModel():QVirtualKeyboardSelectionListModel;
 		ConnectWordCandidateListModelChanged(f:()=>void):void;
@@ -417,7 +417,7 @@ declare namespace virtualkeyboard {
 		SetCanceled(canceled:boolean):void;
 		SetChannelData(channel:string,index:number,data:core.QVariant_ITF):void;
 		SetChannels(channels:string[]):void;
-		SetFinal(final:boolean):void;
+		SetFinal(fi:boolean):void;
 		SetOpacity(opacity:number):void;
 		SetTraceId(id:number):void;
 		TraceId():number;

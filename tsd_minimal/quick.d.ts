@@ -74,6 +74,10 @@ declare namespace quick {
 		DisconnectUpdate():void;
 		Update():void;
 		UpdateDefault():void;
+		ConnectWheelEvent(f:(event:gui.QWheelEvent)=>void):void;
+		DisconnectWheelEvent():void;
+		WheelEvent(event:gui.QWheelEvent_ITF):void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
 		Width():number;
 		Window():QQuickWindow;
 		X():number;
@@ -197,6 +201,7 @@ declare namespace quick {
 		SetSource(url:core.QUrl_ITF):void;
 		SetSourceDefault(url:core.QUrl_ITF):void;
 		Source():core.QUrl;
+		WheelEventDefault(e:gui.QWheelEvent_ITF):void;
 		ConnectDestroyQQuickWidget(f:()=>void):void;
 		DisconnectDestroyQQuickWidget():void;
 		DestroyQQuickWidget():void;
@@ -253,6 +258,7 @@ declare namespace quick {
 		DisconnectUpdate():void;
 		Update():void;
 		UpdateDefault():void;
+		WheelEventDefault(event:gui.QWheelEvent_ITF):void;
 		ConnectDestroyQQuickWindow(f:()=>void):void;
 		DisconnectDestroyQQuickWindow():void;
 		DestroyQQuickWindow():void;

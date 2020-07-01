@@ -14,33 +14,6 @@ declare namespace sql {
 		DestroyQSql():void;
 	}
 	function NewQSqlFromPointer(ptr:number):QSql;
-	function NewQSqlDatabase():QSqlDatabase;
-	function NewQSqlDatabase2(other:QSqlDatabase_ITF):QSqlDatabase;
-	function NewQSqlDatabase3(ty:string):QSqlDatabase;
-	function NewQSqlDatabase4(driver:QSqlDriver_ITF):QSqlDatabase;
-	function NewQSqlDriver(parent:core.QObject_ITF):QSqlDriver;
-	function NewQSqlDriverPlugin(parent:core.QObject_ITF):QSqlDriverPlugin;
-	function NewQSqlError2(driverText:string,databaseText:string,ty:number,code:string):QSqlError;
-	function NewQSqlError3(other:QSqlError_ITF):QSqlError;
-	function NewQSqlError4(other:QSqlError_ITF):QSqlError;
-	function NewQSqlField(fieldName:string,ty:number):QSqlField;
-	function NewQSqlField2(fieldName:string,ty:number,table:string):QSqlField;
-	function NewQSqlField3(other:QSqlField_ITF):QSqlField;
-	function NewQSqlIndex(cursorname:string,name:string):QSqlIndex;
-	function NewQSqlIndex2(other:QSqlIndex_ITF):QSqlIndex;
-	function NewQSqlQuery(result:QSqlResult_ITF):QSqlQuery;
-	function NewQSqlQuery2(query:string,db:QSqlDatabase_ITF):QSqlQuery;
-	function NewQSqlQuery3(db:QSqlDatabase_ITF):QSqlQuery;
-	function NewQSqlQuery4(other:QSqlQuery_ITF):QSqlQuery;
-	function NewQSqlQueryModel(parent:core.QObject_ITF):QSqlQueryModel;
-	function NewQSqlRecord():QSqlRecord;
-	function NewQSqlRecord2(other:QSqlRecord_ITF):QSqlRecord;
-	function NewQSqlRelation():QSqlRelation;
-	function NewQSqlRelation2(tableName:string,indexColumn:string,displayColumn:string):QSqlRelation;
-	function NewQSqlRelationalDelegate(parent:core.QObject_ITF):QSqlRelationalDelegate;
-	function NewQSqlRelationalTableModel(parent:core.QObject_ITF,db:QSqlDatabase_ITF):QSqlRelationalTableModel;
-	function NewQSqlResult(db:QSqlDriver_ITF):QSqlResult;
-	function NewQSqlTableModel(parent:core.QObject_ITF,db:QSqlDatabase_ITF):QSqlTableModel;
 	const QSql__BeforeFirstRow: number;
 	const QSql__AfterLastRow: number;
 	const QSql__LowPrecisionInt32: number;
@@ -247,7 +220,6 @@ declare namespace sql {
 	}
 	function NewQSqlDriverFromPointer(ptr:number):QSqlDriver;
 	function NewQSqlDriver(parent:core.QObject_ITF):QSqlDriver;
-	function NewQSqlDriverPlugin(parent:core.QObject_ITF):QSqlDriverPlugin;
 	const QSqlDriver__Transactions: number;
 	const QSqlDriver__QuerySize: number;
 	const QSqlDriver__BLOB: number;
@@ -273,6 +245,17 @@ declare namespace sql {
 	const QSqlDriver__UnknownSource: number;
 	const QSqlDriver__SelfSource: number;
 	const QSqlDriver__OtherSource: number;
+	interface QSqlDriverCreator_ITF extends QSqlDriverCreatorBase_ITF {
+		QSqlDriverCreator_PTR():QSqlDriverCreator;
+	}
+
+	class QSqlDriverCreator extends QSqlDriverCreatorBase {
+		___pointer: number;
+		QSqlDriverCreator_PTR():QSqlDriverCreator;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQSqlDriverCreator():void;
+	}
 	interface QSqlDriverCreatorBase_ITF {
 		QSqlDriverCreatorBase_PTR():QSqlDriverCreatorBase;
 	}
@@ -466,7 +449,6 @@ declare namespace sql {
 	function NewQSqlQuery2(query:string,db:QSqlDatabase_ITF):QSqlQuery;
 	function NewQSqlQuery3(db:QSqlDatabase_ITF):QSqlQuery;
 	function NewQSqlQuery4(other:QSqlQuery_ITF):QSqlQuery;
-	function NewQSqlQueryModel(parent:core.QObject_ITF):QSqlQueryModel;
 	const QSqlQuery__ValuesAsRows: number;
 	const QSqlQuery__ValuesAsColumns: number;
 	interface QSqlQueryModel_ITF extends core.QAbstractTableModel_ITF {
@@ -616,8 +598,6 @@ declare namespace sql {
 	function NewQSqlRelationFromPointer(ptr:number):QSqlRelation;
 	function NewQSqlRelation():QSqlRelation;
 	function NewQSqlRelation2(tableName:string,indexColumn:string,displayColumn:string):QSqlRelation;
-	function NewQSqlRelationalDelegate(parent:core.QObject_ITF):QSqlRelationalDelegate;
-	function NewQSqlRelationalTableModel(parent:core.QObject_ITF,db:QSqlDatabase_ITF):QSqlRelationalTableModel;
 	interface QSqlRelationalDelegate_ITF extends widgets.QItemDelegate_ITF {
 		QSqlRelationalDelegate_PTR():QSqlRelationalDelegate;
 	}

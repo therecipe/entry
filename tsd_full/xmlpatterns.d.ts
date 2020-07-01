@@ -296,8 +296,6 @@ declare namespace xmlpatterns {
 	function NewQXmlName3(other:QXmlName_ITF):QXmlName;
 	function QXmlName_FromClarkName(clarkName:string,namePool:QXmlNamePool_ITF):QXmlName;
 	function QXmlName_IsNCName(candidate:string):boolean;
-	function NewQXmlNamePool():QXmlNamePool;
-	function NewQXmlNamePool2(other:QXmlNamePool_ITF):QXmlNamePool;
 	interface QXmlNamePool_ITF {
 		QXmlNamePool_PTR():QXmlNamePool;
 	}
@@ -437,8 +435,6 @@ declare namespace xmlpatterns {
 	function NewQXmlSchemaFromPointer(ptr:number):QXmlSchema;
 	function NewQXmlSchema():QXmlSchema;
 	function NewQXmlSchema2(other:QXmlSchema_ITF):QXmlSchema;
-	function NewQXmlSchemaValidator():QXmlSchemaValidator;
-	function NewQXmlSchemaValidator2(schema:QXmlSchema_ITF):QXmlSchemaValidator;
 	interface QXmlSchemaValidator_ITF {
 		QXmlSchemaValidator_PTR():QXmlSchemaValidator;
 	}

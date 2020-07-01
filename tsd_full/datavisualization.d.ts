@@ -631,6 +631,16 @@ declare namespace datavisualization {
 	const QAbstract3DAxis__AxisTypeNone: number;
 	const QAbstract3DAxis__AxisTypeCategory: number;
 	const QAbstract3DAxis__AxisTypeValue: number;
+	interface QAbstract3DGraph_ITF {
+		QAbstract3DGraph_PTR():QAbstract3DGraph;
+	}
+
+	class QAbstract3DGraph {
+		___pointer: number;
+		QAbstract3DGraph_PTR():QAbstract3DGraph;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	const QAbstract3DGraph__SelectionNone: number;
 	const QAbstract3DGraph__SelectionItem: number;
 	const QAbstract3DGraph__SelectionRow: number;
@@ -1928,7 +1938,6 @@ declare namespace datavisualization {
 	}
 	function NewQValue3DAxisFromPointer(ptr:number):QValue3DAxis;
 	function NewQValue3DAxis(parent:core.QObject_ITF):QValue3DAxis;
-	function NewQValue3DAxisFormatter2(parent:core.QObject_ITF):QValue3DAxisFormatter;
 	interface QValue3DAxisFormatter_ITF {
 		QValue3DAxisFormatter_PTR():QValue3DAxisFormatter;
 	}

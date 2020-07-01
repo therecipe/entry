@@ -51,7 +51,6 @@ declare namespace macextras {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQMacToolBarFromPointer(ptr:number):QMacToolBar;
-	function NewQMacToolBarItem(parent:core.QObject_ITF):QMacToolBarItem;
 	interface QMacToolBarItem_ITF extends core.QObject_ITF {
 		QMacToolBarItem_PTR():QMacToolBarItem;
 	}

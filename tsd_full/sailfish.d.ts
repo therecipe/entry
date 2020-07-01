@@ -11,7 +11,7 @@ declare namespace sailfish {
 		SailfishApp_PTR():SailfishApp;
 		Pointer():number;
 		SetPointer(p:number):void;
-		DestroySailfishApp():{};
+		DestroySailfishApp():void;
 		Application(argc:number,argv:string[]):gui.QGuiApplication;
 		Main(argc:number,argv:string[]):number;
 		CreateView():quick.QQuickView;

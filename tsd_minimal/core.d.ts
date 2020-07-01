@@ -768,13 +768,6 @@ declare namespace core {
 	function NewQDate2():QDate;
 	function NewQDate3(y:number,m:number,d:number):QDate;
 	function QDate_IsValid2(year:number,month:number,day:number):boolean;
-	function NewQDateTime():QDateTime;
-	function NewQDateTime2(date:QDate_ITF):QDateTime;
-	function NewQDateTime3(date:QDate_ITF,ti:QTime_ITF,spec:number):QDateTime;
-	function NewQDateTime4(date:QDate_ITF,ti:QTime_ITF,spec:number,offsetSeconds:number):QDateTime;
-	function NewQDateTime5(date:QDate_ITF,ti:QTime_ITF,timeZone:QTimeZone_ITF):QDateTime;
-	function NewQDateTime6(other:QDateTime_ITF):QDateTime;
-	function NewQDateTime7(other:QDateTime_ITF):QDateTime;
 	const QDate__DateFormat: number;
 	const QDate__StandaloneFormat: number;
 	interface QDateTime_ITF {
@@ -968,7 +961,6 @@ declare namespace core {
 	}
 	function NewQEventFromPointer(ptr:number):QEvent;
 	function NewQEvent(ty:number):QEvent;
-	function NewQEventLoop(parent:QObject_ITF):QEventLoop;
 	const QEvent__None: number;
 	const QEvent__Timer: number;
 	const QEvent__MouseButtonPress: number;
@@ -1205,13 +1197,6 @@ declare namespace core {
 	function QFile_Exists(fileName:string):boolean;
 	function QFile_Remove2(fileName:string):boolean;
 	function QFile_Resize2(fileName:string,sz:number):boolean;
-	function NewQFileInfo2():QFileInfo;
-	function NewQFileInfo3(file:string):QFileInfo;
-	function NewQFileInfo4(file:QFile_ITF):QFileInfo;
-	function NewQFileInfo5(dir:QDir_ITF,file:string):QFileInfo;
-	function NewQFileInfo6(fileinfo:QFileInfo_ITF):QFileInfo;
-	function NewQFileSystemWatcher(parent:QObject_ITF):QFileSystemWatcher;
-	function NewQFileSystemWatcher2(paths:string[],parent:QObject_ITF):QFileSystemWatcher;
 	interface QFileDevice_ITF extends QIODevice_ITF {
 		QFileDevice_PTR():QFileDevice;
 	}
@@ -1404,10 +1389,6 @@ declare namespace core {
 	function NewQItemSelection():QItemSelection;
 	function NewQItemSelection2(topLeft:QModelIndex_ITF,bottomRight:QModelIndex_ITF):QItemSelection;
 	function QItemSelection_Split(ran:QItemSelectionRange_ITF,other:QItemSelectionRange_ITF,result:QItemSelection_ITF):void;
-	function NewQItemSelectionRange():QItemSelectionRange;
-	function NewQItemSelectionRange2(other:QItemSelectionRange_ITF):QItemSelectionRange;
-	function NewQItemSelectionRange4(topLeft:QModelIndex_ITF,bottomRight:QModelIndex_ITF):QItemSelectionRange;
-	function NewQItemSelectionRange5(index:QModelIndex_ITF):QItemSelectionRange;
 	const QItemSelectionModel__NoUpdate: number;
 	const QItemSelectionModel__Clear: number;
 	const QItemSelectionModel__Select: number;
@@ -1429,7 +1410,6 @@ declare namespace core {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQItemSelectionRange():void;
-		Bottom():number;
 		Contains(index:QModelIndex_ITF):boolean;
 		Contains2(row:number,column:number,parentIndex:QModelIndex_ITF):boolean;
 		Height():number;
@@ -1648,16 +1628,11 @@ declare namespace core {
 		SetPointer(p:number):void;
 		DestroyQLine():void;
 		Center():QPoint;
-		Dy():number;
 	}
 	function NewQLineFromPointer(ptr:number):QLine;
 	function NewQLine():QLine;
 	function NewQLine2(p1:QPoint_ITF,p2:QPoint_ITF):QLine;
 	function NewQLine3(x1:number,y1:number,x2:number,y2:number):QLine;
-	function NewQLineF():QLineF;
-	function NewQLineF2(p1:QPointF_ITF,p2:QPointF_ITF):QLineF;
-	function NewQLineF3(x1:number,y1:number,x2:number,y2:number):QLineF;
-	function NewQLineF4(line:QLine_ITF):QLineF;
 	interface QLineF_ITF {
 		QLineF_PTR():QLineF;
 	}
@@ -1668,8 +1643,8 @@ declare namespace core {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQLineF():void;
+		Angle():number;
 		Center():QPointF;
-		Dy():number;
 		Length():number;
 	}
 	function NewQLineFFromPointer(ptr:number):QLineF;
@@ -2569,7 +2544,6 @@ declare namespace core {
 		Pointer():number;
 		SetPointer(p:number):void;
 		DestroyQMargins():void;
-		Bottom():number;
 		Left():number;
 		Right():number;
 		Top():number;
@@ -2901,9 +2875,6 @@ declare namespace core {
 	function NewQPointFromPointer(ptr:number):QPoint;
 	function NewQPoint():QPoint;
 	function NewQPoint2(xpos:number,ypos:number):QPoint;
-	function NewQPointF():QPointF;
-	function NewQPointF2(point:QPoint_ITF):QPointF;
-	function NewQPointF3(xpos:number,ypos:number):QPointF;
 	interface QPointF_ITF {
 		QPointF_PTR():QPointF;
 	}
@@ -2956,7 +2927,6 @@ declare namespace core {
 		SetPointer(p:number):void;
 		DestroyQRect():void;
 		Adjust(dx1:number,dy1:number,dx2:number,dy2:number):void;
-		Bottom():number;
 		Center():QPoint;
 		Contains(point:QPoint_ITF,proper:boolean):boolean;
 		Contains2(rectangle:QRect_ITF,proper:boolean):boolean;
@@ -2981,11 +2951,6 @@ declare namespace core {
 	function NewQRect2(topLeft:QPoint_ITF,bottomRight:QPoint_ITF):QRect;
 	function NewQRect3(topLeft:QPoint_ITF,size:QSize_ITF):QRect;
 	function NewQRect4(x:number,y:number,width:number,height:number):QRect;
-	function NewQRectF():QRectF;
-	function NewQRectF2(topLeft:QPointF_ITF,size:QSizeF_ITF):QRectF;
-	function NewQRectF3(topLeft:QPointF_ITF,bottomRight:QPointF_ITF):QRectF;
-	function NewQRectF4(x:number,y:number,width:number,height:number):QRectF;
-	function NewQRectF5(rectangle:QRect_ITF):QRectF;
 	interface QRectF_ITF {
 		QRectF_PTR():QRectF;
 	}
@@ -2997,7 +2962,6 @@ declare namespace core {
 		SetPointer(p:number):void;
 		DestroyQRectF():void;
 		Adjust(dx1:number,dy1:number,dx2:number,dy2:number):void;
-		Bottom():number;
 		Center():QPointF;
 		Contains(point:QPointF_ITF):boolean;
 		Contains2(rectangle:QRectF_ITF):boolean;
@@ -3074,8 +3038,6 @@ declare namespace core {
 	function NewQRegularExpression():QRegularExpression;
 	function NewQRegularExpression2(pattern:string,options:number):QRegularExpression;
 	function NewQRegularExpression3(re:QRegularExpression_ITF):QRegularExpression;
-	function NewQRegularExpressionMatch():QRegularExpressionMatch;
-	function NewQRegularExpressionMatch2(match:QRegularExpressionMatch_ITF):QRegularExpressionMatch;
 	const QRegularExpression__NoPatternOption: number;
 	const QRegularExpression__CaseInsensitiveOption: number;
 	const QRegularExpression__DotMatchesEverythingOption: number;
@@ -3170,9 +3132,6 @@ declare namespace core {
 	function NewQSizeFromPointer(ptr:number):QSize;
 	function NewQSize():QSize;
 	function NewQSize2(width:number,height:number):QSize;
-	function NewQSizeF():QSizeF;
-	function NewQSizeF2(size:QSize_ITF):QSizeF;
-	function NewQSizeF3(width:number,height:number):QSizeF;
 	interface QSizeF_ITF {
 		QSizeF_PTR():QSizeF;
 	}
@@ -3199,6 +3158,20 @@ declare namespace core {
 	const QSocketNotifier__Read: number;
 	const QSocketNotifier__Write: number;
 	const QSocketNotifier__Exception: number;
+	interface QStandardPaths_ITF {
+		QStandardPaths_PTR():QStandardPaths;
+	}
+
+	class QStandardPaths {
+		___pointer: number;
+		QStandardPaths_PTR():QStandardPaths;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQStandardPaths():void;
+		StandardLocations(ty:number):string[];
+	}
+	function NewQStandardPathsFromPointer(ptr:number):QStandardPaths;
+	function QStandardPaths_StandardLocations(ty:number):string[];
 	const QStandardPaths__DesktopLocation: number;
 	const QStandardPaths__DocumentsLocation: number;
 	const QStandardPaths__FontsLocation: number;
@@ -3426,13 +3399,6 @@ declare namespace core {
 	function NewQTime2():QTime;
 	function NewQTime3(h:number,m:number,s:number,ms:number):QTime;
 	function QTime_IsValid2(h:number,m:number,s:number,ms:number):boolean;
-	function NewQTimeZone():QTimeZone;
-	function NewQTimeZone2(ianaId:QByteArray_ITF):QTimeZone;
-	function NewQTimeZone3(offsetSeconds:number):QTimeZone;
-	function NewQTimeZone4(ianaId:QByteArray_ITF,offsetSeconds:number,name:string,abbreviation:string,country:number,comment:string):QTimeZone;
-	function NewQTimeZone5(other:QTimeZone_ITF):QTimeZone;
-	function NewQTimer(parent:QObject_ITF):QTimer;
-	function NewQTimerEvent(timerId:number):QTimerEvent;
 	const QTimeLine__NotRunning: number;
 	const QTimeLine__Paused: number;
 	const QTimeLine__Running: number;
@@ -3507,7 +3473,6 @@ declare namespace core {
 	function NewQTimer(parent:QObject_ITF):QTimer;
 	function QTimer_SingleShot(msec:number,receiver:QObject_ITF,member:string):void;
 	function QTimer_SingleShot2(msec:number,timerType:number,receiver:QObject_ITF,member:string):void;
-	function NewQTimerEvent(timerId:number):QTimerEvent;
 	interface QTimerEvent_ITF extends QEvent_ITF {
 		QTimerEvent_PTR():QTimerEvent;
 	}
@@ -3622,6 +3587,7 @@ declare namespace core {
 		ToGoType(dst:any):void;
 		CanConvert(targetTypeId:number):boolean;
 		Clear():void;
+		IsNull():boolean;
 		IsValid():boolean;
 		ToBool():boolean;
 		ToDouble(ok:boolean):number;
@@ -3639,7 +3605,6 @@ declare namespace core {
 		ToImage():number;
 	}
 	function NewQVariantFromPointer(ptr:number):QVariant;
-	function NewQVariant1(i:any):QVariant;
 	function NewQVariant():QVariant;
 	function NewQVariant2(ty:number):QVariant;
 	function NewQVariant3(typeId:number,copy:number):QVariant;

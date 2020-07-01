@@ -13,41 +13,6 @@ declare namespace bluetooth {
 		DestroyQBluetooth():void;
 	}
 	function NewQBluetoothFromPointer(ptr:number):QBluetooth;
-	function NewQBluetoothAddress():QBluetoothAddress;
-	function NewQBluetoothAddress2(address:number):QBluetoothAddress;
-	function NewQBluetoothAddress3(address:string):QBluetoothAddress;
-	function NewQBluetoothAddress4(other:QBluetoothAddress_ITF):QBluetoothAddress;
-	function NewQBluetoothDeviceDiscoveryAgent(parent:core.QObject_ITF):QBluetoothDeviceDiscoveryAgent;
-	function NewQBluetoothDeviceDiscoveryAgent2(deviceAdapter:QBluetoothAddress_ITF,parent:core.QObject_ITF):QBluetoothDeviceDiscoveryAgent;
-	function NewQBluetoothDeviceInfo():QBluetoothDeviceInfo;
-	function NewQBluetoothDeviceInfo2(address:QBluetoothAddress_ITF,name:string,classOfDevice:number):QBluetoothDeviceInfo;
-	function NewQBluetoothDeviceInfo3(uuid:QBluetoothUuid_ITF,name:string,classOfDevice:number):QBluetoothDeviceInfo;
-	function NewQBluetoothDeviceInfo4(other:QBluetoothDeviceInfo_ITF):QBluetoothDeviceInfo;
-	function NewQBluetoothHostInfo():QBluetoothHostInfo;
-	function NewQBluetoothHostInfo2(other:QBluetoothHostInfo_ITF):QBluetoothHostInfo;
-	function NewQBluetoothLocalDevice(parent:core.QObject_ITF):QBluetoothLocalDevice;
-	function NewQBluetoothLocalDevice2(address:QBluetoothAddress_ITF,parent:core.QObject_ITF):QBluetoothLocalDevice;
-	function NewQBluetoothServer(serverType:number,parent:core.QObject_ITF):QBluetoothServer;
-	function NewQBluetoothServiceDiscoveryAgent(parent:core.QObject_ITF):QBluetoothServiceDiscoveryAgent;
-	function NewQBluetoothServiceDiscoveryAgent2(deviceAdapter:QBluetoothAddress_ITF,parent:core.QObject_ITF):QBluetoothServiceDiscoveryAgent;
-	function NewQBluetoothServiceInfo():QBluetoothServiceInfo;
-	function NewQBluetoothServiceInfo2(other:QBluetoothServiceInfo_ITF):QBluetoothServiceInfo;
-	function NewQBluetoothSocket(socketType:number,parent:core.QObject_ITF):QBluetoothSocket;
-	function NewQBluetoothSocket2(parent:core.QObject_ITF):QBluetoothSocket;
-	function NewQBluetoothTransferManager(parent:core.QObject_ITF):QBluetoothTransferManager;
-	function NewQBluetoothTransferReply(parent:core.QObject_ITF):QBluetoothTransferReply;
-	function NewQBluetoothTransferRequest(address:QBluetoothAddress_ITF):QBluetoothTransferRequest;
-	function NewQBluetoothTransferRequest2(other:QBluetoothTransferRequest_ITF):QBluetoothTransferRequest;
-	function NewQBluetoothUuid():QBluetoothUuid;
-	function NewQBluetoothUuid2(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid3(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid4(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid5(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid6(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid7(uuid:number):QBluetoothUuid;
-	function NewQBluetoothUuid9(uuid:string):QBluetoothUuid;
-	function NewQBluetoothUuid10(uuid:QBluetoothUuid_ITF):QBluetoothUuid;
-	function NewQBluetoothUuid11(uuid:core.QUuid_ITF):QBluetoothUuid;
 	const QBluetooth__AttAuthorizationRequired: number;
 	const QBluetooth__AttAuthenticationRequired: number;
 	const QBluetooth__AttEncryptionRequired: number;
@@ -1148,8 +1113,6 @@ declare namespace bluetooth {
 	function NewQLowEnergyCharacteristicFromPointer(ptr:number):QLowEnergyCharacteristic;
 	function NewQLowEnergyCharacteristic():QLowEnergyCharacteristic;
 	function NewQLowEnergyCharacteristic2(other:QLowEnergyCharacteristic_ITF):QLowEnergyCharacteristic;
-	function NewQLowEnergyCharacteristicData():QLowEnergyCharacteristicData;
-	function NewQLowEnergyCharacteristicData2(other:QLowEnergyCharacteristicData_ITF):QLowEnergyCharacteristicData;
 	const QLowEnergyCharacteristic__Unknown: number;
 	const QLowEnergyCharacteristic__Broadcasting: number;
 	const QLowEnergyCharacteristic__Read: number;
@@ -1319,9 +1282,6 @@ declare namespace bluetooth {
 	function NewQLowEnergyDescriptorFromPointer(ptr:number):QLowEnergyDescriptor;
 	function NewQLowEnergyDescriptor():QLowEnergyDescriptor;
 	function NewQLowEnergyDescriptor2(other:QLowEnergyDescriptor_ITF):QLowEnergyDescriptor;
-	function NewQLowEnergyDescriptorData():QLowEnergyDescriptorData;
-	function NewQLowEnergyDescriptorData2(uuid:QBluetoothUuid_ITF,value:core.QByteArray_ITF):QLowEnergyDescriptorData;
-	function NewQLowEnergyDescriptorData3(other:QLowEnergyDescriptorData_ITF):QLowEnergyDescriptorData;
 	interface QLowEnergyDescriptorData_ITF {
 		QLowEnergyDescriptorData_PTR():QLowEnergyDescriptorData;
 	}
@@ -1409,8 +1369,6 @@ declare namespace bluetooth {
 		TimerEventDefault(event:core.QTimerEvent_ITF):void;
 	}
 	function NewQLowEnergyServiceFromPointer(ptr:number):QLowEnergyService;
-	function NewQLowEnergyServiceData():QLowEnergyServiceData;
-	function NewQLowEnergyServiceData2(other:QLowEnergyServiceData_ITF):QLowEnergyServiceData;
 	const QLowEnergyService__PrimaryService: number;
 	const QLowEnergyService__IncludedService: number;
 	const QLowEnergyService__NoError: number;

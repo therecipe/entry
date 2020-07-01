@@ -1,5 +1,226 @@
 /// <reference path="core.d.ts" />
 declare namespace sensors {
+	interface AndroidAccelerometer_ITF {
+		AndroidAccelerometer_PTR():AndroidAccelerometer;
+	}
+
+	class AndroidAccelerometer {
+		___pointer: number;
+		AndroidAccelerometer_PTR():AndroidAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidAccelerometer():void;
+	}
+	interface AndroidCompass_ITF extends ThreadSafeSensorBackend_ITF {
+		AndroidCompass_PTR():AndroidCompass;
+	}
+
+	class AndroidCompass extends ThreadSafeSensorBackend {
+		___pointer: number;
+		AndroidCompass_PTR():AndroidCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface AndroidGyroscope_ITF {
+		AndroidGyroscope_PTR():AndroidGyroscope;
+	}
+
+	class AndroidGyroscope {
+		___pointer: number;
+		AndroidGyroscope_PTR():AndroidGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidGyroscope():void;
+	}
+	interface AndroidLight_ITF {
+		AndroidLight_PTR():AndroidLight;
+	}
+
+	class AndroidLight {
+		___pointer: number;
+		AndroidLight_PTR():AndroidLight;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidLight():void;
+	}
+	interface AndroidMagnetometer_ITF {
+		AndroidMagnetometer_PTR():AndroidMagnetometer;
+	}
+
+	class AndroidMagnetometer {
+		___pointer: number;
+		AndroidMagnetometer_PTR():AndroidMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidMagnetometer():void;
+	}
+	interface AndroidPressure_ITF {
+		AndroidPressure_PTR():AndroidPressure;
+	}
+
+	class AndroidPressure {
+		___pointer: number;
+		AndroidPressure_PTR():AndroidPressure;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidPressure():void;
+	}
+	interface AndroidProximity_ITF {
+		AndroidProximity_PTR():AndroidProximity;
+	}
+
+	class AndroidProximity {
+		___pointer: number;
+		AndroidProximity_PTR():AndroidProximity;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidProximity():void;
+	}
+	interface AndroidRotation_ITF {
+		AndroidRotation_PTR():AndroidRotation;
+	}
+
+	class AndroidRotation {
+		___pointer: number;
+		AndroidRotation_PTR():AndroidRotation;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidRotation():void;
+	}
+	interface AndroidTemperature_ITF {
+		AndroidTemperature_PTR():AndroidTemperature;
+	}
+
+	class AndroidTemperature {
+		___pointer: number;
+		AndroidTemperature_PTR():AndroidTemperature;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyAndroidTemperature():void;
+	}
+	interface FunctionEvent_ITF extends core.QEvent_ITF {
+		FunctionEvent_PTR():FunctionEvent;
+	}
+
+	class FunctionEvent extends core.QEvent {
+		___pointer: number;
+		FunctionEvent_PTR():FunctionEvent;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyFunctionEvent():void;
+	}
+	interface GenericTiltSensor_ITF extends QSensorBackend_ITF {
+		GenericTiltSensor_PTR():GenericTiltSensor;
+		QAccelerometerFilter_PTR():QAccelerometerFilter;
+	}
+
+	class GenericTiltSensor extends QSensorBackend {
+		QAccelerometerFilter_PTR():QAccelerometerFilter
+		___pointer: number;
+		GenericTiltSensor_PTR():GenericTiltSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IIOSensorProxyCompass_ITF extends IIOSensorProxySensorBase_ITF {
+		IIOSensorProxyCompass_PTR():IIOSensorProxyCompass;
+	}
+
+	class IIOSensorProxyCompass extends IIOSensorProxySensorBase {
+		___pointer: number;
+		IIOSensorProxyCompass_PTR():IIOSensorProxyCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IIOSensorProxyLightSensor_ITF extends IIOSensorProxySensorBase_ITF {
+		IIOSensorProxyLightSensor_PTR():IIOSensorProxyLightSensor;
+	}
+
+	class IIOSensorProxyLightSensor extends IIOSensorProxySensorBase {
+		___pointer: number;
+		IIOSensorProxyLightSensor_PTR():IIOSensorProxyLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IIOSensorProxyOrientationSensor_ITF extends IIOSensorProxySensorBase_ITF {
+		IIOSensorProxyOrientationSensor_PTR():IIOSensorProxyOrientationSensor;
+	}
+
+	class IIOSensorProxyOrientationSensor extends IIOSensorProxySensorBase {
+		___pointer: number;
+		IIOSensorProxyOrientationSensor_PTR():IIOSensorProxyOrientationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IIOSensorProxySensorBase_ITF extends QSensorBackend_ITF {
+		IIOSensorProxySensorBase_PTR():IIOSensorProxySensorBase;
+	}
+
+	class IIOSensorProxySensorBase extends QSensorBackend {
+		___pointer: number;
+		IIOSensorProxySensorBase_PTR():IIOSensorProxySensorBase;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IOSAccelerometer_ITF extends QSensorBackend_ITF {
+		IOSAccelerometer_PTR():IOSAccelerometer;
+	}
+
+	class IOSAccelerometer extends QSensorBackend {
+		___pointer: number;
+		IOSAccelerometer_PTR():IOSAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IOSCompass_ITF extends QSensorBackend_ITF {
+		IOSCompass_PTR():IOSCompass;
+	}
+
+	class IOSCompass extends QSensorBackend {
+		___pointer: number;
+		IOSCompass_PTR():IOSCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IOSGyroscope_ITF extends QSensorBackend_ITF {
+		IOSGyroscope_PTR():IOSGyroscope;
+	}
+
+	class IOSGyroscope extends QSensorBackend {
+		___pointer: number;
+		IOSGyroscope_PTR():IOSGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IOSMagnetometer_ITF extends QSensorBackend_ITF {
+		IOSMagnetometer_PTR():IOSMagnetometer;
+	}
+
+	class IOSMagnetometer extends QSensorBackend {
+		___pointer: number;
+		IOSMagnetometer_PTR():IOSMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface IOSProximitySensor_ITF extends QSensorBackend_ITF {
+		IOSProximitySensor_PTR():IOSProximitySensor;
+	}
+
+	class IOSProximitySensor extends QSensorBackend {
+		___pointer: number;
+		IOSProximitySensor_PTR():IOSProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface LinuxSysAccelerometer_ITF extends QSensorBackend_ITF {
+		LinuxSysAccelerometer_PTR():LinuxSysAccelerometer;
+	}
+
+	class LinuxSysAccelerometer extends QSensorBackend {
+		___pointer: number;
+		LinuxSysAccelerometer_PTR():LinuxSysAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 	interface QAccelerometer_ITF extends QSensor_ITF {
 		QAccelerometer_PTR():QAccelerometer;
 	}
@@ -941,10 +1162,6 @@ declare namespace sensors {
 	function QSensor_DefaultSensorForType(ty:core.QByteArray_ITF):core.QByteArray;
 	function QSensor_SensorTypes():core.QByteArray[];
 	function QSensor_SensorsForType(ty:core.QByteArray_ITF):core.QByteArray[];
-	function NewQSensorGesture(ids:string[],parent:core.QObject_ITF):QSensorGesture;
-	function NewQSensorGestureManager(parent:core.QObject_ITF):QSensorGestureManager;
-	function NewQSensorGesturePluginInterface():QSensorGesturePluginInterface;
-	function NewQSensorGestureRecognizer(parent:core.QObject_ITF):QSensorGestureRecognizer;
 	const QSensor__Buffering: number;
 	const QSensor__AlwaysOn: number;
 	const QSensor__GeoValues: number;
@@ -1079,9 +1296,6 @@ declare namespace sensors {
 	}
 	function NewQSensorGestureFromPointer(ptr:number):QSensorGesture;
 	function NewQSensorGesture(ids:string[],parent:core.QObject_ITF):QSensorGesture;
-	function NewQSensorGestureManager(parent:core.QObject_ITF):QSensorGestureManager;
-	function NewQSensorGesturePluginInterface():QSensorGesturePluginInterface;
-	function NewQSensorGestureRecognizer(parent:core.QObject_ITF):QSensorGestureRecognizer;
 	interface QSensorGestureManager_ITF extends core.QObject_ITF {
 		QSensorGestureManager_PTR():QSensorGestureManager;
 	}
@@ -1361,4 +1575,910 @@ declare namespace sensors {
 	}
 	function NewQTiltSensorFromPointer(ptr:number):QTiltSensor;
 	function NewQTiltSensor(parent:core.QObject_ITF):QTiltSensor;
+	interface QmlAccelerometer_ITF extends QmlSensor_ITF {
+		QmlAccelerometer_PTR():QmlAccelerometer;
+	}
+
+	class QmlAccelerometer extends QmlSensor {
+		___pointer: number;
+		QmlAccelerometer_PTR():QmlAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAccelerometerReading_ITF extends QmlSensorReading_ITF {
+		QmlAccelerometerReading_PTR():QmlAccelerometerReading;
+	}
+
+	class QmlAccelerometerReading extends QmlSensorReading {
+		___pointer: number;
+		QmlAccelerometerReading_PTR():QmlAccelerometerReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAltimeter_ITF extends QmlSensor_ITF {
+		QmlAltimeter_PTR():QmlAltimeter;
+	}
+
+	class QmlAltimeter extends QmlSensor {
+		___pointer: number;
+		QmlAltimeter_PTR():QmlAltimeter;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAltimeterReading_ITF extends QmlSensorReading_ITF {
+		QmlAltimeterReading_PTR():QmlAltimeterReading;
+	}
+
+	class QmlAltimeterReading extends QmlSensorReading {
+		___pointer: number;
+		QmlAltimeterReading_PTR():QmlAltimeterReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAmbientLightSensor_ITF extends QmlSensor_ITF {
+		QmlAmbientLightSensor_PTR():QmlAmbientLightSensor;
+	}
+
+	class QmlAmbientLightSensor extends QmlSensor {
+		___pointer: number;
+		QmlAmbientLightSensor_PTR():QmlAmbientLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAmbientLightSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlAmbientLightSensorReading_PTR():QmlAmbientLightSensorReading;
+	}
+
+	class QmlAmbientLightSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlAmbientLightSensorReading_PTR():QmlAmbientLightSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAmbientTemperatureReading_ITF extends QmlSensorReading_ITF {
+		QmlAmbientTemperatureReading_PTR():QmlAmbientTemperatureReading;
+	}
+
+	class QmlAmbientTemperatureReading extends QmlSensorReading {
+		___pointer: number;
+		QmlAmbientTemperatureReading_PTR():QmlAmbientTemperatureReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlAmbientTemperatureSensor_ITF extends QmlSensor_ITF {
+		QmlAmbientTemperatureSensor_PTR():QmlAmbientTemperatureSensor;
+	}
+
+	class QmlAmbientTemperatureSensor extends QmlSensor {
+		___pointer: number;
+		QmlAmbientTemperatureSensor_PTR():QmlAmbientTemperatureSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlCompass_ITF extends QmlSensor_ITF {
+		QmlCompass_PTR():QmlCompass;
+	}
+
+	class QmlCompass extends QmlSensor {
+		___pointer: number;
+		QmlCompass_PTR():QmlCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlCompassReading_ITF extends QmlSensorReading_ITF {
+		QmlCompassReading_PTR():QmlCompassReading;
+	}
+
+	class QmlCompassReading extends QmlSensorReading {
+		___pointer: number;
+		QmlCompassReading_PTR():QmlCompassReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlDistanceReading_ITF extends QmlSensorReading_ITF {
+		QmlDistanceReading_PTR():QmlDistanceReading;
+	}
+
+	class QmlDistanceReading extends QmlSensorReading {
+		___pointer: number;
+		QmlDistanceReading_PTR():QmlDistanceReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlDistanceSensor_ITF extends QmlSensor_ITF {
+		QmlDistanceSensor_PTR():QmlDistanceSensor;
+	}
+
+	class QmlDistanceSensor extends QmlSensor {
+		___pointer: number;
+		QmlDistanceSensor_PTR():QmlDistanceSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlGyroscope_ITF extends QmlSensor_ITF {
+		QmlGyroscope_PTR():QmlGyroscope;
+	}
+
+	class QmlGyroscope extends QmlSensor {
+		___pointer: number;
+		QmlGyroscope_PTR():QmlGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlGyroscopeReading_ITF extends QmlSensorReading_ITF {
+		QmlGyroscopeReading_PTR():QmlGyroscopeReading;
+	}
+
+	class QmlGyroscopeReading extends QmlSensorReading {
+		___pointer: number;
+		QmlGyroscopeReading_PTR():QmlGyroscopeReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlHolsterReading_ITF extends QmlSensorReading_ITF {
+		QmlHolsterReading_PTR():QmlHolsterReading;
+	}
+
+	class QmlHolsterReading extends QmlSensorReading {
+		___pointer: number;
+		QmlHolsterReading_PTR():QmlHolsterReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlHolsterSensor_ITF extends QmlSensor_ITF {
+		QmlHolsterSensor_PTR():QmlHolsterSensor;
+	}
+
+	class QmlHolsterSensor extends QmlSensor {
+		___pointer: number;
+		QmlHolsterSensor_PTR():QmlHolsterSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlHumidityReading_ITF extends QmlSensorReading_ITF {
+		QmlHumidityReading_PTR():QmlHumidityReading;
+	}
+
+	class QmlHumidityReading extends QmlSensorReading {
+		___pointer: number;
+		QmlHumidityReading_PTR():QmlHumidityReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlHumiditySensor_ITF extends QmlSensor_ITF {
+		QmlHumiditySensor_PTR():QmlHumiditySensor;
+	}
+
+	class QmlHumiditySensor extends QmlSensor {
+		___pointer: number;
+		QmlHumiditySensor_PTR():QmlHumiditySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlIRProximitySensor_ITF extends QmlSensor_ITF {
+		QmlIRProximitySensor_PTR():QmlIRProximitySensor;
+	}
+
+	class QmlIRProximitySensor extends QmlSensor {
+		___pointer: number;
+		QmlIRProximitySensor_PTR():QmlIRProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlIRProximitySensorReading_ITF extends QmlSensorReading_ITF {
+		QmlIRProximitySensorReading_PTR():QmlIRProximitySensorReading;
+	}
+
+	class QmlIRProximitySensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlIRProximitySensorReading_PTR():QmlIRProximitySensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlLidReading_ITF extends QmlSensorReading_ITF {
+		QmlLidReading_PTR():QmlLidReading;
+	}
+
+	class QmlLidReading extends QmlSensorReading {
+		___pointer: number;
+		QmlLidReading_PTR():QmlLidReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlLidSensor_ITF extends QmlSensor_ITF {
+		QmlLidSensor_PTR():QmlLidSensor;
+	}
+
+	class QmlLidSensor extends QmlSensor {
+		___pointer: number;
+		QmlLidSensor_PTR():QmlLidSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlLightSensor_ITF extends QmlSensor_ITF {
+		QmlLightSensor_PTR():QmlLightSensor;
+	}
+
+	class QmlLightSensor extends QmlSensor {
+		___pointer: number;
+		QmlLightSensor_PTR():QmlLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlLightSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlLightSensorReading_PTR():QmlLightSensorReading;
+	}
+
+	class QmlLightSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlLightSensorReading_PTR():QmlLightSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlMagnetometer_ITF extends QmlSensor_ITF {
+		QmlMagnetometer_PTR():QmlMagnetometer;
+	}
+
+	class QmlMagnetometer extends QmlSensor {
+		___pointer: number;
+		QmlMagnetometer_PTR():QmlMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlMagnetometerReading_ITF extends QmlSensorReading_ITF {
+		QmlMagnetometerReading_PTR():QmlMagnetometerReading;
+	}
+
+	class QmlMagnetometerReading extends QmlSensorReading {
+		___pointer: number;
+		QmlMagnetometerReading_PTR():QmlMagnetometerReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlOrientationSensor_ITF extends QmlSensor_ITF {
+		QmlOrientationSensor_PTR():QmlOrientationSensor;
+	}
+
+	class QmlOrientationSensor extends QmlSensor {
+		___pointer: number;
+		QmlOrientationSensor_PTR():QmlOrientationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlOrientationSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlOrientationSensorReading_PTR():QmlOrientationSensorReading;
+	}
+
+	class QmlOrientationSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlOrientationSensorReading_PTR():QmlOrientationSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlPressureReading_ITF extends QmlSensorReading_ITF {
+		QmlPressureReading_PTR():QmlPressureReading;
+	}
+
+	class QmlPressureReading extends QmlSensorReading {
+		___pointer: number;
+		QmlPressureReading_PTR():QmlPressureReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlPressureSensor_ITF extends QmlSensor_ITF {
+		QmlPressureSensor_PTR():QmlPressureSensor;
+	}
+
+	class QmlPressureSensor extends QmlSensor {
+		___pointer: number;
+		QmlPressureSensor_PTR():QmlPressureSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlProximitySensor_ITF extends QmlSensor_ITF {
+		QmlProximitySensor_PTR():QmlProximitySensor;
+	}
+
+	class QmlProximitySensor extends QmlSensor {
+		___pointer: number;
+		QmlProximitySensor_PTR():QmlProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlProximitySensorReading_ITF extends QmlSensorReading_ITF {
+		QmlProximitySensorReading_PTR():QmlProximitySensorReading;
+	}
+
+	class QmlProximitySensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlProximitySensorReading_PTR():QmlProximitySensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlRotationSensor_ITF extends QmlSensor_ITF {
+		QmlRotationSensor_PTR():QmlRotationSensor;
+	}
+
+	class QmlRotationSensor extends QmlSensor {
+		___pointer: number;
+		QmlRotationSensor_PTR():QmlRotationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlRotationSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlRotationSensorReading_PTR():QmlRotationSensorReading;
+	}
+
+	class QmlRotationSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlRotationSensorReading_PTR():QmlRotationSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensor_ITF extends core.QObject_ITF {
+		QmlSensor_PTR():QmlSensor;
+	}
+
+	class QmlSensor extends core.QObject {
+		___pointer: number;
+		QmlSensor_PTR():QmlSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensorGesture_ITF extends core.QObject_ITF {
+		QmlSensorGesture_PTR():QmlSensorGesture;
+	}
+
+	class QmlSensorGesture extends core.QObject {
+		___pointer: number;
+		QmlSensorGesture_PTR():QmlSensorGesture;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensorGlobal_ITF extends core.QObject_ITF {
+		QmlSensorGlobal_PTR():QmlSensorGlobal;
+	}
+
+	class QmlSensorGlobal extends core.QObject {
+		___pointer: number;
+		QmlSensorGlobal_PTR():QmlSensorGlobal;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensorOutputRange_ITF extends core.QObject_ITF {
+		QmlSensorOutputRange_PTR():QmlSensorOutputRange;
+	}
+
+	class QmlSensorOutputRange extends core.QObject {
+		___pointer: number;
+		QmlSensorOutputRange_PTR():QmlSensorOutputRange;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensorRange_ITF extends core.QObject_ITF {
+		QmlSensorRange_PTR():QmlSensorRange;
+	}
+
+	class QmlSensorRange extends core.QObject {
+		___pointer: number;
+		QmlSensorRange_PTR():QmlSensorRange;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlSensorReading_ITF extends core.QObject_ITF {
+		QmlSensorReading_PTR():QmlSensorReading;
+	}
+
+	class QmlSensorReading extends core.QObject {
+		___pointer: number;
+		QmlSensorReading_PTR():QmlSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlTapSensor_ITF extends QmlSensor_ITF {
+		QmlTapSensor_PTR():QmlTapSensor;
+	}
+
+	class QmlTapSensor extends QmlSensor {
+		___pointer: number;
+		QmlTapSensor_PTR():QmlTapSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlTapSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlTapSensorReading_PTR():QmlTapSensorReading;
+	}
+
+	class QmlTapSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlTapSensorReading_PTR():QmlTapSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlTiltSensor_ITF extends QmlSensor_ITF {
+		QmlTiltSensor_PTR():QmlTiltSensor;
+	}
+
+	class QmlTiltSensor extends QmlSensor {
+		___pointer: number;
+		QmlTiltSensor_PTR():QmlTiltSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface QmlTiltSensorReading_ITF extends QmlSensorReading_ITF {
+		QmlTiltSensorReading_PTR():QmlTiltSensorReading;
+	}
+
+	class QmlTiltSensorReading extends QmlSensorReading {
+		___pointer: number;
+		QmlTiltSensorReading_PTR():QmlTiltSensorReading;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorEventQueue_ITF extends ThreadSafeSensorBackend_ITF {
+		SensorEventQueue_PTR():SensorEventQueue;
+	}
+
+	class SensorEventQueue extends ThreadSafeSensorBackend {
+		___pointer: number;
+		SensorEventQueue_PTR():SensorEventQueue;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorManager_ITF extends core.QThread_ITF {
+		SensorManager_PTR():SensorManager;
+	}
+
+	class SensorManager extends core.QThread {
+		___pointer: number;
+		SensorManager_PTR():SensorManager;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagAccelerometer_ITF extends SensorTagBase_ITF {
+		SensorTagAccelerometer_PTR():SensorTagAccelerometer;
+	}
+
+	class SensorTagAccelerometer extends SensorTagBase {
+		___pointer: number;
+		SensorTagAccelerometer_PTR():SensorTagAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagAls_ITF extends SensorTagBase_ITF {
+		SensorTagAls_PTR():SensorTagAls;
+	}
+
+	class SensorTagAls extends SensorTagBase {
+		___pointer: number;
+		SensorTagAls_PTR():SensorTagAls;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagBase_ITF extends QSensorBackend_ITF {
+		SensorTagBase_PTR():SensorTagBase;
+	}
+
+	class SensorTagBase extends QSensorBackend {
+		___pointer: number;
+		SensorTagBase_PTR():SensorTagBase;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagGyroscope_ITF extends SensorTagBase_ITF {
+		SensorTagGyroscope_PTR():SensorTagGyroscope;
+	}
+
+	class SensorTagGyroscope extends SensorTagBase {
+		___pointer: number;
+		SensorTagGyroscope_PTR():SensorTagGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagHumiditySensor_ITF extends SensorTagBase_ITF {
+		SensorTagHumiditySensor_PTR():SensorTagHumiditySensor;
+	}
+
+	class SensorTagHumiditySensor extends SensorTagBase {
+		___pointer: number;
+		SensorTagHumiditySensor_PTR():SensorTagHumiditySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagLightSensor_ITF extends SensorTagBase_ITF {
+		SensorTagLightSensor_PTR():SensorTagLightSensor;
+	}
+
+	class SensorTagLightSensor extends SensorTagBase {
+		___pointer: number;
+		SensorTagLightSensor_PTR():SensorTagLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagMagnetometer_ITF extends SensorTagBase_ITF {
+		SensorTagMagnetometer_PTR():SensorTagMagnetometer;
+	}
+
+	class SensorTagMagnetometer extends SensorTagBase {
+		___pointer: number;
+		SensorTagMagnetometer_PTR():SensorTagMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagPressureSensor_ITF extends SensorTagBase_ITF {
+		SensorTagPressureSensor_PTR():SensorTagPressureSensor;
+	}
+
+	class SensorTagPressureSensor extends SensorTagBase {
+		___pointer: number;
+		SensorTagPressureSensor_PTR():SensorTagPressureSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorTagTemperatureSensor_ITF extends SensorTagBase_ITF {
+		SensorTagTemperatureSensor_PTR():SensorTagTemperatureSensor;
+	}
+
+	class SensorTagTemperatureSensor extends SensorTagBase {
+		___pointer: number;
+		SensorTagTemperatureSensor_PTR():SensorTagTemperatureSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwCompass_ITF extends SensorfwSensorBase_ITF {
+		SensorfwCompass_PTR():SensorfwCompass;
+	}
+
+	class SensorfwCompass extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwCompass_PTR():SensorfwCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwGyroscope_ITF extends SensorfwSensorBase_ITF {
+		SensorfwGyroscope_PTR():SensorfwGyroscope;
+	}
+
+	class SensorfwGyroscope extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwGyroscope_PTR():SensorfwGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwIrProximitySensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwIrProximitySensor_PTR():SensorfwIrProximitySensor;
+	}
+
+	class SensorfwIrProximitySensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwIrProximitySensor_PTR():SensorfwIrProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwLidSensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwLidSensor_PTR():SensorfwLidSensor;
+	}
+
+	class SensorfwLidSensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwLidSensor_PTR():SensorfwLidSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwLightSensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwLightSensor_PTR():SensorfwLightSensor;
+	}
+
+	class SensorfwLightSensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwLightSensor_PTR():SensorfwLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwMagnetometer_ITF extends SensorfwSensorBase_ITF {
+		SensorfwMagnetometer_PTR():SensorfwMagnetometer;
+	}
+
+	class SensorfwMagnetometer extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwMagnetometer_PTR():SensorfwMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwOrientationSensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwOrientationSensor_PTR():SensorfwOrientationSensor;
+	}
+
+	class SensorfwOrientationSensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwOrientationSensor_PTR():SensorfwOrientationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwProximitySensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwProximitySensor_PTR():SensorfwProximitySensor;
+	}
+
+	class SensorfwProximitySensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwProximitySensor_PTR():SensorfwProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwRotationSensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwRotationSensor_PTR():SensorfwRotationSensor;
+	}
+
+	class SensorfwRotationSensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwRotationSensor_PTR():SensorfwRotationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwSensorBase_ITF extends QSensorBackend_ITF {
+		SensorfwSensorBase_PTR():SensorfwSensorBase;
+	}
+
+	class SensorfwSensorBase extends QSensorBackend {
+		___pointer: number;
+		SensorfwSensorBase_PTR():SensorfwSensorBase;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorfwTapSensor_ITF extends SensorfwSensorBase_ITF {
+		SensorfwTapSensor_PTR():SensorfwTapSensor;
+	}
+
+	class SensorfwTapSensor extends SensorfwSensorBase {
+		___pointer: number;
+		SensorfwTapSensor_PTR():SensorfwTapSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface Sensorfwals_ITF extends SensorfwSensorBase_ITF {
+		Sensorfwals_PTR():Sensorfwals;
+	}
+
+	class Sensorfwals extends SensorfwSensorBase {
+		___pointer: number;
+		Sensorfwals_PTR():Sensorfwals;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SensorsConnection_ITF extends core.QObject_ITF {
+		SensorsConnection_PTR():SensorsConnection;
+	}
+
+	class SensorsConnection extends core.QObject {
+		___pointer: number;
+		SensorsConnection_PTR():SensorsConnection;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorAccelerometer_ITF extends SimulatorCommon_ITF {
+		SimulatorAccelerometer_PTR():SimulatorAccelerometer;
+	}
+
+	class SimulatorAccelerometer extends SimulatorCommon {
+		___pointer: number;
+		SimulatorAccelerometer_PTR():SimulatorAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorAmbientLightSensor_ITF extends SimulatorCommon_ITF {
+		SimulatorAmbientLightSensor_PTR():SimulatorAmbientLightSensor;
+	}
+
+	class SimulatorAmbientLightSensor extends SimulatorCommon {
+		___pointer: number;
+		SimulatorAmbientLightSensor_PTR():SimulatorAmbientLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorCommon_ITF extends QSensorBackend_ITF {
+		SimulatorCommon_PTR():SimulatorCommon;
+	}
+
+	class SimulatorCommon extends QSensorBackend {
+		___pointer: number;
+		SimulatorCommon_PTR():SimulatorCommon;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorCompass_ITF extends SimulatorCommon_ITF {
+		SimulatorCompass_PTR():SimulatorCompass;
+	}
+
+	class SimulatorCompass extends SimulatorCommon {
+		___pointer: number;
+		SimulatorCompass_PTR():SimulatorCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorIRProximitySensor_ITF extends SimulatorCommon_ITF {
+		SimulatorIRProximitySensor_PTR():SimulatorIRProximitySensor;
+	}
+
+	class SimulatorIRProximitySensor extends SimulatorCommon {
+		___pointer: number;
+		SimulatorIRProximitySensor_PTR():SimulatorIRProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorLightSensor_ITF extends SimulatorCommon_ITF {
+		SimulatorLightSensor_PTR():SimulatorLightSensor;
+	}
+
+	class SimulatorLightSensor extends SimulatorCommon {
+		___pointer: number;
+		SimulatorLightSensor_PTR():SimulatorLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorMagnetometer_ITF extends SimulatorCommon_ITF {
+		SimulatorMagnetometer_PTR():SimulatorMagnetometer;
+	}
+
+	class SimulatorMagnetometer extends SimulatorCommon {
+		___pointer: number;
+		SimulatorMagnetometer_PTR():SimulatorMagnetometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface SimulatorProximitySensor_ITF extends SimulatorCommon_ITF {
+		SimulatorProximitySensor_PTR():SimulatorProximitySensor;
+	}
+
+	class SimulatorProximitySensor extends SimulatorCommon {
+		___pointer: number;
+		SimulatorProximitySensor_PTR():SimulatorProximitySensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface ThreadSafeSensorBackend_ITF extends QSensorBackend_ITF {
+		ThreadSafeSensorBackend_PTR():ThreadSafeSensorBackend;
+	}
+
+	class ThreadSafeSensorBackend extends QSensorBackend {
+		___pointer: number;
+		ThreadSafeSensorBackend_PTR():ThreadSafeSensorBackend;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtAccelerometer_ITF extends QSensorBackend_ITF {
+		WinRtAccelerometer_PTR():WinRtAccelerometer;
+	}
+
+	class WinRtAccelerometer extends QSensorBackend {
+		___pointer: number;
+		WinRtAccelerometer_PTR():WinRtAccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtAmbientLightSensor_ITF extends QSensorBackend_ITF {
+		WinRtAmbientLightSensor_PTR():WinRtAmbientLightSensor;
+	}
+
+	class WinRtAmbientLightSensor extends QSensorBackend {
+		___pointer: number;
+		WinRtAmbientLightSensor_PTR():WinRtAmbientLightSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtCompass_ITF extends QSensorBackend_ITF {
+		WinRtCompass_PTR():WinRtCompass;
+	}
+
+	class WinRtCompass extends QSensorBackend {
+		___pointer: number;
+		WinRtCompass_PTR():WinRtCompass;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtGyroscope_ITF extends QSensorBackend_ITF {
+		WinRtGyroscope_PTR():WinRtGyroscope;
+	}
+
+	class WinRtGyroscope extends QSensorBackend {
+		___pointer: number;
+		WinRtGyroscope_PTR():WinRtGyroscope;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtOrientationSensor_ITF extends QSensorBackend_ITF {
+		WinRtOrientationSensor_PTR():WinRtOrientationSensor;
+	}
+
+	class WinRtOrientationSensor extends QSensorBackend {
+		___pointer: number;
+		WinRtOrientationSensor_PTR():WinRtOrientationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface WinRtRotationSensor_ITF extends QSensorBackend_ITF {
+		WinRtRotationSensor_PTR():WinRtRotationSensor;
+	}
+
+	class WinRtRotationSensor extends QSensorBackend {
+		___pointer: number;
+		WinRtRotationSensor_PTR():WinRtRotationSensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface dummyaccelerometer_ITF extends dummycommon_ITF {
+		dummyaccelerometer_PTR():dummyaccelerometer;
+	}
+
+	class dummyaccelerometer extends dummycommon {
+		___pointer: number;
+		dummyaccelerometer_PTR():dummyaccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface dummycommon_ITF extends QSensorBackend_ITF {
+		dummycommon_PTR():dummycommon;
+	}
+
+	class dummycommon extends QSensorBackend {
+		___pointer: number;
+		dummycommon_PTR():dummycommon;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface dummylightsensor_ITF extends dummycommon_ITF {
+		dummylightsensor_PTR():dummylightsensor;
+	}
+
+	class dummylightsensor extends dummycommon {
+		___pointer: number;
+		dummylightsensor_PTR():dummylightsensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface genericalssensor_ITF extends QSensorBackend_ITF {
+		genericalssensor_PTR():genericalssensor;
+		QLightFilter_PTR():QLightFilter;
+	}
+
+	class genericalssensor extends QSensorBackend {
+		QLightFilter_PTR():QLightFilter
+		___pointer: number;
+		genericalssensor_PTR():genericalssensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface genericorientationsensor_ITF extends QSensorBackend_ITF {
+		genericorientationsensor_PTR():genericorientationsensor;
+		QAccelerometerFilter_PTR():QAccelerometerFilter;
+	}
+
+	class genericorientationsensor extends QSensorBackend {
+		QAccelerometerFilter_PTR():QAccelerometerFilter
+		___pointer: number;
+		genericorientationsensor_PTR():genericorientationsensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface genericrotationsensor_ITF extends QSensorFilter_ITF {
+		genericrotationsensor_PTR():genericrotationsensor;
+		QSensorBackend_PTR():QSensorBackend;
+	}
+
+	class genericrotationsensor extends QSensorFilter {
+		QSensorBackend_PTR():QSensorBackend
+		___pointer: number;
+		genericrotationsensor_PTR():genericrotationsensor;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
+	interface sensorfwaccelerometer_ITF extends SensorfwSensorBase_ITF {
+		sensorfwaccelerometer_PTR():sensorfwaccelerometer;
+	}
+
+	class sensorfwaccelerometer extends SensorfwSensorBase {
+		___pointer: number;
+		sensorfwaccelerometer_PTR():sensorfwaccelerometer;
+		Pointer():number;
+		SetPointer(p:number):void;
+	}
 }

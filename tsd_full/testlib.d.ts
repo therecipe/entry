@@ -67,6 +67,17 @@ declare namespace testlib {
 		DestroyQSpontaneKeyEvent():void;
 	}
 	function NewQSpontaneKeyEventFromPointer(ptr:number):QSpontaneKeyEvent;
+	interface QTest_ITF {
+		QTest_PTR():QTest;
+	}
+
+	class QTest {
+		___pointer: number;
+		QTest_PTR():QTest;
+		Pointer():number;
+		SetPointer(p:number):void;
+		DestroyQTest():void;
+	}
 	const QTest__Abort: number;
 	const QTest__Continue: number;
 	const QTest__FramesPerSecond: number;
@@ -171,8 +182,6 @@ declare namespace testlib {
 		DestroyQTestEvent():void;
 	}
 	function NewQTestEventFromPointer(ptr:number):QTestEvent;
-	function NewQTestEventList():QTestEventList;
-	function NewQTestEventList2(other:QTestEventList_ITF):QTestEventList;
 	interface QTestEventList_ITF {
 		QTestEventList_PTR():QTestEventList;
 	}

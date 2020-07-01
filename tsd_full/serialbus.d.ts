@@ -26,9 +26,6 @@ declare namespace serialbus {
 	}
 	function NewQCanBusFromPointer(ptr:number):QCanBus;
 	function QCanBus_Instance():QCanBus;
-	function NewQCanBusDevice2(parent:core.QObject_ITF):QCanBusDevice;
-	function NewQCanBusFrame(ty:number):QCanBusFrame;
-	function NewQCanBusFrame2(identifier:number,data:core.QByteArray_ITF):QCanBusFrame;
 	interface QCanBusDevice_ITF extends core.QObject_ITF {
 		QCanBusDevice_PTR():QCanBusDevice;
 	}
@@ -338,7 +335,6 @@ declare namespace serialbus {
 	}
 	function NewQModbusDeviceFromPointer(ptr:number):QModbusDevice;
 	function NewQModbusDevice(parent:core.QObject_ITF):QModbusDevice;
-	function NewQModbusDeviceIdentification():QModbusDeviceIdentification;
 	const QModbusDevice__NoError: number;
 	const QModbusDevice__ReadError: number;
 	const QModbusDevice__WriteError: number;
