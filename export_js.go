@@ -69,7 +69,7 @@ func patchZip(t string, pay []byte, b *widgets.QPushButton) {
 
 		buf := new(bytes.Buffer)
 		copyWithProgress(buf, resp.Body, func(off int64) {
-			b.SetText(fmt.Sprint("(1/3) Downloading ", off/(resp.ContentLength/100)) + "%")
+			b.SetText(fmt.Sprintf("(1/3) Downloading %v%%", off/(resp.ContentLength/100)))
 			qtsched()
 		})
 		resp.Body.Close()
@@ -116,7 +116,7 @@ func patchZip(t string, pay []byte, b *widgets.QPushButton) {
 				qtsched()
 
 				copyWithProgress(fw, bytes.NewReader(data), func(off int64) {
-					b.SetText(fmt.Sprintf("(3/3) Packing %v/%v %v", i, len(r.File), off/(int64(len(data))/100)) + "%")
+					b.SetText(fmt.Sprintf("(3/3) Packing %v/%v %v%%", i, len(r.File), off/(int64(len(data))/100)))
 					qtsched()
 				})
 			}
